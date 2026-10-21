@@ -38,7 +38,7 @@ pytest
 
 `handcheck/DVA_handcheck.xlsx` has one tab per statement, laid out exactly as in DaVita's latest 10-K, the latest two years side by side. Type each figure as printed into the yellow cells; differences above 1% turn red, and the Summary tab shows the match rate per tab. A Notes tab covers the note items, and a Ratios tab rebuilds every ratio from your typed figures through the same line mapping as the standard spread.
 
-**Result (DaVita, FY2024–FY2025, 2026-10-21): 220 of 220 statement lines within 1% of the 10-K; 214 exact.** The six non-exact lines all differ by exactly 100 ($ thousands) and come from two hand-typing slips: FY2024 non-controlling interests, which carried into the net income lines through the sheet's own subtotal formulas, and FY2025 employee stock proceeds, which carried into cash from financing. The tool's figures match the SEC's rendering of the filing. Every ratio rebuilt in Excel from the typed figures equals the tool's ratio. Notes tab still to do. Full table: [handcheck/DVA_result.md](handcheck/DVA_result.md).
+**Result (DaVita, FY2024–FY2025, 2026-10-21): 220 of 220 statement lines match the 10-K exactly.** The first pass had six lines off by exactly 100 ($ thousands); they traced to two hand-typing slips (FY2024 non-controlling interests, FY2025 employee stock proceeds) that the sheet's subtotal formulas carried into four other lines. Both were rechecked against the 10-K and corrected; the tool was right in both cases. Every ratio rebuilt in Excel from the typed figures equals the tool's ratio. Notes tab still to do. Full table: [handcheck/DVA_result.md](handcheck/DVA_result.md).
 
 ```bash
 python -m creditmemo.handcheck make DVA
