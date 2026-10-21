@@ -48,6 +48,12 @@ The company-facts route (`creditmemo/spread.py`) stays as an independent cross-c
 | | Shareholders' equity | |
 | | Total liabilities and equity **(tie)** | |
 
+Mapping rules that matter:
+- D&A comes from the cash flow statement, so EBITDA catches D&A that the income statement folds into other costs.
+- Debt includes every debt-like line on the balance sheet: revolver borrowings, current and long-term debt, finance leases and financing obligations from failed sale-leasebacks (Kohl's).
+- Interest is the face-of-statement line. Non-operating lines are printed income-positive by some filers (DaVita, Union Pacific) and expense-positive by others (Kohl's); the sign is taken from the statement's own arithmetic, not guessed.
+- Total operating lease liabilities come from the notes (company facts), because some balance sheets fold the current part into other liabilities (Union Pacific).
+
 EBITDA is reported EBITDA: no add-backs. Unusual items are shown on their own line so a reader can see them, but they are not removed.
 
 ## Definitions

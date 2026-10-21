@@ -1,447 +1,3250 @@
 {
-  "spread_version": 1,
+  "spread_version": 2,
   "ticker": "DVA",
   "name": "DaVita Inc.",
   "cik": 927066,
   "role": "High yield, healthcare services",
-  "entity_name_sec": "DAVITA INC.",
-  "source": "SEC EDGAR XBRL company facts API",
-  "rule": "Latest 10-K reporting each period; flows 340-380 days",
+  "facility": {
+    "type": "Senior unsecured term loan",
+    "amount_usd": 500000000,
+    "tenor_years": 5,
+    "purpose": "General corporate purposes",
+    "note": "Hypothetical request. It gives the memo a specific facility to approve or decline."
+  },
+  "floating_rate_share": null,
+  "floating_rate_source": "TODO: 10-K Item 7A, page __",
   "periods": [
     {
-      "label": "FY2023",
-      "end": "2023-12-31"
+      "label": "FY2023"
     },
     {
-      "label": "FY2024",
-      "end": "2024-12-31"
+      "label": "FY2024"
     },
     {
-      "label": "FY2025",
-      "end": "2025-12-31"
+      "label": "FY2025"
     }
   ],
-  "concept_labels": {
-    "revenue": "Revenue",
-    "operating_income": "Operating income",
-    "da": "Depreciation and amortization",
-    "interest_expense": "Interest expense",
-    "pretax_income": "Pre-tax income",
-    "net_income": "Net income",
-    "cfo": "Cash from operations",
-    "capex": "Capital expenditures",
-    "cash_taxes": "Cash taxes paid",
-    "operating_lease_cost": "Operating lease cost (rent)",
-    "cash": "Cash and equivalents",
-    "current_assets": "Current assets",
-    "current_liabilities": "Current liabilities",
-    "total_assets": "Total assets",
-    "equity": "Shareholders' equity",
-    "short_term_borrowings": "Short-term borrowings",
-    "commercial_paper": "Commercial paper",
-    "current_ltd": "Current portion of long-term debt",
-    "noncurrent_ltd": "Long-term debt, noncurrent",
-    "finance_lease_liabilities": "Finance lease liabilities",
-    "operating_lease_liabilities": "Operating lease liabilities",
-    "scheduled_principal": "Scheduled principal, next 12 months"
+  "as_reported": {
+    "ticker": "DVA",
+    "name": "DaVita Inc.",
+    "filings": [
+      {
+        "accn": "0000927066-26-000012",
+        "filed": "2026-02-11",
+        "period": "2025-12-31"
+      },
+      {
+        "accn": "0000927066-25-000012",
+        "filed": "2025-02-13",
+        "period": "2024-12-31"
+      }
+    ],
+    "statements": {
+      "income": {
+        "name": "Income statement",
+        "title": "CONSOLIDATED STATEMENTS OF INCOME - USD ($) $ in Thousands",
+        "short_name": "CONSOLIDATED STATEMENTS OF INCOME",
+        "money_scale": 1000.0,
+        "periods": [
+          {
+            "end": "2023-12-31",
+            "accn": "0000927066-26-000012",
+            "url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/R3.htm",
+            "label": "FY2023"
+          },
+          {
+            "end": "2024-12-31",
+            "accn": "0000927066-26-000012",
+            "url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/R3.htm",
+            "label": "FY2024"
+          },
+          {
+            "end": "2025-12-31",
+            "accn": "0000927066-26-000012",
+            "url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/R3.htm",
+            "label": "FY2025"
+          }
+        ],
+        "rows": [
+          {
+            "label": "Income Statement [Abstract]",
+            "tag": "us-gaap_IncomeStatementAbstract",
+            "abstract": true,
+            "id": 0
+          },
+          {
+            "label": "Dialysis patient service revenues",
+            "tag": "dva_RevenueFromContractWithCustomerIncludingAssessedTaxNetOfProvisionForUncollectibleAccounts",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              11574941000.0,
+              12260375000.0,
+              13007186000.0
+            ],
+            "id": 1
+          },
+          {
+            "label": "Other revenues",
+            "tag": "us-gaap_OtherIncome",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              565206000.0,
+              555175000.0,
+              635883000.0
+            ],
+            "id": 2
+          },
+          {
+            "label": "Total revenues",
+            "tag": "us-gaap_Revenues",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              12140147000.0,
+              12815550000.0,
+              13643069000.0
+            ],
+            "id": 3
+          },
+          {
+            "label": "Operating expenses:",
+            "tag": "us-gaap_CostsAndExpensesAbstract",
+            "abstract": true,
+            "id": 4
+          },
+          {
+            "label": "Patient care costs",
+            "tag": "dva_PatientCareCosts",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              8319717000.0,
+              8598521000.0,
+              9243476000.0
+            ],
+            "id": 5
+          },
+          {
+            "label": "General and administrative",
+            "tag": "us-gaap_GeneralAndAdministrativeExpense",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              1473984000.0,
+              1538341000.0,
+              1673630000.0
+            ],
+            "id": 6
+          },
+          {
+            "label": "Depreciation and amortization",
+            "tag": "us-gaap_DepreciationAndAmortization",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              745443000.0,
+              723860000.0,
+              715348000.0
+            ],
+            "id": 7
+          },
+          {
+            "label": "Equity investment income, net",
+            "tag": "us-gaap_IncomeLossFromEquityMethodInvestments",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -27864000.0,
+              -26189000.0,
+              -33000000.0
+            ],
+            "id": 8
+          },
+          {
+            "label": "Goodwill impairment charges",
+            "tag": "us-gaap_GoodwillImpairmentLoss",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              26083000.0,
+              0.0,
+              0.0
+            ],
+            "id": 9
+          },
+          {
+            "label": "Gain on changes in ownership interests",
+            "tag": "us-gaap_BusinessCombinationStepAcquisitionEquityInterestInAcquireeRemeasurementGain",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              0.0,
+              -109466000.0,
+              0.0
+            ],
+            "id": 10
+          },
+          {
+            "label": "Total operating expenses",
+            "tag": "us-gaap_CostsAndExpenses",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              10537363000.0,
+              10725067000.0,
+              11599454000.0
+            ],
+            "id": 11
+          },
+          {
+            "label": "Operating income",
+            "tag": "us-gaap_OperatingIncomeLoss",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              1602784000.0,
+              2090483000.0,
+              2043615000.0
+            ],
+            "id": 12
+          },
+          {
+            "label": "Debt expense",
+            "tag": "us-gaap_InterestAndDebtExpense",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -398551000.0,
+              -470469000.0,
+              -579926000.0
+            ],
+            "id": 13
+          },
+          {
+            "label": "Debt extinguishment and modification costs",
+            "tag": "dva_DebtPrepaymentExtinguishmentAndModificationCosts",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -7962000.0,
+              -19813000.0,
+              -14178000.0
+            ],
+            "id": 14
+          },
+          {
+            "label": "Other loss, net",
+            "tag": "us-gaap_OtherNonoperatingIncomeExpense",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -19177000.0,
+              -69808000.0,
+              -102688000.0
+            ],
+            "id": 15
+          },
+          {
+            "label": "Income from continuing operations before income taxes",
+            "tag": "us-gaap_IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              1177094000.0,
+              1530393000.0,
+              1346823000.0
+            ],
+            "id": 16
+          },
+          {
+            "label": "Income tax expense",
+            "tag": "us-gaap_IncomeTaxExpenseBenefit",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              220116000.0,
+              279656000.0,
+              293107000.0
+            ],
+            "id": 17
+          },
+          {
+            "label": "Net income from continuing operations",
+            "tag": "us-gaap_IncomeLossFromContinuingOperationsIncludingPortionAttributableToNoncontrollingInterest",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              956978000.0,
+              1250737000.0,
+              1053716000.0
+            ],
+            "id": 18
+          },
+          {
+            "label": "Net income from discontinued operations, net of tax",
+            "tag": "us-gaap_IncomeLossFromDiscontinuedOperationsNetOfTax",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              0.0,
+              0.0,
+              25000000.0
+            ],
+            "id": 19
+          },
+          {
+            "label": "Net income",
+            "tag": "us-gaap_ProfitLoss",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              956978000.0,
+              1250737000.0,
+              1078716000.0
+            ],
+            "id": 20
+          },
+          {
+            "label": "Less: Net income attributable to noncontrolling interests",
+            "tag": "us-gaap_NetIncomeLossAttributableToNoncontrollingInterest",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -265443000.0,
+              -314395000.0,
+              -331913000.0
+            ],
+            "id": 21
+          },
+          {
+            "label": "Net income attributable to DaVita Inc.",
+            "tag": "us-gaap_NetIncomeLoss",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              691535000.0,
+              936342000.0,
+              746803000.0
+            ],
+            "id": 22
+          },
+          {
+            "label": "Earnings per share attributable to DaVita Inc.:",
+            "tag": "us-gaap_EarningsPerShareAbstract",
+            "abstract": true,
+            "id": 23
+          },
+          {
+            "label": "Basic net income from continuing operations",
+            "tag": "us-gaap_IncomeLossFromContinuingOperationsPerBasicShare",
+            "abstract": false,
+            "kind": "per_share",
+            "total": false,
+            "values": [
+              7.62,
+              11.02,
+              9.72
+            ],
+            "id": 24
+          },
+          {
+            "label": "Basic net income",
+            "tag": "us-gaap_EarningsPerShareBasic",
+            "abstract": false,
+            "kind": "per_share",
+            "total": false,
+            "values": [
+              7.62,
+              11.02,
+              10.06
+            ],
+            "id": 25
+          },
+          {
+            "label": "Diluted net income from continuing operations",
+            "tag": "us-gaap_IncomeLossFromContinuingOperationsPerDilutedShare",
+            "abstract": false,
+            "kind": "per_share",
+            "total": false,
+            "values": [
+              7.42,
+              10.73,
+              9.51
+            ],
+            "id": 26
+          },
+          {
+            "label": "Diluted net income",
+            "tag": "us-gaap_EarningsPerShareDiluted",
+            "abstract": false,
+            "kind": "per_share",
+            "total": false,
+            "values": [
+              7.42,
+              10.73,
+              9.84
+            ],
+            "id": 27
+          },
+          {
+            "label": "Weighted average shares for earnings per share:",
+            "tag": "us-gaap_WeightedAverageNumberOfSharesOutstandingAbstract",
+            "abstract": true,
+            "id": 28
+          },
+          {
+            "label": "Basic shares (in shares)",
+            "tag": "us-gaap_WeightedAverageNumberOfSharesOutstandingBasic",
+            "abstract": false,
+            "kind": "shares",
+            "total": false,
+            "values": [
+              90790000.0,
+              84991000.0,
+              74227000.0
+            ],
+            "id": 29
+          },
+          {
+            "label": "Diluted shares (in shares)",
+            "tag": "us-gaap_WeightedAverageNumberOfDilutedSharesOutstanding",
+            "abstract": false,
+            "kind": "shares",
+            "total": false,
+            "values": [
+              93182000.0,
+              87274000.0,
+              75885000.0
+            ],
+            "id": 30
+          },
+          {
+            "label": "Amounts attributable to DaVita Inc.:",
+            "tag": "us-gaap_NetIncomeLossAbstract",
+            "abstract": true,
+            "id": 31
+          },
+          {
+            "label": "Net income from continuing operations",
+            "tag": "us-gaap_IncomeLossFromContinuingOperations",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              691535000.0,
+              936342000.0,
+              721803000.0
+            ],
+            "id": 32
+          },
+          {
+            "label": "Net income from discontinued operations",
+            "tag": "us-gaap_IncomeLossFromDiscontinuedOperationsNetOfTaxAttributableToReportingEntity",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              0.0,
+              0.0,
+              25000000.0
+            ],
+            "id": 33
+          },
+          {
+            "label": "Net income attributable to DaVita Inc.",
+            "tag": "us-gaap_NetIncomeLoss",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              691535000.0,
+              936342000.0,
+              746803000.0
+            ],
+            "id": 34
+          }
+        ]
+      },
+      "balance": {
+        "name": "Balance sheet",
+        "title": "CONSOLIDATED BALANCE SHEETS - USD ($) $ in Thousands",
+        "short_name": "CONSOLIDATED BALANCE SHEETS",
+        "money_scale": 1000.0,
+        "periods": [
+          {
+            "end": "2023-12-31",
+            "accn": "0000927066-25-000012",
+            "url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/R5.htm",
+            "label": "FY2023"
+          },
+          {
+            "end": "2024-12-31",
+            "accn": "0000927066-26-000012",
+            "url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/R5.htm",
+            "label": "FY2024"
+          },
+          {
+            "end": "2025-12-31",
+            "accn": "0000927066-26-000012",
+            "url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/R5.htm",
+            "label": "FY2025"
+          }
+        ],
+        "rows": [
+          {
+            "label": "ASSETS",
+            "tag": "us-gaap_AssetsAbstract",
+            "abstract": true,
+            "id": 0
+          },
+          {
+            "label": "Cash and cash equivalents",
+            "tag": "us-gaap_CashAndCashEquivalentsAtCarryingValue",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              380063000.0,
+              794933000.0,
+              676438000.0
+            ],
+            "id": 1
+          },
+          {
+            "label": "Restricted cash and equivalents",
+            "tag": "us-gaap_RestrictedCashAndCashEquivalents",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              84571000.0,
+              84892000.0,
+              81309000.0
+            ],
+            "id": 2
+          },
+          {
+            "label": "Short-term investments",
+            "tag": "us-gaap_MarketableSecuritiesCurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              11610000.0,
+              51064000.0,
+              24303000.0
+            ],
+            "id": 3
+          },
+          {
+            "label": "Accounts receivable",
+            "tag": "us-gaap_AccountsReceivableNetCurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              1986856000.0,
+              2146975000.0,
+              2414690000.0
+            ],
+            "id": 4
+          },
+          {
+            "label": "Inventories",
+            "tag": "us-gaap_InventoryNet",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              143105000.0,
+              134559000.0,
+              160627000.0
+            ],
+            "id": 5
+          },
+          {
+            "label": "Contract assets and other receivables",
+            "tag": "us-gaap_OtherReceivablesNetCurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              422669000.0,
+              383166000.0,
+              494414000.0
+            ],
+            "id": 6
+          },
+          {
+            "label": "Prepaid and other current assets",
+            "tag": "us-gaap_PrepaidExpenseAndOtherAssetsCurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              102645000.0,
+              122948000.0,
+              156285000.0
+            ],
+            "id": 7
+          },
+          {
+            "label": "Income tax receivable",
+            "tag": "us-gaap_IncomeTaxesReceivable",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              6387000.0,
+              27535000.0,
+              49937000.0
+            ],
+            "id": 8
+          },
+          {
+            "label": "Total current assets",
+            "tag": "us-gaap_AssetsCurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              3137906000.0,
+              3746072000.0,
+              4058003000.0
+            ],
+            "id": 9
+          },
+          {
+            "label": "Property and equipment, net of accumulated depreciation",
+            "tag": "us-gaap_PropertyPlantAndEquipmentNet",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              3073533000.0,
+              2940916000.0,
+              2812966000.0
+            ],
+            "id": 10
+          },
+          {
+            "label": "Operating lease right-of-use assets",
+            "tag": "us-gaap_OperatingLeaseRightOfUseAsset",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              2501364000.0,
+              2393558000.0,
+              2397179000.0
+            ],
+            "id": 11
+          },
+          {
+            "label": "Intangible assets, net of accumulated amortization",
+            "tag": "us-gaap_IntangibleAssetsNetExcludingGoodwill",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              203224000.0,
+              197431000.0,
+              222125000.0
+            ],
+            "id": 12
+          },
+          {
+            "label": "Equity method and other investments",
+            "tag": "us-gaap_InvestmentsInAffiliatesSubsidiariesAssociatesAndJointVentures",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              545848000.0,
+              336684000.0,
+              157249000.0
+            ],
+            "id": 13
+          },
+          {
+            "label": "Long-term investments",
+            "tag": "us-gaap_MarketableSecuritiesNoncurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              47890000.0,
+              33660000.0,
+              40966000.0
+            ],
+            "id": 14
+          },
+          {
+            "label": "Other long-term assets",
+            "tag": "us-gaap_OtherAssetsNoncurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              271253000.0,
+              261731000.0,
+              246520000.0
+            ],
+            "id": 15
+          },
+          {
+            "label": "Goodwill",
+            "tag": "us-gaap_Goodwill",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              7112560000.0,
+              7375216000.0,
+              7545095000.0
+            ],
+            "id": 16
+          },
+          {
+            "label": "Assets, Total",
+            "tag": "us-gaap_Assets",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              16893578000.0,
+              17285268000.0,
+              17480103000.0
+            ],
+            "id": 17
+          },
+          {
+            "label": "LIABILITIES AND EQUITY",
+            "tag": "us-gaap_LiabilitiesAndStockholdersEquityAbstract",
+            "abstract": true,
+            "id": 18
+          },
+          {
+            "label": "Accounts payable",
+            "tag": "us-gaap_AccountsPayableCurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              514533000.0,
+              547200000.0,
+              696148000.0
+            ],
+            "id": 19
+          },
+          {
+            "label": "Other liabilities",
+            "tag": "us-gaap_OtherLiabilitiesCurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              828878000.0,
+              934145000.0,
+              893024000.0
+            ],
+            "id": 20
+          },
+          {
+            "label": "Accrued compensation and benefits",
+            "tag": "us-gaap_EmployeeRelatedLiabilitiesCurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              752598000.0,
+              800484000.0,
+              793478000.0
+            ],
+            "id": 21
+          },
+          {
+            "label": "Current portion of operating lease liabilities",
+            "tag": "us-gaap_OperatingLeaseLiabilityCurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              394399000.0,
+              410411000.0,
+              425484000.0
+            ],
+            "id": 22
+          },
+          {
+            "label": "Current portion of long-term debt",
+            "tag": "us-gaap_LongTermDebtAndCapitalLeaseObligationsCurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              123299000.0,
+              270867000.0,
+              109201000.0
+            ],
+            "id": 23
+          },
+          {
+            "label": "Income tax payable",
+            "tag": "us-gaap_AccruedIncomeTaxesCurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              28507000.0,
+              10303000.0,
+              24359000.0
+            ],
+            "id": 24
+          },
+          {
+            "label": "Due to Related Party",
+            "tag": "dva_DueToRelatedParty",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              null,
+              0.0,
+              199940000.0
+            ],
+            "id": 25
+          },
+          {
+            "label": "Total current liabilities",
+            "tag": "us-gaap_LiabilitiesCurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              2642214000.0,
+              2973410000.0,
+              3141634000.0
+            ],
+            "id": 26
+          },
+          {
+            "label": "Long-term operating lease liabilities",
+            "tag": "us-gaap_OperatingLeaseLiabilityNoncurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              2330389000.0,
+              2209655000.0,
+              2175658000.0
+            ],
+            "id": 27
+          },
+          {
+            "label": "Long-term debt",
+            "tag": "us-gaap_LongTermDebtAndCapitalLeaseObligations",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              8268334000.0,
+              9175903000.0,
+              10163988000.0
+            ],
+            "id": 28
+          },
+          {
+            "label": "Other long-term liabilities",
+            "tag": "us-gaap_OtherLiabilitiesNoncurrent",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              183074000.0,
+              169588000.0,
+              83516000.0
+            ],
+            "id": 29
+          },
+          {
+            "label": "Deferred income taxes",
+            "tag": "us-gaap_DeferredIncomeTaxLiabilitiesNet",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              726217000.0,
+              665361000.0,
+              756869000.0
+            ],
+            "id": 30
+          },
+          {
+            "label": "Total liabilities",
+            "tag": "us-gaap_Liabilities",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              14150228000.0,
+              15193917000.0,
+              16321665000.0
+            ],
+            "id": 31
+          },
+          {
+            "label": "Commitments and contingencies",
+            "tag": "us-gaap_CommitmentsAndContingenciesDisclosureAbstract",
+            "abstract": true,
+            "id": 32
+          },
+          {
+            "label": "Noncontrolling interests subject to put provisions",
+            "tag": "us-gaap_RedeemableNoncontrollingInterestEquityCarryingAmount",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              1499288000.0,
+              1695483000.0,
+              1532166000.0
+            ],
+            "id": 33
+          },
+          {
+            "label": "Equity:",
+            "tag": "us-gaap_StockholdersEquityIncludingPortionAttributableToNoncontrollingInterestAbstract",
+            "abstract": true,
+            "id": 34
+          },
+          {
+            "label": "Preferred Stock, Value, Issued",
+            "tag": "us-gaap_PreferredStockValue",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "id": 35
+          },
+          {
+            "label": "Common Stock, Value, Issued",
+            "tag": "us-gaap_CommonStockValue",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              89000.0,
+              90000.0,
+              69000.0
+            ],
+            "id": 36
+          },
+          {
+            "label": "Additional paid-in capital",
+            "tag": "us-gaap_AdditionalPaidInCapitalCommonStock",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              509804000.0,
+              286270000.0,
+              0.0
+            ],
+            "id": 37
+          },
+          {
+            "label": "Accumulated (deficit) earnings",
+            "tag": "us-gaap_RetainedEarningsAccumulatedDeficit",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              598288000.0,
+              1534630000.0,
+              -328428000.0
+            ],
+            "id": 38
+          },
+          {
+            "label": "Treasury Stock, Value",
+            "tag": "us-gaap_TreasuryStockValue",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              0.0,
+              -1389072000.0,
+              -199940000.0
+            ],
+            "id": 39
+          },
+          {
+            "label": "Accumulated other comprehensive loss",
+            "tag": "us-gaap_AccumulatedOtherComprehensiveIncomeLossNetOfTax",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -52084000.0,
+              -310796000.0,
+              -122783000.0
+            ],
+            "id": 40
+          },
+          {
+            "label": "Total DaVita Inc. shareholders' equity (deficit)",
+            "tag": "us-gaap_StockholdersEquity",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              1056097000.0,
+              121122000.0,
+              -651082000.0
+            ],
+            "id": 41
+          },
+          {
+            "label": "Noncontrolling interests not subject to put provisions",
+            "tag": "us-gaap_MinorityInterest",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              187965000.0,
+              274746000.0,
+              277354000.0
+            ],
+            "id": 42
+          },
+          {
+            "label": "Total equity (deficit)",
+            "tag": "us-gaap_StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              1244062000.0,
+              395868000.0,
+              -373728000.0
+            ],
+            "id": 43
+          },
+          {
+            "label": "Total liabilities and shareholders' equity",
+            "tag": "us-gaap_LiabilitiesAndStockholdersEquity",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              16893578000.0,
+              17285268000.0,
+              17480103000.0
+            ],
+            "id": 44
+          },
+          {
+            "label": "Preferred stock, par value (in usd per share)",
+            "tag": "us-gaap_PreferredStockParOrStatedValuePerShare",
+            "abstract": false,
+            "kind": "per_share",
+            "total": false,
+            "values": [
+              0.001,
+              0.001,
+              0.001
+            ],
+            "id": 45
+          },
+          {
+            "label": "Preferred stock, shares authorized (in shares)",
+            "tag": "us-gaap_PreferredStockSharesAuthorized",
+            "abstract": false,
+            "kind": "shares",
+            "total": false,
+            "values": [
+              5000000.0,
+              5000000.0,
+              5000000.0
+            ],
+            "id": 46
+          },
+          {
+            "label": "Preferred stock, issued (in shares)",
+            "tag": "us-gaap_PreferredStockSharesIssued",
+            "abstract": false,
+            "kind": "shares",
+            "total": false,
+            "values": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "id": 47
+          },
+          {
+            "label": "Common stock, par value (in usd per share)",
+            "tag": "us-gaap_CommonStockParOrStatedValuePerShare",
+            "abstract": false,
+            "kind": "per_share",
+            "total": false,
+            "values": [
+              0.001,
+              0.001,
+              0.001
+            ],
+            "id": 48
+          },
+          {
+            "label": "Common stock, shares authorized (in shares)",
+            "tag": "us-gaap_CommonStockSharesAuthorized",
+            "abstract": false,
+            "kind": "shares",
+            "total": false,
+            "values": [
+              450000000.0,
+              450000000.0,
+              450000000.0
+            ],
+            "id": 49
+          },
+          {
+            "label": "Common stock, shares issued (in shares)",
+            "tag": "us-gaap_CommonStockSharesIssued",
+            "abstract": false,
+            "kind": "shares",
+            "total": false,
+            "values": [
+              88824000.0,
+              90369000.0,
+              68549000.0
+            ],
+            "id": 50
+          }
+        ]
+      },
+      "cashflow": {
+        "name": "Cash flow statement",
+        "title": "CONSOLIDATED STATEMENTS OF CASH FLOWS - USD ($) $ in Thousands",
+        "short_name": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+        "money_scale": 1000.0,
+        "periods": [
+          {
+            "end": "2023-12-31",
+            "accn": "0000927066-26-000012",
+            "url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/R7.htm",
+            "label": "FY2023"
+          },
+          {
+            "end": "2024-12-31",
+            "accn": "0000927066-26-000012",
+            "url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/R7.htm",
+            "label": "FY2024"
+          },
+          {
+            "end": "2025-12-31",
+            "accn": "0000927066-26-000012",
+            "url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/R7.htm",
+            "label": "FY2025"
+          }
+        ],
+        "rows": [
+          {
+            "label": "Cash flows from operating activities:",
+            "tag": "us-gaap_NetCashProvidedByUsedInOperatingActivitiesContinuingOperationsAbstract",
+            "abstract": true,
+            "id": 0
+          },
+          {
+            "label": "Net income",
+            "tag": "us-gaap_ProfitLoss",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              956978000.0,
+              1250737000.0,
+              1078716000.0
+            ],
+            "id": 1
+          },
+          {
+            "label": "Adjustment to Reconcile Net Income to Cash Provided by (Used in) Operating Activity [Abstract]",
+            "tag": "us-gaap_AdjustmentsToReconcileNetIncomeLossToCashProvidedByUsedInOperatingActivitiesAbstract",
+            "abstract": true,
+            "id": 2
+          },
+          {
+            "label": "Depreciation and amortization",
+            "tag": "us-gaap_DepreciationAmortizationAndAccretionNet",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              745443000.0,
+              723860000.0,
+              715348000.0
+            ],
+            "id": 3
+          },
+          {
+            "label": "Impairment charges",
+            "tag": "us-gaap_GoodwillAndIntangibleAssetImpairment",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              26083000.0,
+              0.0,
+              0.0
+            ],
+            "id": 4
+          },
+          {
+            "label": "Loss on extinguishment of debt",
+            "tag": "dva_LossOnExtinguishmentOfDebt",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              7132000.0,
+              12527000.0,
+              12386000.0
+            ],
+            "id": 5
+          },
+          {
+            "label": "Stock-based compensation expense",
+            "tag": "us-gaap_ShareBasedCompensation",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              112375000.0,
+              102788000.0,
+              139953000.0
+            ],
+            "id": 6
+          },
+          {
+            "label": "Deferred income taxes",
+            "tag": "us-gaap_DeferredIncomeTaxExpenseBenefit",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -39354000.0,
+              -57840000.0,
+              86574000.0
+            ],
+            "id": 7
+          },
+          {
+            "label": "Equity investment loss, net",
+            "tag": "dva_AdjustmentIncomeLossFromEquityMethodInvestments",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              64777000.0,
+              115839000.0,
+              134313000.0
+            ],
+            "id": 8
+          },
+          {
+            "label": "Gain on changes in ownership interests",
+            "tag": "us-gaap_BusinessCombinationStepAcquisitionEquityInterestInAcquireeRemeasurementGain",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              0.0,
+              -109466000.0,
+              0.0
+            ],
+            "id": 9
+          },
+          {
+            "label": "Other non-cash (gains) and losses, net",
+            "tag": "us-gaap_OtherNoncashIncomeExpense",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -8938000.0,
+              13414000.0,
+              -17549000.0
+            ],
+            "id": 10
+          },
+          {
+            "label": "Changes in operating assets and liabilities, net of effect of acquisitions and divestitures:",
+            "tag": "us-gaap_IncreaseDecreaseInOperatingCapitalAbstract",
+            "abstract": true,
+            "id": 11
+          },
+          {
+            "label": "Accounts receivable",
+            "tag": "us-gaap_IncreaseDecreaseInAccountsReceivable",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              172361000.0,
+              -29766000.0,
+              -210632000.0
+            ],
+            "id": 12
+          },
+          {
+            "label": "Inventories",
+            "tag": "us-gaap_IncreaseDecreaseInInventories",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -32132000.0,
+              17942000.0,
+              -19950000.0
+            ],
+            "id": 13
+          },
+          {
+            "label": "Other current assets",
+            "tag": "dva_IncreaseDecreaseInOtherCurrentReceivablesAndOtherCurrentAssets",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -43437000.0,
+              36801000.0,
+              -124297000.0
+            ],
+            "id": 14
+          },
+          {
+            "label": "Other long-term assets",
+            "tag": "us-gaap_IncreaseDecreaseInOtherNoncurrentAssets",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -5792000.0,
+              -67031000.0,
+              -40253000.0
+            ],
+            "id": 15
+          },
+          {
+            "label": "Accounts payable",
+            "tag": "us-gaap_IncreaseDecreaseInAccountsPayable",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              26890000.0,
+              1699000.0,
+              128303000.0
+            ],
+            "id": 16
+          },
+          {
+            "label": "Accrued compensation and benefits",
+            "tag": "us-gaap_IncreaseDecreaseInEmployeeRelatedLiabilities",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              56209000.0,
+              14687000.0,
+              -24042000.0
+            ],
+            "id": 17
+          },
+          {
+            "label": "Other current liabilities",
+            "tag": "us-gaap_IncreaseDecreaseInOtherCurrentLiabilities",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              27082000.0,
+              46733000.0,
+              -29963000.0
+            ],
+            "id": 18
+          },
+          {
+            "label": "Income taxes",
+            "tag": "us-gaap_IncreaseDecreaseInAccruedIncomeTaxesPayable",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              1570000.0,
+              -44214000.0,
+              50245000.0
+            ],
+            "id": 19
+          },
+          {
+            "label": "Other long-term liabilities",
+            "tag": "us-gaap_IncreaseDecreaseInOtherNoncurrentLiabilities",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -8216000.0,
+              -6672000.0,
+              7348000.0
+            ],
+            "id": 20
+          },
+          {
+            "label": "Net Cash Provided by (Used in) Operating Activities, Total",
+            "tag": "us-gaap_NetCashProvidedByUsedInOperatingActivities",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              2059031000.0,
+              2022038000.0,
+              1886500000.0
+            ],
+            "id": 21
+          },
+          {
+            "label": "Cash flows from investing activities:",
+            "tag": "us-gaap_NetCashProvidedByUsedInInvestingActivitiesContinuingOperationsAbstract",
+            "abstract": true,
+            "id": 22
+          },
+          {
+            "label": "Additions of property and equipment",
+            "tag": "us-gaap_PaymentsToAcquirePropertyPlantAndEquipment",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -567985000.0,
+              -555443000.0,
+              -575864000.0
+            ],
+            "id": 23
+          },
+          {
+            "label": "Acquisitions",
+            "tag": "us-gaap_PaymentsToAcquireBusinessesNetOfCashAcquired",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -26394000.0,
+              -246068000.0,
+              -117468000.0
+            ],
+            "id": 24
+          },
+          {
+            "label": "Proceeds from asset and business sales",
+            "tag": "us-gaap_ProceedsFromSalesOfBusinessAffiliateAndProductiveAssets",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              30610000.0,
+              25862000.0,
+              34173000.0
+            ],
+            "id": 25
+          },
+          {
+            "label": "Purchase of debt investments held-to-maturity",
+            "tag": "us-gaap_PaymentsToAcquireHeldToMaturitySecurities",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -37180000.0,
+              -15319000.0,
+              -16405000.0
+            ],
+            "id": 26
+          },
+          {
+            "label": "Purchase of other debt and equity investments",
+            "tag": "dva_PaymentsToAcquireOtherDebtAndEquityInvestments",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -9566000.0,
+              -9140000.0,
+              -6031000.0
+            ],
+            "id": 27
+          },
+          {
+            "label": "Proceeds from debt investments held-to-maturity",
+            "tag": "us-gaap_ProceedsFromSaleAndMaturityOfHeldToMaturitySecurities",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              99639000.0,
+              22638000.0,
+              45413000.0
+            ],
+            "id": 28
+          },
+          {
+            "label": "Proceeds from sale of other debt and equity investments",
+            "tag": "us-gaap_ProceedsFromSaleAndMaturityOfOtherInvestments",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              10365000.0,
+              4566000.0,
+              6723000.0
+            ],
+            "id": 29
+          },
+          {
+            "label": "Purchase of equity method investments",
+            "tag": "us-gaap_PaymentsToAcquireEquityMethodInvestments",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -276202000.0,
+              -5205000.0,
+              -27030000.0
+            ],
+            "id": 30
+          },
+          {
+            "label": "Distributions from equity method investments",
+            "tag": "us-gaap_ProceedsFromEquityMethodInvestmentDividendsOrDistributionsReturnOfCapital",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              4913000.0,
+              6680000.0,
+              1540000.0
+            ],
+            "id": 31
+          },
+          {
+            "label": "Net Cash Provided by (Used in) Investing Activities, Total",
+            "tag": "us-gaap_NetCashProvidedByUsedInInvestingActivities",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              -771800000.0,
+              -771429000.0,
+              -654949000.0
+            ],
+            "id": 32
+          },
+          {
+            "label": "Cash flows from financing activities:",
+            "tag": "us-gaap_NetCashProvidedByUsedInFinancingActivitiesContinuingOperationsAbstract",
+            "abstract": true,
+            "id": 33
+          },
+          {
+            "label": "Borrowings",
+            "tag": "us-gaap_ProceedsFromIssuanceOfLongTermDebt",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              2468341000.0,
+              6624310000.0,
+              5612280000.0
+            ],
+            "id": 34
+          },
+          {
+            "label": "Payments on long-term debt",
+            "tag": "us-gaap_RepaymentsOfDebtAndCapitalLeaseObligations",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -3020956000.0,
+              -5515213000.0,
+              -4788845000.0
+            ],
+            "id": 35
+          },
+          {
+            "label": "Deferred and debt related financing costs",
+            "tag": "us-gaap_PaymentsOfFinancingCosts",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -69791000.0,
+              -50874000.0,
+              -53819000.0
+            ],
+            "id": 36
+          },
+          {
+            "label": "Purchase Of Treasury Stock From Related Party",
+            "tag": "dva_PurchaseOfTreasuryStockFromRelatedParty",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              0.0,
+              0.0,
+              -484633000.0
+            ],
+            "id": 37
+          },
+          {
+            "label": "Purchase of treasury stock",
+            "tag": "us-gaap_PaymentsForRepurchaseOfCommonStock",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -272219000.0,
+              -1385932000.0,
+              -1308366000.0
+            ],
+            "id": 38
+          },
+          {
+            "label": "Distributions to noncontrolling interests",
+            "tag": "us-gaap_PaymentsOfDistributionsToAffiliates",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -280938000.0,
+              -337042000.0,
+              -324270000.0
+            ],
+            "id": 39
+          },
+          {
+            "label": "Net proceeds from issuance of common stock under employee stock plans",
+            "tag": "dva_NetProceedsFromIssuanceOfStockToEmployees",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              16900000.0,
+              20453000.0,
+              23290000.0
+            ],
+            "id": 40
+          },
+          {
+            "label": "Payment, Tax Withholding, Share-Based Payment Arrangement",
+            "tag": "us-gaap_PaymentsRelatedToTaxWithholdingForShareBasedCompensation",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -65012000.0,
+              -134040000.0,
+              -35291000.0
+            ],
+            "id": 41
+          },
+          {
+            "label": "Contributions from noncontrolling interests",
+            "tag": "us-gaap_ProceedsFromContributionsFromAffiliates",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              14773000.0,
+              14499000.0,
+              7078000.0
+            ],
+            "id": 42
+          },
+          {
+            "label": "Proceeds from sales of additional noncontrolling interests",
+            "tag": "us-gaap_ProceedsFromMinorityShareholders",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              50962000.0,
+              860000.0,
+              3794000.0
+            ],
+            "id": 43
+          },
+          {
+            "label": "Purchases of noncontrolling interests",
+            "tag": "us-gaap_PaymentsToMinorityShareholders",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              -12555000.0,
+              -53958000.0,
+              -25998000.0
+            ],
+            "id": 44
+          },
+          {
+            "label": "Net cash used in financing activities",
+            "tag": "us-gaap_NetCashProvidedByUsedInFinancingActivities",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              -1170495000.0,
+              -816937000.0,
+              -1374780000.0
+            ],
+            "id": 45
+          },
+          {
+            "label": "Effect of exchange rate changes on cash, cash equivalents and restricted cash",
+            "tag": "us-gaap_EffectOfExchangeRateOnCashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              8909000.0,
+              -18481000.0,
+              21151000.0
+            ],
+            "id": 46
+          },
+          {
+            "label": "Less: Net increase (decrease) in cash, cash equivalents and restricted cash",
+            "tag": "us-gaap_CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsPeriodIncreaseDecreaseIncludingExchangeRateEffect",
+            "abstract": false,
+            "kind": "money",
+            "total": true,
+            "values": [
+              125645000.0,
+              415191000.0,
+              -122078000.0
+            ],
+            "id": 47
+          },
+          {
+            "label": "Cash, cash equivalents and restricted cash of continuing operations at beginning of the year",
+            "tag": "us-gaap_CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              338989000.0,
+              464634000.0,
+              879825000.0
+            ],
+            "id": 48
+          },
+          {
+            "label": "Cash, cash equivalents and restricted cash of continuing operations at end of the year",
+            "tag": "us-gaap_CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "abstract": false,
+            "kind": "money",
+            "total": false,
+            "values": [
+              464634000.0,
+              879825000.0,
+              757747000.0
+            ],
+            "id": 49
+          }
+        ]
+      }
+    }
   },
-  "lines": {
-    "revenue": {
-      "FY2023": {
-        "value": 12140147000.0,
-        "source": "xbrl",
-        "tag": "Revenues",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2023-01-01",
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2024": {
-        "value": 12815550000.0,
-        "source": "xbrl",
-        "tag": "Revenues",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2024-01-01",
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2025": {
-        "value": 13643069000.0,
-        "source": "xbrl",
-        "tag": "Revenues",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2025-01-01",
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      }
+  "standard": {
+    "periods": {
+      "income": [
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "balance": [
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "cashflow": [
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ]
     },
-    "operating_income": {
-      "FY2023": {
-        "value": 1602784000.0,
-        "source": "xbrl",
-        "tag": "OperatingIncomeLoss",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2023-01-01",
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
+    "income": [
+      {
+        "key": "revenue",
+        "label": "Revenue",
+        "values": [
+          12140147000.0,
+          12815550000.0,
+          13643069000.0
+        ],
+        "sources": [
+          {
+            "id": 3,
+            "label": "Total revenues",
+            "tag": "us-gaap_Revenues",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
       },
-      "FY2024": {
-        "value": 2090483000.0,
-        "source": "xbrl",
-        "tag": "OperatingIncomeLoss",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2024-01-01",
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
+      {
+        "key": "operating_costs",
+        "label": "Operating costs excl. D&A",
+        "values": [
+          9765837000.0,
+          10110673000.0,
+          10884106000.0
+        ],
+        "sources": [
+          {
+            "id": 5,
+            "label": "Patient care costs",
+            "tag": "dva_PatientCareCosts",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 6,
+            "label": "General and administrative",
+            "tag": "us-gaap_GeneralAndAdministrativeExpense",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 8,
+            "label": "Equity investment income, net",
+            "tag": "us-gaap_IncomeLossFromEquityMethodInvestments",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 7,
+            "label": "Depreciation and amortization",
+            "tag": "us-gaap_DepreciationAndAmortization",
+            "sign": 1.0,
+            "periods": null
+          }
+        ],
+        "note": "Costs as printed, with D&A moved to its own line (D&A from the cash flow statement)"
       },
-      "FY2025": {
-        "value": 2043615000.0,
-        "source": "xbrl",
-        "tag": "OperatingIncomeLoss",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2025-01-01",
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
+      {
+        "key": "da",
+        "label": "Depreciation & amortization",
+        "values": [
+          745443000.0,
+          723860000.0,
+          715348000.0
+        ],
+        "sources": [],
+        "note": "From the cash flow statement"
+      },
+      {
+        "key": "unusual_operating",
+        "label": "Unusual operating items (gains negative)",
+        "values": [
+          26083000.0,
+          -109466000.0,
+          0.0
+        ],
+        "sources": [
+          {
+            "id": 9,
+            "label": "Goodwill impairment charges",
+            "tag": "us-gaap_GoodwillImpairmentLoss",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 10,
+            "label": "Gain on changes in ownership interests",
+            "tag": "us-gaap_BusinessCombinationStepAcquisitionEquityInterestInAcquireeRemeasurementGain",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "operating_income",
+        "label": "Operating income",
+        "values": [
+          1602784000.0,
+          2090483000.0,
+          2043615000.0
+        ],
+        "sources": [
+          {
+            "id": 12,
+            "label": "Operating income",
+            "tag": "us-gaap_OperatingIncomeLoss",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "interest_expense",
+        "label": "Interest expense",
+        "values": [
+          398551000.0,
+          470469000.0,
+          579926000.0
+        ],
+        "sources": [
+          {
+            "id": 13,
+            "label": "Debt expense",
+            "tag": "us-gaap_InterestAndDebtExpense",
+            "sign": -1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "other_nonoperating",
+        "label": "Other non-operating income (expense)",
+        "values": [
+          -27139000.0,
+          -89621000.0,
+          -116866000.0
+        ],
+        "sources": [
+          {
+            "id": 14,
+            "label": "Debt extinguishment and modification costs",
+            "tag": "dva_DebtPrepaymentExtinguishmentAndModificationCosts",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 15,
+            "label": "Other loss, net",
+            "tag": "us-gaap_OtherNonoperatingIncomeExpense",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "pretax_income",
+        "label": "Pre-tax income",
+        "values": [
+          1177094000.0,
+          1530393000.0,
+          1346823000.0
+        ],
+        "sources": [
+          {
+            "id": 16,
+            "label": "Income from continuing operations before income taxes",
+            "tag": "us-gaap_IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "income_tax",
+        "label": "Income tax",
+        "values": [
+          220116000.0,
+          279656000.0,
+          293107000.0
+        ],
+        "sources": [
+          {
+            "id": 17,
+            "label": "Income tax expense",
+            "tag": "us-gaap_IncomeTaxExpenseBenefit",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "discontinued",
+        "label": "Discontinued operations",
+        "values": [
+          0.0,
+          0.0,
+          25000000.0
+        ],
+        "sources": [
+          {
+            "id": 19,
+            "label": "Net income from discontinued operations, net of tax",
+            "tag": "us-gaap_IncomeLossFromDiscontinuedOperationsNetOfTax",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "net_income_total",
+        "label": "Net income incl. NCI",
+        "values": [
+          956978000.0,
+          1250737000.0,
+          1078716000.0
+        ],
+        "sources": []
+      },
+      {
+        "key": "nci",
+        "label": "Less: non-controlling interests",
+        "values": [
+          265443000.0,
+          314395000.0,
+          331913000.0
+        ],
+        "sources": []
+      },
+      {
+        "key": "net_income",
+        "label": "Net income to the company",
+        "values": [
+          691535000.0,
+          936342000.0,
+          746803000.0
+        ],
+        "sources": [
+          {
+            "id": 22,
+            "label": "Net income attributable to DaVita Inc.",
+            "tag": "us-gaap_NetIncomeLoss",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "ebitda",
+        "label": "EBITDA (operating income + D&A)",
+        "values": [
+          2348227000.0,
+          2814343000.0,
+          2758963000.0
+        ],
+        "sources": []
       }
-    },
-    "da": {
-      "FY2023": {
-        "value": 736474000.0,
-        "source": "xbrl",
-        "tag": "DepreciationDepletionAndAmortization",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2023-01-01",
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
+    ],
+    "balance": [
+      {
+        "key": "cash",
+        "label": "Cash and equivalents",
+        "values": [
+          380063000.0,
+          794933000.0,
+          676438000.0
+        ],
+        "sources": [
+          {
+            "id": 1,
+            "label": "Cash and cash equivalents",
+            "tag": "us-gaap_CashAndCashEquivalentsAtCarryingValue",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
       },
-      "FY2024": {
-        "value": 716396000.0,
-        "source": "xbrl",
-        "tag": "DepreciationDepletionAndAmortization",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2024-01-01",
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
+      {
+        "key": "receivables",
+        "label": "Receivables",
+        "values": [
+          2415912000.0,
+          2557676000.0,
+          2959041000.0
+        ],
+        "sources": [
+          {
+            "id": 4,
+            "label": "Accounts receivable",
+            "tag": "us-gaap_AccountsReceivableNetCurrent",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 6,
+            "label": "Contract assets and other receivables",
+            "tag": "us-gaap_OtherReceivablesNetCurrent",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 8,
+            "label": "Income tax receivable",
+            "tag": "us-gaap_IncomeTaxesReceivable",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
       },
-      "FY2025": {
-        "value": 708252000.0,
-        "source": "xbrl",
-        "tag": "DepreciationDepletionAndAmortization",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2025-01-01",
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
+      {
+        "key": "inventory",
+        "label": "Inventory",
+        "values": [
+          143105000.0,
+          134559000.0,
+          160627000.0
+        ],
+        "sources": [
+          {
+            "id": 5,
+            "label": "Inventories",
+            "tag": "us-gaap_InventoryNet",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "other_current_assets",
+        "label": "Other current assets",
+        "values": [
+          198826000.0,
+          258904000.0,
+          261897000.0
+        ],
+        "sources": [
+          {
+            "id": 2,
+            "label": "Restricted cash and equivalents",
+            "tag": "us-gaap_RestrictedCashAndCashEquivalents",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 3,
+            "label": "Short-term investments",
+            "tag": "us-gaap_MarketableSecuritiesCurrent",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 7,
+            "label": "Prepaid and other current assets",
+            "tag": "us-gaap_PrepaidExpenseAndOtherAssetsCurrent",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "current_assets",
+        "label": "Total current assets",
+        "values": [
+          3137906000.0,
+          3746072000.0,
+          4058003000.0
+        ],
+        "sources": [
+          {
+            "id": 9,
+            "label": "Total current assets",
+            "tag": "us-gaap_AssetsCurrent",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "ppe",
+        "label": "PP&E, net",
+        "values": [
+          3073533000.0,
+          2940916000.0,
+          2812966000.0
+        ],
+        "sources": [
+          {
+            "id": 10,
+            "label": "Property and equipment, net of accumulated depreciation",
+            "tag": "us-gaap_PropertyPlantAndEquipmentNet",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "lease_assets",
+        "label": "Operating lease assets",
+        "values": [
+          2501364000.0,
+          2393558000.0,
+          2397179000.0
+        ],
+        "sources": [
+          {
+            "id": 11,
+            "label": "Operating lease right-of-use assets",
+            "tag": "us-gaap_OperatingLeaseRightOfUseAsset",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "goodwill_intangibles",
+        "label": "Goodwill and intangibles",
+        "values": [
+          7315784000.0,
+          7572647000.0,
+          7767220000.0
+        ],
+        "sources": [
+          {
+            "id": 12,
+            "label": "Intangible assets, net of accumulated amortization",
+            "tag": "us-gaap_IntangibleAssetsNetExcludingGoodwill",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 16,
+            "label": "Goodwill",
+            "tag": "us-gaap_Goodwill",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "other_noncurrent_assets",
+        "label": "Other non-current assets",
+        "values": [
+          864991000.0,
+          632075000.0,
+          444735000.0
+        ],
+        "sources": [
+          {
+            "id": 13,
+            "label": "Equity method and other investments",
+            "tag": "us-gaap_InvestmentsInAffiliatesSubsidiariesAssociatesAndJointVentures",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 14,
+            "label": "Long-term investments",
+            "tag": "us-gaap_MarketableSecuritiesNoncurrent",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 15,
+            "label": "Other long-term assets",
+            "tag": "us-gaap_OtherAssetsNoncurrent",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "total_assets",
+        "label": "Total assets",
+        "values": [
+          16893578000.0,
+          17285268000.0,
+          17480103000.0
+        ],
+        "sources": [
+          {
+            "id": 17,
+            "label": "Assets, Total",
+            "tag": "us-gaap_Assets",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "debt_current",
+        "label": "Short-term debt and current LTD (incl. finance leases)",
+        "values": [
+          123299000.0,
+          270867000.0,
+          109201000.0
+        ],
+        "sources": [
+          {
+            "id": 23,
+            "label": "Current portion of long-term debt",
+            "tag": "us-gaap_LongTermDebtAndCapitalLeaseObligationsCurrent",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "payables",
+        "label": "Accounts payable",
+        "values": [
+          514533000.0,
+          547200000.0,
+          696148000.0
+        ],
+        "sources": [
+          {
+            "id": 19,
+            "label": "Accounts payable",
+            "tag": "us-gaap_AccountsPayableCurrent",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "lease_liab_current",
+        "label": "Operating lease liabilities, current",
+        "values": [
+          394399000.0,
+          410411000.0,
+          425484000.0
+        ],
+        "sources": [
+          {
+            "id": 22,
+            "label": "Current portion of operating lease liabilities",
+            "tag": "us-gaap_OperatingLeaseLiabilityCurrent",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "other_current_liabilities",
+        "label": "Other current liabilities",
+        "values": [
+          1609983000.0,
+          1744932000.0,
+          1910801000.0
+        ],
+        "sources": [
+          {
+            "id": 20,
+            "label": "Other liabilities",
+            "tag": "us-gaap_OtherLiabilitiesCurrent",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 21,
+            "label": "Accrued compensation and benefits",
+            "tag": "us-gaap_EmployeeRelatedLiabilitiesCurrent",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 24,
+            "label": "Income tax payable",
+            "tag": "us-gaap_AccruedIncomeTaxesCurrent",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 25,
+            "label": "Due to Related Party",
+            "tag": "dva_DueToRelatedParty",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "current_liabilities",
+        "label": "Total current liabilities",
+        "values": [
+          2642214000.0,
+          2973410000.0,
+          3141634000.0
+        ],
+        "sources": [
+          {
+            "id": 26,
+            "label": "Total current liabilities",
+            "tag": "us-gaap_LiabilitiesCurrent",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "ltd",
+        "label": "Long-term debt (incl. finance leases)",
+        "values": [
+          8268334000.0,
+          9175903000.0,
+          10163988000.0
+        ],
+        "sources": [
+          {
+            "id": 28,
+            "label": "Long-term debt",
+            "tag": "us-gaap_LongTermDebtAndCapitalLeaseObligations",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "lease_liab_noncurrent",
+        "label": "Operating lease liabilities, non-current",
+        "values": [
+          2330389000.0,
+          2209655000.0,
+          2175658000.0
+        ],
+        "sources": [
+          {
+            "id": 27,
+            "label": "Long-term operating lease liabilities",
+            "tag": "us-gaap_OperatingLeaseLiabilityNoncurrent",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "other_noncurrent_liabilities",
+        "label": "Other non-current liabilities",
+        "values": [
+          909291000.0,
+          834949000.0,
+          840385000.0
+        ],
+        "sources": [
+          {
+            "id": 29,
+            "label": "Other long-term liabilities",
+            "tag": "us-gaap_OtherLiabilitiesNoncurrent",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 30,
+            "label": "Deferred income taxes",
+            "tag": "us-gaap_DeferredIncomeTaxLiabilitiesNet",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "total_liabilities",
+        "label": "Total liabilities",
+        "values": [
+          14150228000.0,
+          15193917000.0,
+          16321665000.0
+        ],
+        "sources": []
+      },
+      {
+        "key": "redeemable_nci",
+        "label": "Redeemable non-controlling interests",
+        "values": [
+          1499288000.0,
+          1695483000.0,
+          1532166000.0
+        ],
+        "sources": [
+          {
+            "id": 33,
+            "label": "Noncontrolling interests subject to put provisions",
+            "tag": "us-gaap_RedeemableNoncontrollingInterestEquityCarryingAmount",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "equity",
+        "label": "Shareholders' equity (company)",
+        "values": [
+          1056097000.0,
+          121122000.0,
+          -651082000.0
+        ],
+        "sources": [
+          {
+            "id": 41,
+            "label": "Total DaVita Inc. shareholders' equity (deficit)",
+            "tag": "us-gaap_StockholdersEquity",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "nci",
+        "label": "Non-controlling interests",
+        "values": [
+          187965000.0,
+          274746000.0,
+          277354000.0
+        ],
+        "sources": [
+          {
+            "id": 42,
+            "label": "Noncontrolling interests not subject to put provisions",
+            "tag": "us-gaap_MinorityInterest",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "total_liabilities_equity",
+        "label": "Total liabilities and equity",
+        "values": [
+          16893578000.0,
+          17285268000.0,
+          17480103000.0
+        ],
+        "sources": [
+          {
+            "id": 44,
+            "label": "Total liabilities and shareholders' equity",
+            "tag": "us-gaap_LiabilitiesAndStockholdersEquity",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "total_debt",
+        "label": "Total debt",
+        "values": [
+          8391633000.0,
+          9446770000.0,
+          10273189000.0
+        ],
+        "sources": []
+      },
+      {
+        "key": "lease_liabilities",
+        "label": "Operating lease liabilities (on the balance sheet)",
+        "values": [
+          2724788000.0,
+          2620066000.0,
+          2601142000.0
+        ],
+        "sources": []
       }
-    },
-    "interest_expense": {
-      "FY2023": {
-        "value": 398551000.0,
-        "source": "xbrl",
-        "tag": "InterestAndDebtExpense",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2023-01-01",
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
+    ],
+    "cashflow": [
+      {
+        "key": "cfo",
+        "label": "Cash from operations",
+        "values": [
+          2059031000.0,
+          2022038000.0,
+          1886500000.0
+        ],
+        "sources": [
+          {
+            "id": 21,
+            "label": "Net Cash Provided by (Used in) Operating Activities, Total",
+            "tag": "us-gaap_NetCashProvidedByUsedInOperatingActivities",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
       },
-      "FY2024": {
-        "value": 470469000.0,
-        "source": "xbrl",
-        "tag": "InterestAndDebtExpense",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2024-01-01",
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
+      {
+        "key": "da",
+        "label": "of which D&A",
+        "values": [
+          745443000.0,
+          723860000.0,
+          715348000.0
+        ],
+        "sources": [
+          {
+            "id": 3,
+            "label": "Depreciation and amortization",
+            "tag": "us-gaap_DepreciationAmortizationAndAccretionNet",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
       },
-      "FY2025": {
-        "value": 579926000.0,
-        "source": "xbrl",
-        "tag": "InterestAndDebtExpense",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2025-01-01",
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
+      {
+        "key": "capex",
+        "label": "Capex",
+        "values": [
+          -567985000.0,
+          -555443000.0,
+          -575864000.0
+        ],
+        "sources": [
+          {
+            "id": 23,
+            "label": "Additions of property and equipment",
+            "tag": "us-gaap_PaymentsToAcquirePropertyPlantAndEquipment",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "acquisitions",
+        "label": "Acquisitions",
+        "values": [
+          -26394000.0,
+          -246068000.0,
+          -117468000.0
+        ],
+        "sources": [
+          {
+            "id": 24,
+            "label": "Acquisitions",
+            "tag": "us-gaap_PaymentsToAcquireBusinessesNetOfCashAcquired",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "other_investing",
+        "label": "Other investing",
+        "values": [
+          -177421000.0,
+          30082000.0,
+          38383000.0
+        ],
+        "sources": [
+          {
+            "id": 25,
+            "label": "Proceeds from asset and business sales",
+            "tag": "us-gaap_ProceedsFromSalesOfBusinessAffiliateAndProductiveAssets",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 26,
+            "label": "Purchase of debt investments held-to-maturity",
+            "tag": "us-gaap_PaymentsToAcquireHeldToMaturitySecurities",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 27,
+            "label": "Purchase of other debt and equity investments",
+            "tag": "dva_PaymentsToAcquireOtherDebtAndEquityInvestments",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 28,
+            "label": "Proceeds from debt investments held-to-maturity",
+            "tag": "us-gaap_ProceedsFromSaleAndMaturityOfHeldToMaturitySecurities",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 29,
+            "label": "Proceeds from sale of other debt and equity investments",
+            "tag": "us-gaap_ProceedsFromSaleAndMaturityOfOtherInvestments",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 30,
+            "label": "Purchase of equity method investments",
+            "tag": "us-gaap_PaymentsToAcquireEquityMethodInvestments",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 31,
+            "label": "Distributions from equity method investments",
+            "tag": "us-gaap_ProceedsFromEquityMethodInvestmentDividendsOrDistributionsReturnOfCapital",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "cfi",
+        "label": "Cash from investing",
+        "values": [
+          -771800000.0,
+          -771429000.0,
+          -654949000.0
+        ],
+        "sources": [
+          {
+            "id": 32,
+            "label": "Net Cash Provided by (Used in) Investing Activities, Total",
+            "tag": "us-gaap_NetCashProvidedByUsedInInvestingActivities",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "debt_issued",
+        "label": "Debt issued",
+        "values": [
+          2468341000.0,
+          6624310000.0,
+          5612280000.0
+        ],
+        "sources": [
+          {
+            "id": 34,
+            "label": "Borrowings",
+            "tag": "us-gaap_ProceedsFromIssuanceOfLongTermDebt",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "debt_repaid",
+        "label": "Debt repaid",
+        "values": [
+          -3020956000.0,
+          -5515213000.0,
+          -4788845000.0
+        ],
+        "sources": [
+          {
+            "id": 35,
+            "label": "Payments on long-term debt",
+            "tag": "us-gaap_RepaymentsOfDebtAndCapitalLeaseObligations",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "dividends",
+        "label": "Dividends",
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "sources": []
+      },
+      {
+        "key": "buybacks",
+        "label": "Share buybacks",
+        "values": [
+          -272219000.0,
+          -1385932000.0,
+          -1792999000.0
+        ],
+        "sources": [
+          {
+            "id": 37,
+            "label": "Purchase Of Treasury Stock From Related Party",
+            "tag": "dva_PurchaseOfTreasuryStockFromRelatedParty",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 38,
+            "label": "Purchase of treasury stock",
+            "tag": "us-gaap_PaymentsForRepurchaseOfCommonStock",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "other_financing",
+        "label": "Other financing (incl. NCI distributions, lease payments)",
+        "values": [
+          -345661000.0,
+          -540102000.0,
+          -405216000.0
+        ],
+        "sources": [
+          {
+            "id": 36,
+            "label": "Deferred and debt related financing costs",
+            "tag": "us-gaap_PaymentsOfFinancingCosts",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 39,
+            "label": "Distributions to noncontrolling interests",
+            "tag": "us-gaap_PaymentsOfDistributionsToAffiliates",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 40,
+            "label": "Net proceeds from issuance of common stock under employee stock plans",
+            "tag": "dva_NetProceedsFromIssuanceOfStockToEmployees",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 41,
+            "label": "Payment, Tax Withholding, Share-Based Payment Arrangement",
+            "tag": "us-gaap_PaymentsRelatedToTaxWithholdingForShareBasedCompensation",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 42,
+            "label": "Contributions from noncontrolling interests",
+            "tag": "us-gaap_ProceedsFromContributionsFromAffiliates",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 43,
+            "label": "Proceeds from sales of additional noncontrolling interests",
+            "tag": "us-gaap_ProceedsFromMinorityShareholders",
+            "sign": 1.0,
+            "periods": null
+          },
+          {
+            "id": 44,
+            "label": "Purchases of noncontrolling interests",
+            "tag": "us-gaap_PaymentsToMinorityShareholders",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "cff",
+        "label": "Cash from financing",
+        "values": [
+          -1170495000.0,
+          -816937000.0,
+          -1374780000.0
+        ],
+        "sources": [
+          {
+            "id": 45,
+            "label": "Net cash used in financing activities",
+            "tag": "us-gaap_NetCashProvidedByUsedInFinancingActivities",
+            "sign": 1.0,
+            "periods": null
+          }
+        ]
+      },
+      {
+        "key": "fcf",
+        "label": "Free cash flow (CFO + capex)",
+        "values": [
+          1491046000.0,
+          1466595000.0,
+          1310636000.0
+        ],
+        "sources": []
       }
-    },
-    "pretax_income": {
-      "FY2023": {
-        "value": 1177094000.0,
-        "source": "xbrl",
-        "tag": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2023-01-01",
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
+    ],
+    "ties": [
+      {
+        "statement": "income",
+        "check": "Revenue - costs - D&A - unusual = operating income",
+        "period": "FY2023",
+        "reported": 1602784000.0,
+        "computed": 1602784000.0,
+        "diff": 0.0,
+        "ok": true
       },
-      "FY2024": {
-        "value": 1530393000.0,
-        "source": "xbrl",
-        "tag": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2024-01-01",
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
+      {
+        "statement": "income",
+        "check": "Revenue - costs - D&A - unusual = operating income",
+        "period": "FY2024",
+        "reported": 2090483000.0,
+        "computed": 2090483000.0,
+        "diff": 0.0,
+        "ok": true
       },
-      "FY2025": {
-        "value": 1346823000.0,
-        "source": "xbrl",
-        "tag": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2025-01-01",
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
+      {
+        "statement": "income",
+        "check": "Revenue - costs - D&A - unusual = operating income",
+        "period": "FY2025",
+        "reported": 2043615000.0,
+        "computed": 2043615000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "income",
+        "check": "Operating income - interest + other = pre-tax income",
+        "period": "FY2023",
+        "reported": 1177094000.0,
+        "computed": 1177094000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "income",
+        "check": "Operating income - interest + other = pre-tax income",
+        "period": "FY2024",
+        "reported": 1530393000.0,
+        "computed": 1530393000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "income",
+        "check": "Operating income - interest + other = pre-tax income",
+        "period": "FY2025",
+        "reported": 1346823000.0,
+        "computed": 1346823000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "income",
+        "check": "Pre-tax - tax + discontinued - NCI = net income",
+        "period": "FY2023",
+        "reported": 691535000.0,
+        "computed": 691535000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "income",
+        "check": "Pre-tax - tax + discontinued - NCI = net income",
+        "period": "FY2024",
+        "reported": 936342000.0,
+        "computed": 936342000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "income",
+        "check": "Pre-tax - tax + discontinued - NCI = net income",
+        "period": "FY2025",
+        "reported": 746803000.0,
+        "computed": 746803000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Current asset lines = total current assets",
+        "period": "FY2023",
+        "reported": 3137906000.0,
+        "computed": 3137906000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Current asset lines = total current assets",
+        "period": "FY2024",
+        "reported": 3746072000.0,
+        "computed": 3746072000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Current asset lines = total current assets",
+        "period": "FY2025",
+        "reported": 4058003000.0,
+        "computed": 4058003000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Current + non-current assets = total assets",
+        "period": "FY2023",
+        "reported": 16893578000.0,
+        "computed": 16893578000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Current + non-current assets = total assets",
+        "period": "FY2024",
+        "reported": 17285268000.0,
+        "computed": 17285268000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Current + non-current assets = total assets",
+        "period": "FY2025",
+        "reported": 17480103000.0,
+        "computed": 17480103000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Current liability lines = total current liabilities",
+        "period": "FY2023",
+        "reported": 2642214000.0,
+        "computed": 2642214000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Current liability lines = total current liabilities",
+        "period": "FY2024",
+        "reported": 2973410000.0,
+        "computed": 2973410000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Current liability lines = total current liabilities",
+        "period": "FY2025",
+        "reported": 3141634000.0,
+        "computed": 3141634000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Current + non-current liabilities = total liabilities",
+        "period": "FY2023",
+        "reported": 14150228000.0,
+        "computed": 14150228000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Current + non-current liabilities = total liabilities",
+        "period": "FY2024",
+        "reported": 15193917000.0,
+        "computed": 15193917000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Current + non-current liabilities = total liabilities",
+        "period": "FY2025",
+        "reported": 16321665000.0,
+        "computed": 16321665000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Liabilities + equity lines = total liabilities and equity",
+        "period": "FY2023",
+        "reported": 16893578000.0,
+        "computed": 16893578000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Liabilities + equity lines = total liabilities and equity",
+        "period": "FY2024",
+        "reported": 17285268000.0,
+        "computed": 17285268000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Liabilities + equity lines = total liabilities and equity",
+        "period": "FY2025",
+        "reported": 17480103000.0,
+        "computed": 17480103000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Total liabilities and equity = total assets",
+        "period": "FY2023",
+        "reported": 16893578000.0,
+        "computed": 16893578000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Total liabilities and equity = total assets",
+        "period": "FY2024",
+        "reported": 17285268000.0,
+        "computed": 17285268000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "balance",
+        "check": "Total liabilities and equity = total assets",
+        "period": "FY2025",
+        "reported": 17480103000.0,
+        "computed": 17480103000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "cashflow",
+        "check": "Operating lines = cash from operations",
+        "period": "FY2023",
+        "reported": 2059031000.0,
+        "computed": 2059031000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "cashflow",
+        "check": "Operating lines = cash from operations",
+        "period": "FY2024",
+        "reported": 2022038000.0,
+        "computed": 2022038000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "cashflow",
+        "check": "Operating lines = cash from operations",
+        "period": "FY2025",
+        "reported": 1886500000.0,
+        "computed": 1886500000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "cashflow",
+        "check": "Investing lines = cash from investing",
+        "period": "FY2023",
+        "reported": -771800000.0,
+        "computed": -771800000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "cashflow",
+        "check": "Investing lines = cash from investing",
+        "period": "FY2024",
+        "reported": -771429000.0,
+        "computed": -771429000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "cashflow",
+        "check": "Investing lines = cash from investing",
+        "period": "FY2025",
+        "reported": -654949000.0,
+        "computed": -654949000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "cashflow",
+        "check": "Financing lines = cash from financing",
+        "period": "FY2023",
+        "reported": -1170495000.0,
+        "computed": -1170495000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "cashflow",
+        "check": "Financing lines = cash from financing",
+        "period": "FY2024",
+        "reported": -816937000.0,
+        "computed": -816937000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "cashflow",
+        "check": "Financing lines = cash from financing",
+        "period": "FY2025",
+        "reported": -1374780000.0,
+        "computed": -1374780000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "cashflow",
+        "check": "CFO + CFI + CFF + FX = change in cash",
+        "period": "FY2023",
+        "reported": 125645000.0,
+        "computed": 125645000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "cashflow",
+        "check": "CFO + CFI + CFF + FX = change in cash",
+        "period": "FY2024",
+        "reported": 415191000.0,
+        "computed": 415191000.0,
+        "diff": 0.0,
+        "ok": true
+      },
+      {
+        "statement": "cashflow",
+        "check": "CFO + CFI + CFF + FX = change in cash",
+        "period": "FY2025",
+        "reported": -122078000.0,
+        "computed": -122078000.0,
+        "diff": 0.0,
+        "ok": true
       }
-    },
-    "net_income": {
-      "FY2023": {
-        "value": 691535000.0,
-        "source": "xbrl",
-        "tag": "NetIncomeLoss",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2023-01-01",
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2024": {
-        "value": 936342000.0,
-        "source": "xbrl",
-        "tag": "NetIncomeLoss",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2024-01-01",
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2025": {
-        "value": 746803000.0,
-        "source": "xbrl",
-        "tag": "NetIncomeLoss",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2025-01-01",
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      }
-    },
-    "cfo": {
-      "FY2023": {
-        "value": 2059031000.0,
-        "source": "xbrl",
-        "tag": "NetCashProvidedByUsedInOperatingActivities",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2023-01-01",
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2024": {
-        "value": 2022038000.0,
-        "source": "xbrl",
-        "tag": "NetCashProvidedByUsedInOperatingActivities",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2024-01-01",
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2025": {
-        "value": 1886500000.0,
-        "source": "xbrl",
-        "tag": "NetCashProvidedByUsedInOperatingActivities",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2025-01-01",
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      }
-    },
-    "capex": {
-      "FY2023": {
-        "value": 567985000.0,
-        "source": "xbrl",
-        "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2023-01-01",
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2024": {
-        "value": 555443000.0,
-        "source": "xbrl",
-        "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2024-01-01",
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2025": {
-        "value": 575864000.0,
-        "source": "xbrl",
-        "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2025-01-01",
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      }
-    },
-    "cash_taxes": {
-      "FY2023": {
-        "value": 268091000.0,
-        "source": "xbrl",
-        "tag": "IncomeTaxesPaidNet",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2023-01-01",
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2024": {
-        "value": 387940000.0,
-        "source": "xbrl",
-        "tag": "IncomeTaxesPaidNet",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2024-01-01",
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2025": {
-        "value": 176688000.0,
-        "source": "xbrl",
-        "tag": "IncomeTaxesPaidNet",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": "2025-01-01",
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      }
-    },
+    ],
+    "ties_ok": true
+  },
+  "notes": {
     "operating_lease_cost": {
       "FY2023": {
         "value": 692834000.0,
@@ -484,407 +3287,6 @@
         "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
         "proxy": false,
         "note": null
-      }
-    },
-    "cash": {
-      "FY2023": {
-        "value": 380063000.0,
-        "source": "xbrl",
-        "tag": "CashAndCashEquivalentsAtCarryingValue",
-        "unit": "USD",
-        "accn": "0000927066-25-000012",
-        "form": "10-K",
-        "filed": "2025-02-13",
-        "start": null,
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2024": {
-        "value": 794933000.0,
-        "source": "xbrl",
-        "tag": "CashAndCashEquivalentsAtCarryingValue",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": null,
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2025": {
-        "value": 676438000.0,
-        "source": "xbrl",
-        "tag": "CashAndCashEquivalentsAtCarryingValue",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": null,
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      }
-    },
-    "current_assets": {
-      "FY2023": {
-        "value": 3137906000.0,
-        "source": "xbrl",
-        "tag": "AssetsCurrent",
-        "unit": "USD",
-        "accn": "0000927066-25-000012",
-        "form": "10-K",
-        "filed": "2025-02-13",
-        "start": null,
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2024": {
-        "value": 3746072000.0,
-        "source": "xbrl",
-        "tag": "AssetsCurrent",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": null,
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2025": {
-        "value": 4058003000.0,
-        "source": "xbrl",
-        "tag": "AssetsCurrent",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": null,
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      }
-    },
-    "current_liabilities": {
-      "FY2023": {
-        "value": 2642214000.0,
-        "source": "xbrl",
-        "tag": "LiabilitiesCurrent",
-        "unit": "USD",
-        "accn": "0000927066-25-000012",
-        "form": "10-K",
-        "filed": "2025-02-13",
-        "start": null,
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2024": {
-        "value": 2973410000.0,
-        "source": "xbrl",
-        "tag": "LiabilitiesCurrent",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": null,
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2025": {
-        "value": 3141634000.0,
-        "source": "xbrl",
-        "tag": "LiabilitiesCurrent",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": null,
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      }
-    },
-    "total_assets": {
-      "FY2023": {
-        "value": 16893578000.0,
-        "source": "xbrl",
-        "tag": "Assets",
-        "unit": "USD",
-        "accn": "0000927066-25-000012",
-        "form": "10-K",
-        "filed": "2025-02-13",
-        "start": null,
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2024": {
-        "value": 17285268000.0,
-        "source": "xbrl",
-        "tag": "Assets",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": null,
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2025": {
-        "value": 17480103000.0,
-        "source": "xbrl",
-        "tag": "Assets",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": null,
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      }
-    },
-    "equity": {
-      "FY2023": {
-        "value": 1056097000.0,
-        "source": "xbrl",
-        "tag": "StockholdersEquity",
-        "unit": "USD",
-        "accn": "0000927066-25-000012",
-        "form": "10-K",
-        "filed": "2025-02-13",
-        "start": null,
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2024": {
-        "value": 121122000.0,
-        "source": "xbrl",
-        "tag": "StockholdersEquity",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": null,
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2025": {
-        "value": -651082000.0,
-        "source": "xbrl",
-        "tag": "StockholdersEquity",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": null,
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      }
-    },
-    "short_term_borrowings": {
-      "FY2023": {
-        "value": 0.0,
-        "source": "assumed_zero",
-        "proxy": false,
-        "note": "Not tagged; counted as 0. Confirm in the 10-K.",
-        "end": "2023-12-31"
-      },
-      "FY2024": {
-        "value": 0.0,
-        "source": "assumed_zero",
-        "proxy": false,
-        "note": "Not tagged; counted as 0. Confirm in the 10-K.",
-        "end": "2024-12-31"
-      },
-      "FY2025": {
-        "value": 0.0,
-        "source": "assumed_zero",
-        "proxy": false,
-        "note": "Not tagged; counted as 0. Confirm in the 10-K.",
-        "end": "2025-12-31"
-      }
-    },
-    "commercial_paper": {
-      "FY2023": {
-        "value": 0.0,
-        "source": "assumed_zero",
-        "proxy": false,
-        "note": "Not tagged; counted as 0. Confirm in the 10-K.",
-        "end": "2023-12-31"
-      },
-      "FY2024": {
-        "value": 0.0,
-        "source": "assumed_zero",
-        "proxy": false,
-        "note": "Not tagged; counted as 0. Confirm in the 10-K.",
-        "end": "2024-12-31"
-      },
-      "FY2025": {
-        "value": 0.0,
-        "source": "assumed_zero",
-        "proxy": false,
-        "note": "Not tagged; counted as 0. Confirm in the 10-K.",
-        "end": "2025-12-31"
-      }
-    },
-    "current_ltd": {
-      "FY2023": {
-        "value": 123299000.0,
-        "source": "xbrl",
-        "tag": "LongTermDebtAndCapitalLeaseObligationsCurrent",
-        "unit": "USD",
-        "accn": "0000927066-25-000012",
-        "form": "10-K",
-        "filed": "2025-02-13",
-        "start": null,
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2024": {
-        "value": 270867000.0,
-        "source": "xbrl",
-        "tag": "LongTermDebtAndCapitalLeaseObligationsCurrent",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": null,
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2025": {
-        "value": 109201000.0,
-        "source": "xbrl",
-        "tag": "LongTermDebtAndCapitalLeaseObligationsCurrent",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": null,
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      }
-    },
-    "noncurrent_ltd": {
-      "FY2023": {
-        "value": 8268334000.0,
-        "source": "xbrl",
-        "tag": "LongTermDebtAndCapitalLeaseObligations",
-        "unit": "USD",
-        "accn": "0000927066-25-000012",
-        "form": "10-K",
-        "filed": "2025-02-13",
-        "start": null,
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2024": {
-        "value": 9175903000.0,
-        "source": "xbrl",
-        "tag": "LongTermDebtAndCapitalLeaseObligations",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": null,
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      },
-      "FY2025": {
-        "value": 10163988000.0,
-        "source": "xbrl",
-        "tag": "LongTermDebtAndCapitalLeaseObligations",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": null,
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": null
-      }
-    },
-    "finance_lease_liabilities": {
-      "FY2023": {
-        "value": 0.0,
-        "source": "included_in_debt",
-        "tag": "FinanceLeaseLiability",
-        "unit": "USD",
-        "accn": "0000927066-24-000013",
-        "form": "10-K",
-        "filed": "2024-02-14",
-        "start": null,
-        "end": "2023-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706624000013/0000927066-24-000013-index.htm",
-        "proxy": false,
-        "note": "Already inside the long-term debt tags; not added again",
-        "reported_value": 255491000.0
-      },
-      "FY2024": {
-        "value": 0.0,
-        "source": "included_in_debt",
-        "tag": "FinanceLeaseLiability",
-        "unit": "USD",
-        "accn": "0000927066-25-000012",
-        "form": "10-K",
-        "filed": "2025-02-13",
-        "start": null,
-        "end": "2024-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
-        "proxy": false,
-        "note": "Already inside the long-term debt tags; not added again",
-        "reported_value": 216401000.0
-      },
-      "FY2025": {
-        "value": 0.0,
-        "source": "included_in_debt",
-        "tag": "FinanceLeaseLiability",
-        "unit": "USD",
-        "accn": "0000927066-26-000012",
-        "form": "10-K",
-        "filed": "2026-02-11",
-        "start": null,
-        "end": "2025-12-31",
-        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
-        "proxy": false,
-        "note": "Already inside the long-term debt tags; not added again",
-        "reported_value": 185120000.0
       }
     },
     "operating_lease_liabilities": {
@@ -974,31 +3376,137 @@
         "proxy": false,
         "note": null
       }
+    },
+    "cash_taxes": {
+      "FY2023": {
+        "value": 268091000.0,
+        "source": "xbrl",
+        "tag": "IncomeTaxesPaidNet",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 387940000.0,
+        "source": "xbrl",
+        "tag": "IncomeTaxesPaidNet",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 176688000.0,
+        "source": "xbrl",
+        "tag": "IncomeTaxesPaidNet",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    }
+  },
+  "ratio_inputs": {
+    "FY2023": {
+      "revenue": 12140147000.0,
+      "operating_income": 1602784000.0,
+      "da": 745443000.0,
+      "interest_expense": 398551000.0,
+      "short_term_borrowings": 123299000.0,
+      "commercial_paper": 0.0,
+      "current_ltd": 0.0,
+      "finance_lease_liabilities": 0.0,
+      "noncurrent_ltd": 8268334000.0,
+      "cash": 380063000.0,
+      "current_assets": 3137906000.0,
+      "current_liabilities": 2642214000.0,
+      "cfo": 2059031000.0,
+      "capex": 567985000.0,
+      "operating_lease_liabilities": 2724788000.0,
+      "operating_lease_cost": 692834000.0,
+      "cash_taxes": 268091000.0,
+      "scheduled_principal": 123299000.0
+    },
+    "FY2024": {
+      "revenue": 12815550000.0,
+      "operating_income": 2090483000.0,
+      "da": 723860000.0,
+      "interest_expense": 470469000.0,
+      "short_term_borrowings": 270867000.0,
+      "commercial_paper": 0.0,
+      "current_ltd": 0.0,
+      "finance_lease_liabilities": 0.0,
+      "noncurrent_ltd": 9175903000.0,
+      "cash": 794933000.0,
+      "current_assets": 3746072000.0,
+      "current_liabilities": 2973410000.0,
+      "cfo": 2022038000.0,
+      "capex": 555443000.0,
+      "operating_lease_liabilities": 2620066000.0,
+      "operating_lease_cost": 689130000.0,
+      "cash_taxes": 387940000.0,
+      "scheduled_principal": 270867000.0
+    },
+    "FY2025": {
+      "revenue": 13643069000.0,
+      "operating_income": 2043615000.0,
+      "da": 715348000.0,
+      "interest_expense": 579926000.0,
+      "short_term_borrowings": 109201000.0,
+      "commercial_paper": 0.0,
+      "current_ltd": 0.0,
+      "finance_lease_liabilities": 0.0,
+      "noncurrent_ltd": 10163988000.0,
+      "cash": 676438000.0,
+      "current_assets": 4058003000.0,
+      "current_liabilities": 3141634000.0,
+      "cfo": 1886500000.0,
+      "capex": 575864000.0,
+      "operating_lease_liabilities": 2601142000.0,
+      "operating_lease_cost": 702180000.0,
+      "cash_taxes": 176688000.0,
+      "scheduled_principal": 109201000.0
     }
   },
   "derived": {
     "FY2023": {
-      "ebitda": 2339258000.0,
-      "ebitda_margin": 0.1926877821166416,
-      "ebitdar": 3032092000.0,
+      "ebitda": 2348227000.0,
+      "ebitda_margin": 0.1934265705349367,
+      "ebitdar": 3041061000.0,
       "total_debt": 8391633000.0,
       "net_debt": 8011570000.0,
       "lease_adj_debt": 11116421000.0,
       "fcf": 1491046000.0
     },
     "FY2024": {
-      "ebitda": 2806879000.0,
-      "ebitda_margin": 0.2190213451627125,
-      "ebitdar": 3496009000.0,
+      "ebitda": 2814343000.0,
+      "ebitda_margin": 0.21960376261650885,
+      "ebitdar": 3503473000.0,
       "total_debt": 9446770000.0,
       "net_debt": 8651837000.0,
       "lease_adj_debt": 12066836000.0,
       "fcf": 1466595000.0
     },
     "FY2025": {
-      "ebitda": 2751867000.0,
-      "ebitda_margin": 0.2017043965694229,
-      "ebitdar": 3454047000.0,
+      "ebitda": 2758963000.0,
+      "ebitda_margin": 0.20222451414707351,
+      "ebitdar": 3461143000.0,
       "total_debt": 10273189000.0,
       "net_debt": 9596751000.0,
       "lease_adj_debt": 12874331000.0,
@@ -1007,30 +3515,30 @@
   },
   "ratios": {
     "FY2023": {
-      "debt_ebitda": 3.5873054618173796,
-      "net_debt_ebitda": 3.424833857573641,
-      "lease_adj_debt_ebitdar": 3.6662545199815835,
-      "lease_adj_net_debt_ebitdar": 3.540907729712687,
-      "interest_coverage": 5.869406926591578,
-      "dscr": 2.880486729903229,
+      "debt_ebitda": 3.573603829612725,
+      "net_debt_ebitda": 3.4117527819925417,
+      "lease_adj_debt_ebitdar": 3.6554416369813034,
+      "lease_adj_net_debt_ebitdar": 3.5304645319511843,
+      "interest_coverage": 5.8919109474069815,
+      "dscr": 2.8976736610137013,
       "current_ratio": 1.1876047890140617
     },
     "FY2024": {
-      "debt_ebitda": 3.3655779248054514,
-      "net_debt_ebitda": 3.0823690654281855,
-      "lease_adj_debt_ebitdar": 3.4516032424401653,
-      "lease_adj_net_debt_ebitdar": 3.224220246572592,
-      "interest_coverage": 5.966129543072976,
-      "dscr": 2.5136995910086655,
+      "debt_ebitda": 3.3566519788099747,
+      "net_debt_ebitda": 3.0741942257926627,
+      "lease_adj_debt_ebitdar": 3.4442497487493124,
+      "lease_adj_net_debt_ebitdar": 3.217351182669311,
+      "interest_coverage": 5.981994562872368,
+      "dscr": 2.5237679001154674,
       "current_ratio": 1.2598572009914542
     },
     "FY2025": {
-      "debt_ebitda": 3.7331706074457816,
-      "net_debt_ebitda": 3.487360035931969,
-      "lease_adj_debt_ebitdar": 3.727317839045039,
-      "lease_adj_net_debt_ebitdar": 3.5314785815016414,
-      "interest_coverage": 4.7452036984029,
-      "dscr": 2.9012286559661717,
+      "debt_ebitda": 3.7235689641361627,
+      "net_debt_ebitda": 3.478390612704846,
+      "lease_adj_debt_ebitdar": 3.7196761301107757,
+      "lease_adj_net_debt_ebitdar": 3.5242383802113926,
+      "interest_coverage": 4.75743974231195,
+      "dscr": 2.911525741989503,
       "current_ratio": 1.2916854732282628
     }
   },
@@ -1039,19 +3547,278 @@
     "FY2024": {},
     "FY2025": {}
   },
-  "warnings": [
-    "FY2023 Short-term borrowings: not tagged, counted as 0",
-    "FY2024 Short-term borrowings: not tagged, counted as 0",
-    "FY2025 Short-term borrowings: not tagged, counted as 0",
-    "FY2023 Commercial paper: not tagged, counted as 0",
-    "FY2024 Commercial paper: not tagged, counted as 0",
-    "FY2025 Commercial paper: not tagged, counted as 0"
+  "ties_ok": true,
+  "cross_check": [
+    {
+      "statement": "income",
+      "line": "revenue",
+      "period": "FY2023",
+      "standard": 12140147000.0,
+      "company_facts": 12140147000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "income",
+      "line": "revenue",
+      "period": "FY2024",
+      "standard": 12815550000.0,
+      "company_facts": 12815550000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "income",
+      "line": "revenue",
+      "period": "FY2025",
+      "standard": 13643069000.0,
+      "company_facts": 13643069000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "income",
+      "line": "operating_income",
+      "period": "FY2023",
+      "standard": 1602784000.0,
+      "company_facts": 1602784000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "income",
+      "line": "operating_income",
+      "period": "FY2024",
+      "standard": 2090483000.0,
+      "company_facts": 2090483000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "income",
+      "line": "operating_income",
+      "period": "FY2025",
+      "standard": 2043615000.0,
+      "company_facts": 2043615000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "income",
+      "line": "da",
+      "period": "FY2023",
+      "standard": 745443000.0,
+      "company_facts": 736474000.0,
+      "diff": 0.012178298215551397,
+      "ok": false
+    },
+    {
+      "statement": "income",
+      "line": "da",
+      "period": "FY2024",
+      "standard": 723860000.0,
+      "company_facts": 716396000.0,
+      "diff": 0.010418818642203474,
+      "ok": false
+    },
+    {
+      "statement": "income",
+      "line": "da",
+      "period": "FY2025",
+      "standard": 715348000.0,
+      "company_facts": 708252000.0,
+      "diff": 0.010019032773645539,
+      "ok": false
+    },
+    {
+      "statement": "income",
+      "line": "interest_expense",
+      "period": "FY2023",
+      "standard": 398551000.0,
+      "company_facts": 398551000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "income",
+      "line": "interest_expense",
+      "period": "FY2024",
+      "standard": 470469000.0,
+      "company_facts": 470469000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "income",
+      "line": "interest_expense",
+      "period": "FY2025",
+      "standard": 579926000.0,
+      "company_facts": 579926000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "cashflow",
+      "line": "cfo",
+      "period": "FY2023",
+      "standard": 2059031000.0,
+      "company_facts": 2059031000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "cashflow",
+      "line": "cfo",
+      "period": "FY2024",
+      "standard": 2022038000.0,
+      "company_facts": 2022038000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "cashflow",
+      "line": "cfo",
+      "period": "FY2025",
+      "standard": 1886500000.0,
+      "company_facts": 1886500000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "cashflow",
+      "line": "capex",
+      "period": "FY2023",
+      "standard": 567985000.0,
+      "company_facts": 567985000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "cashflow",
+      "line": "capex",
+      "period": "FY2024",
+      "standard": 555443000.0,
+      "company_facts": 555443000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "cashflow",
+      "line": "capex",
+      "period": "FY2025",
+      "standard": 575864000.0,
+      "company_facts": 575864000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "balance",
+      "line": "cash",
+      "period": "FY2023",
+      "standard": 380063000.0,
+      "company_facts": 380063000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "balance",
+      "line": "cash",
+      "period": "FY2024",
+      "standard": 794933000.0,
+      "company_facts": 794933000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "balance",
+      "line": "cash",
+      "period": "FY2025",
+      "standard": 676438000.0,
+      "company_facts": 676438000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "balance",
+      "line": "current_assets",
+      "period": "FY2023",
+      "standard": 3137906000.0,
+      "company_facts": 3137906000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "balance",
+      "line": "current_assets",
+      "period": "FY2024",
+      "standard": 3746072000.0,
+      "company_facts": 3746072000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "balance",
+      "line": "current_assets",
+      "period": "FY2025",
+      "standard": 4058003000.0,
+      "company_facts": 4058003000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "balance",
+      "line": "current_liabilities",
+      "period": "FY2023",
+      "standard": 2642214000.0,
+      "company_facts": 2642214000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "balance",
+      "line": "current_liabilities",
+      "period": "FY2024",
+      "standard": 2973410000.0,
+      "company_facts": 2973410000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "balance",
+      "line": "current_liabilities",
+      "period": "FY2025",
+      "standard": 3141634000.0,
+      "company_facts": 3141634000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "balance",
+      "line": "total_debt",
+      "period": "FY2023",
+      "standard": 8391633000.0,
+      "company_facts": 8391633000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "balance",
+      "line": "total_debt",
+      "period": "FY2024",
+      "standard": 9446770000.0,
+      "company_facts": 9446770000.0,
+      "diff": 0.0,
+      "ok": true
+    },
+    {
+      "statement": "balance",
+      "line": "total_debt",
+      "period": "FY2025",
+      "standard": 10273189000.0,
+      "company_facts": 10273189000.0,
+      "diff": 0.0,
+      "ok": true
+    }
   ],
-  "facility": {
-    "type": "Senior unsecured term loan",
-    "amount_usd": 500000000,
-    "tenor_years": 5,
-    "purpose": "General corporate purposes",
-    "note": "Hypothetical request. It gives the memo a specific facility to approve or decline."
-  }
+  "warnings": []
 }
