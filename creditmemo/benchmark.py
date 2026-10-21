@@ -46,9 +46,11 @@ def main(argv=None) -> int:
             r = x["ratings"].get(k)
             if not r:
                 return "—"
-            stale = " ⚠ stale" if r.get("stale") else ""
+            flag = " ⚠ dated" if r.get("stale") else " ⚠ unconfirmed" if r.get("unconfirmed") else ""
             out = f" {r['outlook']}" if r.get("outlook") else ""
-            return f"{r['rating']}{out} (= {x['equivalent'][k]}, {r['as_of']}){stale}"
+            when = f"last action {r['last_action']}" if r.get("last_action") else "no action date"
+            seen = ", seen on agency site" if r.get("as_of") else ""
+            return f"{r['rating']}{out} (= {x['equivalent'][k]}; {when}{seen}){flag}"
         gap = lambda v: "—" if v is None else f"{v:+d}"
         lines.append(f"| {x['name']} | **{x['grade']}** (base {x['base']}, score {x['weighted']:.2f}, "
                      f"stress +{x['notches']}) | {cell('sp')} | {cell('moodys')} | {cell('fitch')} | "

@@ -51,16 +51,16 @@ The 1-to-10 grade was frozen (`config/grade.sha256`) before any rating was looke
 
 | Company | Internal grade | S&P | Moody's | Fitch | Gap |
 |---|---|---|---|---|---|
-| Union Pacific | **5** (score 4.50) | A- (4) | A3 (4) | A- (4) | +1, tool harsher |
-| DaVita | **7** (base 6 + 1 stress notch) | BB (7) | Ba2 (7) ⚠ dated | — | 0 |
-| Kohl's | **8** (base 6 + 2 stress notches) | B+ (8) | B2 (9) | BB- (8) | 0 vs S&P and Fitch, -1 vs Moody's |
+| Union Pacific | **5** (score 4.50) | A- (4) ⚠ unconfirmed | A3 (4) | A- (4) | +1, tool harsher |
+| DaVita | **7** (base 6 + 1 stress notch) | BB (7) | Ba2 (7), last action 2024 | — | 0 |
+| Kohl's | **8** (base 6 + 2 stress notches) | B+ stable (8) | B2 positive (9) | BB- (8) | 0 vs S&P and Fitch, -1 vs Moody's |
 
 Why they differ:
 - **Union Pacific is one notch harsher.** The weighted score is 4.50, exactly on the rounding line. The current ratio (0.91x, score 8) costs it most: railroads run working capital below 1.0x by design. The grade is purely financial, so it gives no credit for scale or for being one of two western US Class I railroads, which the agencies weigh heavily. Not tuned after the fact; that would defeat the freeze.
 - **DaVita matches, but only after the stress notch.** On base-case ratios alone it grades 6 (BBB- equivalent), one notch better than the agencies. Stressed leverage (5.47x) adds the notch. The agencies also weigh what the ratios miss: reliance on government reimbursement, and buybacks that have pushed shareholders' equity negative.
-- **Kohl's matches S&P and Fitch, but its base-case ratios alone also say 6.** The two stress notches do the work. The real gap is trend: revenue fell from $17.5B to $15.5B in two years, and a one-year ratio snapshot can't see a shrinking business. Moody's B2 is one notch below.
+- **Kohl's matches S&P and Fitch, but its base-case ratios alone also say 6.** The two stress notches do the work. The real gap is trend: revenue fell from $17.5B to $15.5B in two years, and a one-year ratio snapshot can't see a shrinking business. Moody's B2 is one notch below. Since the 10-K, both agencies' outlooks have improved (Moody's to positive in April 2026, S&P to stable in June 2026); the ratings themselves haven't moved, so the comparison doesn't change.
 
-What this test can and can't show: three companies only show direction, not accuracy. It is partly circular, because the agencies lean on the same leverage and coverage ratios. One rating (DaVita at Moody's) comes from a dated source. The useful finding is the pattern: base-case ratios flatter the two weaker credits, and the stress overlay is what brings them in line.
+What this test can and can't show: three companies only show direction, not accuracy. It is partly circular, because the agencies lean on the same leverage and coverage ratios. Each rating records its last agency action and, separately, whether it was confirmed on the agency's own site; only Union Pacific's Fitch rating is confirmed that way so far, and Union Pacific's S&P rating rests on a 2025 news report. The useful finding is the pattern: base-case ratios flatter the two weaker credits, and the stress overlay is what brings them in line.
 
 ## Layout
 
