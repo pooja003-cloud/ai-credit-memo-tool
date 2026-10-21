@@ -1,0 +1,38 @@
+{
+  "defaults": {
+    "years": 3,
+    "facility": {
+      "type": "Senior unsecured term loan",
+      "amount_usd": 500000000,
+      "tenor_years": 5,
+      "purpose": "General corporate purposes",
+      "note": "Hypothetical request. It gives the memo a specific facility to approve or decline."
+    }
+  },
+  "companies": {
+    "DVA": {
+      "cik": 927066,
+      "name": "DaVita Inc.",
+      "role": "High yield, healthcare services",
+      "fiscal_label": "end_year",
+      "floating_rate_share": null,
+      "floating_rate_source": "TODO: 10-K Item 7A, page __"
+    },
+    "UNP": {
+      "cik": 100885,
+      "name": "Union Pacific Corporation",
+      "role": "Investment grade, capital-heavy",
+      "fiscal_label": "end_year",
+      "floating_rate_share": null,
+      "floating_rate_source": "TODO: 10-K Item 7A, page __"
+    },
+    "KSS": {
+      "cik": 885639,
+      "name": "Kohl's Corporation",
+      "role": "Stressed retailer, large lease book",
+      "fiscal_label": "start_year",
+      "floating_rate_share": null,
+      "floating_rate_source": "TODO: 10-K Item 7A, page __"
+    }
+  }
+}

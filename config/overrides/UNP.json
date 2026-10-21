@@ -1,0 +1,10 @@
+{
+  "_readme": "Per-company overrides. 'tags' entries go in front of the default list for that concept. 'manual' values are typed in from the 10-K and must carry a source. 'finance_leases_in_debt' is true when the debt tags already include finance leases, so they are not added twice.",
+  "tags": {},
+  "manual": {
+    "cash_taxes": {
+      "_todo": "No cash-taxes tag found on 2026-10-21. Enter income taxes paid from the cash flow statement or its note for each year, e.g. \"FY2025\": {\"value\": 0, \"source\": \"10-K FY2025, Note __, p. __\"}"
+    }
+  },
+  "finance_leases_in_debt": false
+}

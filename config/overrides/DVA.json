@@ -1,0 +1,7 @@
+{
+  "_readme": "See UNP.json for the format.",
+  "tags": {},
+  "manual": {},
+  "finance_leases_in_debt": false,
+  "_todo": "Check in the hand spread whether DaVita's long-term debt line already includes finance lease obligations; if so set finance_leases_in_debt to true."
+}

@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.DS_Store
+# Raw SEC downloads are large and re-downloadable; spreads and logs are committed
+data/cache/

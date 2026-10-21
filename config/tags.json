@@ -1,0 +1,146 @@
+{
+  "_readme": "Concepts in the standard spread. 'tags' are tried in order; the first tag with a value for the period wins. A tag can be a string or an object with negate (flip the sign), proxy (a stand-in that measures something slightly different, flagged in the spread) and note. 'sum_of' lists component tags added together when no total tag is found. 'default_zero' means a missing value counts as 0 and is flagged. 'fallback' names another concept to use when nothing is found.",
+
+  "revenue": {
+    "label": "Revenue",
+    "kind": "flow",
+    "tags": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "RevenueFromContractWithCustomerIncludingAssessedTax",
+      "SalesRevenueNet"
+    ]
+  },
+  "operating_income": {
+    "label": "Operating income",
+    "kind": "flow",
+    "tags": ["OperatingIncomeLoss"]
+  },
+  "da": {
+    "label": "Depreciation and amortization",
+    "kind": "flow",
+    "tags": [
+      "DepreciationDepletionAndAmortization",
+      "DepreciationAmortizationAndAccretionNet",
+      "DepreciationAndAmortization",
+      {"tag": "Depreciation", "note": "Depreciation only; check whether amortization is reported separately"}
+    ]
+  },
+  "interest_expense": {
+    "label": "Interest expense",
+    "kind": "flow",
+    "tags": [
+      "InterestExpense",
+      "InterestExpenseNonoperating",
+      "InterestExpenseDebt",
+      "InterestAndDebtExpense",
+      {"tag": "InterestIncomeExpenseNonoperatingNet", "negate": true, "note": "Interest expense net of interest income"},
+      {"tag": "InterestIncomeExpenseNet", "negate": true, "note": "Interest expense net of interest income"},
+      {"tag": "InterestPaidNet", "proxy": true, "note": "Cash interest paid, used in place of interest expense"},
+      {"tag": "InterestPaid", "proxy": true, "note": "Cash interest paid, used in place of interest expense"}
+    ]
+  },
+  "pretax_income": {
+    "label": "Pre-tax income",
+    "kind": "flow",
+    "tags": [
+      "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+      "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments"
+    ]
+  },
+  "net_income": {
+    "label": "Net income",
+    "kind": "flow",
+    "tags": ["NetIncomeLoss", "ProfitLoss"]
+  },
+  "cfo": {
+    "label": "Cash from operations",
+    "kind": "flow",
+    "tags": [
+      "NetCashProvidedByUsedInOperatingActivities",
+      "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations"
+    ]
+  },
+  "capex": {
+    "label": "Capital expenditures",
+    "kind": "flow",
+    "tags": ["PaymentsToAcquirePropertyPlantAndEquipment", "PaymentsToAcquireProductiveAssets"]
+  },
+  "cash_taxes": {
+    "label": "Cash taxes paid",
+    "kind": "flow",
+    "tags": [
+      "IncomeTaxesPaidNet",
+      "IncomeTaxesPaid",
+      {"tag": "CurrentIncomeTaxExpenseBenefit", "proxy": true, "note": "Current tax expense, used in place of cash taxes paid"}
+    ]
+  },
+  "operating_lease_cost": {
+    "label": "Operating lease cost (rent)",
+    "kind": "flow",
+    "tags": [
+      "OperatingLeaseCost",
+      {"tag": "OperatingLeasePayments", "proxy": true, "note": "Cash lease payments, used in place of lease cost"}
+    ]
+  },
+
+  "cash": {
+    "label": "Cash and equivalents",
+    "kind": "instant",
+    "tags": [
+      "CashAndCashEquivalentsAtCarryingValue",
+      {"tag": "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents", "proxy": true, "note": "Includes restricted cash"}
+    ]
+  },
+  "current_assets": {"label": "Current assets", "kind": "instant", "tags": ["AssetsCurrent"]},
+  "current_liabilities": {"label": "Current liabilities", "kind": "instant", "tags": ["LiabilitiesCurrent"]},
+  "total_assets": {"label": "Total assets", "kind": "instant", "tags": ["Assets"]},
+  "equity": {
+    "label": "Shareholders' equity",
+    "kind": "instant",
+    "tags": ["StockholdersEquity", "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest"]
+  },
+
+  "short_term_borrowings": {
+    "label": "Short-term borrowings",
+    "kind": "instant",
+    "tags": ["ShortTermBorrowings"],
+    "default_zero": true
+  },
+  "commercial_paper": {
+    "label": "Commercial paper",
+    "kind": "instant",
+    "tags": ["CommercialPaper"],
+    "default_zero": true
+  },
+  "current_ltd": {
+    "label": "Current portion of long-term debt",
+    "kind": "instant",
+    "tags": ["LongTermDebtCurrent", "LongTermDebtAndCapitalLeaseObligationsCurrent", "DebtCurrent"],
+    "default_zero": true
+  },
+  "noncurrent_ltd": {
+    "label": "Long-term debt, noncurrent",
+    "kind": "instant",
+    "tags": ["LongTermDebtNoncurrent", "LongTermDebtAndCapitalLeaseObligations"]
+  },
+  "finance_lease_liabilities": {
+    "label": "Finance lease liabilities",
+    "kind": "instant",
+    "tags": ["FinanceLeaseLiability"],
+    "sum_of": ["FinanceLeaseLiabilityCurrent", "FinanceLeaseLiabilityNoncurrent"],
+    "default_zero": true
+  },
+  "operating_lease_liabilities": {
+    "label": "Operating lease liabilities",
+    "kind": "instant",
+    "tags": ["OperatingLeaseLiability"],
+    "sum_of": ["OperatingLeaseLiabilityCurrent", "OperatingLeaseLiabilityNoncurrent"]
+  },
+  "scheduled_principal": {
+    "label": "Scheduled principal, next 12 months",
+    "kind": "instant",
+    "tags": ["LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths"],
+    "fallback": "current_ltd"
+  }
+}
