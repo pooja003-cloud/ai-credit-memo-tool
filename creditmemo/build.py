@@ -26,6 +26,7 @@ from .spread import LOG_FIELDS, build_spread, load_override, load_tag_spec, log_
 from .standard import build_standard
 from .stress import load_config as load_stress, run as run_stress
 from .grade import grade as compute_grade, load_config as load_grade
+from .proforma import run as run_proforma
 
 FACTS_DIR = ROOT / "outputs" / "xbrl_facts"
 
@@ -127,6 +128,15 @@ def assemble(ticker: str, company: dict, facility: dict, cf: dict, spec: dict, o
     stress = run_stress(ratio_inputs[latest], company.get("floating_rate_share") or 0.0,
                         sc["scenario"], sc["thresholds"])
     stress["period"] = latest
+    proforma = None
+    rate_fact = (company.get("facts") or {}).get("facility_rate")
+    if rate_fact and facility.get("amount_usd"):
+        proforma = run_proforma(ratio_inputs[latest], float(facility["amount_usd"]), rate_fact["value"],
+                                company.get("floating_rate_share") or 0.0, sc["scenario"], sc["thresholds"])
+        proforma.update({"period": latest, "rate_cite": rate_fact["cite"], "rate_label": rate_fact.get("label")})
+    else:
+        warnings.append("No facility_rate fact in config/companies.json; pro forma not computed")
+
     gr = compute_grade(ratios[latest], stress["stressed"]["breaches"], load_grade())
     gr["period"] = latest
     if company.get("floating_rate_share") is None:
@@ -155,6 +165,7 @@ def assemble(ticker: str, company: dict, facility: dict, cf: dict, spec: dict, o
         "cross_check": cross,
         "stress": stress,
         "grade": gr,
+        "proforma": proforma,
         "warnings": warnings,
     }, facts
 

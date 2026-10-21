@@ -3,36 +3,80 @@
   "looked_up": "2026-10-21",
   "companies": {
     "UNP": {
-      "sp": {"rating": "A-", "outlook": null, "last_action": null, "as_of": null, "unconfirmed": true,
-             "source": "Investing.com report on S&P's Norfolk Southern action, 2025-07-29: 'Union Pacific maintains its A- rating'. No S&P action on Union Pacific found; check disclosure.spglobal.com, including any CreditWatch tied to the merger",
-             "url": "https://www.investing.com/news/stock-market-news/norfolk-southern-outlook-revised-to-positive-at-sp-on-union-pacific-merger-plan-93CH-4158305"},
-      "moodys": {"rating": "A3", "outlook": "Stable", "last_action": "2025-07-29", "as_of": null,
-                 "source": "Cbonds: Moody's affirmed A3, outlook to stable from positive",
-                 "url": "https://cbonds.com/news/3516333/"},
-      "fitch": {"rating": "A-", "outlook": null, "last_action": "2026-07-15", "as_of": "2026-10-21",
-                "source": "Fitch Ratings entity page for Union Pacific Corporation: 'Ratings (15-Jul-2026): Long-term A-, Short-term F1', seen by Pooja 2026-10-21. Fitch placed UNP on Rating Watch Positive on 2025-07-29 after the merger announcement; current watch status not shown on the card",
-                "url": "https://www.fitchratings.com"},
+      "sp": {
+        "rating": "A-",
+        "outlook": null,
+        "last_action": null,
+        "as_of": null,
+        "unconfirmed": true,
+        "source": "Investing.com report on S&P's Norfolk Southern action, 2025-07-29: 'Union Pacific maintains its A- rating'. No S&P action on Union Pacific found; check disclosure.spglobal.com, including any CreditWatch tied to the merger",
+        "url": "https://www.investing.com/news/stock-market-news/norfolk-southern-outlook-revised-to-positive-at-sp-on-union-pacific-merger-plan-93CH-4158305"
+      },
+      "moodys": {
+        "rating": "A3",
+        "outlook": "Stable",
+        "last_action": "2025-07-29",
+        "as_of": null,
+        "source": "Cbonds: Moody's affirmed A3, outlook to stable from positive",
+        "url": "https://cbonds.com/news/3516333/"
+      },
+      "fitch": {
+        "rating": "A-",
+        "outlook": null,
+        "last_action": "2026-07-15",
+        "as_of": "2026-10-21",
+        "source": "Fitch Ratings entity page for Union Pacific Corporation: 'Ratings (15-Jul-2026): Long-term A-, Short-term F1', seen by Pooja 2026-10-21. Fitch placed UNP on Rating Watch Positive on 2025-07-29 after the merger announcement; current watch status not shown on the card",
+        "url": "https://www.fitchratings.com"
+      },
       "note": "Pending Norfolk Southern merger (closing expected late 2027) could move the rating either way."
     },
     "DVA": {
-      "sp": {"rating": "BB", "outlook": "Stable", "last_action": "2025-09-16", "as_of": null,
-             "source": "Cbonds: S&P affirmed DaVita at BB, outlook stable", "url": "https://cbonds.com/news/3590241/"},
-      "moodys": {"rating": "Ba2", "outlook": "Stable", "last_action": "2024-02-29", "as_of": null, "stale": true,
-                 "source": "Cbonds 2738325, 'Moody's upgrades DaVita to Ba2' (page blocked; date and rating from the search result only). Earlier: Moody's periodic review 2021-12-10 (Ba2 CFR)",
-                 "url": "https://cbonds.com/news/2738325/"},
+      "sp": {
+        "rating": "BB",
+        "outlook": "Stable",
+        "last_action": "2025-09-16",
+        "as_of": null,
+        "source": "Cbonds: S&P affirmed DaVita at BB, outlook stable",
+        "url": "https://cbonds.com/news/3590241/"
+      },
+      "moodys": {
+        "rating": "Ba2",
+        "outlook": "Stable",
+        "last_action": "2024-02-29",
+        "as_of": null,
+        "stale": true,
+        "source": "Cbonds 2738325 headline 'Moody's upgrades DaVita to Ba2' (page blocked, so the date is from the search result and unconfirmed). Earlier: Moody's periodic review 2021-12-10 (Ba2 CFR)",
+        "url": "https://cbonds.com/news/2738325/",
+        "last_action_confirmed": false
+      },
       "fitch": null
     },
     "KSS": {
-      "sp": {"rating": "B+", "outlook": "Stable", "last_action": "2026-06-17", "as_of": null,
-             "source": "Cbonds (2026-06-18): S&P affirmed B+, outlook revised to stable from negative",
-             "url": "https://cbonds.com/news/3972863/"},
-      "moodys": {"rating": "B2", "outlook": "Positive", "last_action": "2026-04-14", "as_of": null,
-                 "source": "SGB Media (2026-04-14): Moody's affirmed the B2 CFR and B2-PD, outlook to positive from stable on 'better-than-expected operating performance', SGL upgraded to SGL-2 from SGL-3",
-                 "url": "https://sgbonline.com/kohls-debt-ratings-outlook-raised-to-positive-by-moodys/"},
-      "fitch": {"rating": "BB-", "outlook": "Negative", "last_action": "2025-04-07", "as_of": null,
-                "source": "Investing.com: Fitch downgraded Kohl's to BB- from BB, outlook negative",
-                "url": "https://www.investing.com/news/stock-market-news/fitch-downgrades-kohls-rating-amidst-operational-challenges-93CH-3972055"},
-      "note": "Kohl's 10-K (ratings as of 2026-01-31) showed Moody's B2 stable, S&P B+ negative, Fitch BB- negative [7-LIQ ¶57-¶69]. Both outlook changes since then are improvements."
+      "sp": {
+        "rating": "B+",
+        "outlook": "Stable",
+        "last_action": "2026-06-17",
+        "as_of": null,
+        "source": "Cbonds (2026-06-18): S&P affirmed B+, outlook revised to stable from negative",
+        "url": "https://cbonds.com/news/3972863/"
+      },
+      "moodys": {
+        "rating": "B2",
+        "outlook": "Positive",
+        "last_action": "2026-04-14",
+        "as_of": null,
+        "source": "SGB Media (2026-04-14): Moody's affirmed the B2 CFR and B2-PD, outlook to positive from stable on 'better-than-expected operating performance', SGL upgraded to SGL-2 from SGL-3",
+        "url": "https://sgbonline.com/kohls-debt-ratings-outlook-raised-to-positive-by-moodys/"
+      },
+      "fitch": {
+        "rating": "BB-",
+        "outlook": "Negative",
+        "last_action": "2025-04-07",
+        "as_of": null,
+        "source": "Investing.com: Fitch downgraded Kohl's to BB- from BB, outlook negative",
+        "url": "https://www.investing.com/news/stock-market-news/fitch-downgrades-kohls-rating-amidst-operational-challenges-93CH-3972055"
+      },
+      "note": "Kohl's 10-K (ratings as of 2026-01-31) showed Moody's B2 stable, S&P B+ negative, Fitch BB- negative [7-LIQ \u00b657-\u00b669]. Both outlook changes since then are improvements."
     }
   }
 }

@@ -3939,5 +3939,131 @@
     "status": "FROZEN 2026-10-21. Signed off by Pooja before any agency rating was looked up. Do not edit: tests/test_grade.py checks this file's SHA-256.",
     "period": "FY2025"
   },
+  "proforma": {
+    "amount": 500000000.0,
+    "rate": 0.0551,
+    "added_interest": 27550000.0,
+    "inputs": {
+      "revenue": 13643069000.0,
+      "operating_income": 2043615000.0,
+      "da": 715348000.0,
+      "interest_expense": 607476000.0,
+      "short_term_borrowings": 109201000.0,
+      "commercial_paper": 0.0,
+      "current_ltd": 0.0,
+      "finance_lease_liabilities": 0.0,
+      "noncurrent_ltd": 10663988000.0,
+      "cash": 676438000.0,
+      "current_assets": 4058003000.0,
+      "current_liabilities": 3141634000.0,
+      "cfo": 1886500000.0,
+      "capex": 575864000.0,
+      "operating_lease_liabilities": 2601142000.0,
+      "operating_lease_cost": 702180000.0,
+      "cash_taxes": 176688000.0,
+      "scheduled_principal": 109201000.0
+    },
+    "derived": {
+      "ebitda": 2758963000.0,
+      "ebitda_margin": 0.20222451414707351,
+      "ebitdar": 3461143000.0,
+      "total_debt": 10773189000.0,
+      "net_debt": 10096751000.0,
+      "lease_adj_debt": 13374331000.0,
+      "fcf": 1310636000.0
+    },
+    "ratios": {
+      "debt_ebitda": 3.904796476067276,
+      "net_debt_ebitda": 3.6596181246359594,
+      "lease_adj_debt_ebitdar": 3.864137078416003,
+      "lease_adj_net_debt_ebitdar": 3.6686993285166203,
+      "interest_coverage": 4.541682305144565,
+      "dscr": 2.79960288944671,
+      "current_ratio": 1.2916854732282628
+    },
+    "ratio_notes": {},
+    "stress": {
+      "scenario": {
+        "revenue_shock": 0.2,
+        "margin_shock": 0.03,
+        "rate_shock": 0.02
+      },
+      "floating_rate_share": 0.0363,
+      "extra_interest": 7821335.214,
+      "base_margin": 0.20222451414707351,
+      "stressed_margin": 0.17222451414707352,
+      "base": {
+        "derived": {
+          "ebitda": 2758963000.0,
+          "ebitda_margin": 0.20222451414707351,
+          "ebitdar": 3461143000.0,
+          "total_debt": 10773189000.0,
+          "net_debt": 10096751000.0,
+          "lease_adj_debt": 13374331000.0,
+          "fcf": 1310636000.0
+        },
+        "ratios": {
+          "debt_ebitda": 3.904796476067276,
+          "net_debt_ebitda": 3.6596181246359594,
+          "lease_adj_debt_ebitdar": 3.864137078416003,
+          "lease_adj_net_debt_ebitdar": 3.6686993285166203,
+          "interest_coverage": 4.541682305144565,
+          "dscr": 2.79960288944671,
+          "current_ratio": 1.2916854732282628
+        },
+        "breaches": {
+          "debt_ebitda": false,
+          "interest_coverage": false,
+          "dscr": false
+        }
+      },
+      "stressed": {
+        "derived": {
+          "ebitda": 1879736744.0,
+          "ebitda_margin": 0.17222451414707352,
+          "ebitdar": 2581916744.0,
+          "total_debt": 10773189000.0,
+          "net_debt": 10096751000.0,
+          "lease_adj_debt": 13374331000.0,
+          "fcf": 1310636000.0
+        },
+        "ratios": {
+          "debt_ebitda": 5.731222222679497,
+          "net_debt_ebitda": 5.371364385054549,
+          "lease_adj_debt_ebitdar": 5.180000877673536,
+          "lease_adj_net_debt_ebitdar": 4.918010245492254,
+          "interest_coverage": 3.0550055012772463,
+          "dscr": 1.555814125738544,
+          "current_ratio": 1.2916854732282628
+        },
+        "ratio_notes": {},
+        "breaches": {
+          "debt_ebitda": true,
+          "interest_coverage": false,
+          "dscr": false
+        }
+      },
+      "thresholds": {
+        "debt_ebitda": {
+          "label": "Debt / EBITDA above 4.0x",
+          "op": ">",
+          "value": 4.0
+        },
+        "interest_coverage": {
+          "label": "EBITDA / interest below 2.0x",
+          "op": "<",
+          "value": 2.0
+        },
+        "dscr": {
+          "label": "DSCR below 1.0x",
+          "op": "<",
+          "value": 1.0
+        }
+      }
+    },
+    "period": "FY2025",
+    "rate_cite": "[DEBT \u00b6114]",
+    "rate_label": "Weighted average effective interest rate on all debt at December 31, 2025 (incl. caps and amortization); used as the pro forma cost of the new facility"
+  },
   "warnings": []
 }

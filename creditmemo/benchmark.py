@@ -49,6 +49,8 @@ def main(argv=None) -> int:
             flag = " ⚠ dated" if r.get("stale") else " ⚠ unconfirmed" if r.get("unconfirmed") else ""
             out = f" {r['outlook']}" if r.get("outlook") else ""
             when = f"last action {r['last_action']}" if r.get("last_action") else "no action date"
+            if r.get("last_action_confirmed") is False:
+                when += ", date unconfirmed"
             seen = ", seen on agency site" if r.get("as_of") else ""
             return f"{r['rating']}{out} (= {x['equivalent'][k]}; {when}{seen}){flag}"
         gap = lambda v: "—" if v is None else f"{v:+d}"

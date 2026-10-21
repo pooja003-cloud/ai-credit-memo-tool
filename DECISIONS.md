@@ -105,6 +105,14 @@ Correction: the first draft used 38.1% for DaVita, saying most caps "expire 2025
 - the caps only pay above their strikes: weighted average SOFR strike 4.32% (2026), 4.46% (2027), 4.43% (2028), 4.50% (2029), with 25bp step-ups at end-2026 and end-2027;
 - cover falls to $1.0B in 2029, inside the requested 5-year loan.
 
+## Pro forma (2026-10-21)
+
+The latest fiscal year as if the requested facility were already drawn (`creditmemo/proforma.py`):
+- debt + facility amount; interest + amount x rate, where the rate is a cited 10-K fact (DaVita: 5.51% weighted average effective rate on all debt, Debt note p. F-30);
+- EBITDA, cash, capex, cash taxes, leases and next-year principal unchanged (proceeds spent, bullet repayment);
+- the stress case is rerun on pro forma inputs with the company's floating share applied to pro forma debt.
+Shown next to reported figures in the memo; not graded. The grade stays on reported figures.
+
 ## Memo rules
 
 - Numbers only as placeholders, filled by `creditmemo/memo_check.py` from the spread (`{{FY2025.debt_ebitda}}`, `{{stress.dscr}}`, `{{growth.FY2025.revenue}}`, ...).

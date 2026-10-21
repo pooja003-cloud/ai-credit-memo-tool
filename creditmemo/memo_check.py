@@ -20,6 +20,8 @@ Placeholders
   {{abs:FY2025.cashflow.buybacks}}  any placeholder without its minus sign (for 'fell', 'buybacks of')
   {{fact.covenant_max_leverage}}    a 10-K figure entered by hand in config/companies.json with its citation
   {{rating.sp}}                     agency rating from config/agency_ratings.json, with its last action date
+  {{proforma.debt_ebitda}}          latest year with the requested facility added; also
+                                    proforma.stress.<ratio>, proforma.rate, proforma.added_interest
   {{grade.grade}}, {{grade.base_grade}}, {{grade.stress_notches}}, {{grade.weighted_score}},
   {{grade.score.dscr}} (a metric's 1-10 score)
 
@@ -202,6 +204,25 @@ class Values:
             if isinstance(v, (dict, list)):
                 return False, ""
             return True, f"{v:.2f}" if isinstance(v, float) else str(v)
+        if head == "proforma" and self.s.get("proforma"):
+            pf = self.s["proforma"]
+            if len(parts) == 2 and parts[1] in ("amount", "added_interest"):
+                return True, fmt(parts[1], pf[parts[1]], "money")
+            if len(parts) == 2 and parts[1] == "rate":
+                return True, f"{pf['rate'] * 100:.2f}%"
+            if len(parts) == 2 and parts[1] in pf["ratios"]:
+                return True, fmt(parts[1], pf["ratios"][parts[1]])
+            if len(parts) == 2 and parts[1] in pf["derived"]:
+                return True, fmt(parts[1], pf["derived"][parts[1]])
+            if len(parts) == 3 and parts[1] == "stress":
+                st = pf["stress"]["stressed"]
+                if parts[2] in st["ratios"]:
+                    return True, fmt(parts[2], st["ratios"][parts[2]])
+                if parts[2] in st["derived"]:
+                    return True, fmt(parts[2], st["derived"][parts[2]])
+                if parts[2] == "extra_interest":
+                    return True, fmt("", pf["stress"]["extra_interest"], "money")
+            return False, ""
         if head == "fact" and len(parts) == 2 and parts[1] in self.facts:
             f = self.facts[parts[1]]
             return True, fmt(parts[1], f["value"], f.get("kind", "money"))
@@ -209,6 +230,8 @@ class Values:
             r = self.ratings[parts[1]]
             outlook = f" {r['outlook'].split(' (')[0].lower()}" if r.get("outlook") else ""
             when = f"last action {r['last_action']}" if r.get("last_action") else "no dated action found"
+            if r.get("last_action") and r.get("last_action_confirmed") is False:
+                when += ", date unconfirmed"
             return True, f"{r['rating']}{outlook} ({AGENCY_NAMES.get(parts[1], parts[1])}, {when})"
         if head == "grade" and self.grade is not None and len(parts) == 3 and parts[1] == "score" \
                 and parts[2] in self.grade.get("scores", {}):

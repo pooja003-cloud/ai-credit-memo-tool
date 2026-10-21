@@ -84,6 +84,12 @@
           "kind": "pct",
           "cite": "[DEBT \u00b696]",
           "label": "Weighted average SOFR cap strike, 2029"
+        },
+        "facility_rate": {
+          "value": 0.0551,
+          "kind": "pct",
+          "cite": "[DEBT \u00b6114]",
+          "label": "Weighted average effective interest rate on all debt at December 31, 2025 (incl. caps and amortization); used as the pro forma cost of the new facility"
         }
       }
     },

@@ -83,7 +83,11 @@ def fact_sheet(spread: dict, v) -> str:
               "stress.revenue_shock", "stress.margin_shock", "stress.rate_shock", "floating_rate_share",
               "facility.type", "facility.amount_usd", "facility.tenor_years", "facility.purpose",
               "grade.grade", "grade.base_grade", "grade.stress_notches", "grade.weighted_score"] +
-             ["grade.score." + k for k in spread["grade"]["scores"]])
+             ["grade.score." + k for k in spread["grade"]["scores"]] +
+             (["proforma.amount", "proforma.rate", "proforma.added_interest", "proforma.total_debt"] +
+              ["proforma." + k for k in spread["proforma"]["ratios"]] +
+              ["proforma.stress." + k for k in ("debt_ebitda", "interest_coverage", "dscr", "extra_interest")]
+              if spread.get("proforma") else []))
     for n in names:
         ok, txt = v.resolve(n)
         if ok:
@@ -134,10 +138,10 @@ A summary table right under the title, with rows: Internal grade ({{{{grade.grad
 
 ## 1. Request
 ## 2. Borrower overview
-## 3. Financial analysis  (include one table of key ratios for the three fiscal years using placeholders; then discuss trends)
+## 3. Financial analysis  (include one table of key ratios for the three fiscal years using placeholders; then discuss trends; end with a short pro forma paragraph: the latest year with the requested facility added, using the proforma placeholders)
 ## 4. Strengths
 ## 5. Risks and mitigants
-## 6. Stress test  (explain the scenario using the stress placeholders and say which thresholds break)
+## 6. Stress test  (explain the scenario using the stress placeholders and say which thresholds break; add the pro forma stressed ratios. Interest rate caps pay only when SOFR is at or above the strike, so capped debt still bears rate rises up to the strike: treat the stress extra interest as a lower bound)
 ## 7. Risk grade  (the internal 1-to-10 grade, 1 = best, from {{{{grade.grade}}}} and its parts; stress notches make the grade WORSE, i.e. a higher number)
 ## 8. Recommendation  (your own judgment on approve or decline; it may differ from what the grade suggests, but explain why)
 

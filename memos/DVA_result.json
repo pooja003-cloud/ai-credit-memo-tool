@@ -4,9 +4,9 @@
   "recommendation": "Approve",
   "grade": 7,
   "stats": {
-    "placeholders": 128,
-    "citations": 51,
-    "sentences_checked": 77
+    "placeholders": 146,
+    "citations": 52,
+    "sentences_checked": 86
   },
   "review_edits": [
     {
@@ -40,5 +40,19 @@
       "Stress shocks now render as 300bp and 200bp instead of 3.0% and 2.0%"
     ],
     "new_10k_facts": "config/companies.json DVA.facts: covenant levels, NCI puts 2026, revolver, unhedged debt, cap coverage and strikes, each with its 10-K citation"
+  },
+  "review_round_3": {
+    "date": "2026-10-21",
+    "by": "Pooja (review), Claude (edits)",
+    "draft_before": "memos/DVA_draft_before_review3.md",
+    "changes": [
+      "Stress: cap logic was reversed ('protected while SOFR stays below the strikes'). Rewritten: a cap pays only at or above its strike, so capped debt bears rises up to the strike and the stress extra interest is a lower bound. The checker passed the wrong version; it was caught in human review",
+      "Pro forma layer for the $500M facility at 5.51% (weighted average effective rate on all debt [DEBT \u00b6114]): debt/EBITDA 3.90x, coverage 4.54x, DSCR 2.80x; stressed 5.73x / 3.06x / 1.56x. Paragraphs added to sections 3 and 6; the grade stays on reported figures",
+      "Condition (c): covenant headroom now measured above pro forma leverage (3.90x), not reported (3.72x); plus a note that the credit agreement's covenant uses its own EBITDA definition",
+      "Summary box: 'probably above' the 5.00x covenant (different EBITDA definition); leverage key reason shows the pro forma figure",
+      "Moody's Ba2 last-action date marked 'date unconfirmed' (Cbonds headline only)",
+      "NCI risk: DSCR does not deduct NCI distributions; removed the FCF-definition mitigant and its decorative citation",
+      "'Strong cash generation' -> 'Solid, though declining' with the CFO decline"
+    ]
   }
 }
