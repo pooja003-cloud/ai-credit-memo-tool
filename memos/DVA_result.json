@@ -4,9 +4,9 @@
   "recommendation": "Approve",
   "grade": 7,
   "stats": {
-    "placeholders": 94,
-    "citations": 46,
-    "sentences_checked": 73
+    "placeholders": 128,
+    "citations": 51,
+    "sentences_checked": 77
   },
   "review_edits": [
     {
@@ -23,5 +23,22 @@
   ],
   "citation_spot_check": "21 citations read against the full 10-K paragraph on 2026-10-21; all support their sentence. Confirmed: max leverage covenant 5.00x through 2028 [DEBT \u00b658], subsidiary guarantees on the 6.75% notes [DEBT \u00b663], no single commercial payor above 10% [1 \u00b676].",
   "recommendation_vs_grade": "Approve with conditions vs internal grade 7 (BB+/BB equivalent; S&P BB, Moody's Ba2). Consistent: sub-investment-grade but serviceable. The conditions target what the grade and stress flag: a leverage covenant set between base ({{FY2025.debt_ebitda}}) and stressed ({{stress.debt_ebitda}}) leverage, no buybacks from proceeds, matching subsidiary guarantees, and hedging past 2028.",
-  "known_weakness": "Rule 2 (every sentence needs a placeholder or citation) pushes Claude to attach citations to pure judgment sentences, e.g. 'The conditions below address each of these points [DEBT \u00b658, \u00b663, \u00b695]'. The citations are relevant but decorative."
+  "known_weakness": "Rule 2 (every sentence needs a placeholder or citation) pushes Claude to attach citations to pure judgment sentences, e.g. 'The conditions below address each of these points [DEBT \u00b658, \u00b663, \u00b695]'. The citations are relevant but decorative.",
+  "review_round_2": {
+    "date": "2026-10-21",
+    "by": "Pooja (review), Claude (edits)",
+    "draft_before": "memos/DVA_draft_pass2_before_review.md",
+    "changes": [
+      "Summary table at the top: grade, recommendation, S&P and Moody's ratings with last-action dates, three key reasons",
+      "Covenant step-down to 4.50x after 2028 [DEBT \u00b658] added to the cap-coverage risk and to condition (c); condition (d) names the 4.00x restriction level",
+      "Liquidity: $1,408M of the $1,532M NCI puts in the 2026 column vs $676M cash [7 \u00b6352]; mitigant: undrawn $1.5B revolver [7-LIQ \u00b681]",
+      "EBITDA excluding the FY2024 ownership gain (derived ebitda_ex_unusual): FY2025 grows 2.0% instead of falling 2.0%",
+      "New NCI risk using FY2025 net income attributable to noncontrolling interests",
+      "abs: formatter on buybacks, capex, the ownership gain and 'fell' growth; the new sign check caught one more plain buybacks placeholder in section 8",
+      "Wording: interest expense over two years with FY2024 shown; DSCR 'rose to' with principal falling; CFO decline added; 'Limited unhedged floating-rate exposure'; stress extra interest is the unhedged share only",
+      "Decorative citation in section 8 replaced by [judgment]",
+      "Stress shocks now render as 300bp and 200bp instead of 3.0% and 2.0%"
+    ],
+    "new_10k_facts": "config/companies.json DVA.facts: covenant levels, NCI puts 2026, revolver, unhedged debt, cap coverage and strikes, each with its 10-K citation"
+  }
 }

@@ -1,3 +1,5 @@
+<!-- Rendered from memos/DVA_draft.md by creditmemo/memo_check.py. Every number comes from outputs/spreads/DVA.json, config/companies.json (cited 10-K facts) or config/agency_ratings.json; Claude (claude -p) wrote placeholders only. Check: 128 placeholders, 51 citations, 0 errors. Drafted in 2 attempts (attempt 1 failed with 7 errors, memos/DVA_check_1.json), then two review rounds, all re-checked; edits logged in memos/DVA_result.json. -->
+
 # Credit memo: DaVita Inc.
 
 | Summary | |
