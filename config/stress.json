@@ -1,13 +1,26 @@
 {
   "_readme": "Stress scenario and threshold flags. The demo page reads this file, so its sliders start at these values and use the same formulas (see creditmemo/stress.py).",
   "scenario": {
-    "revenue_shock": 0.20,
+    "revenue_shock": 0.2,
     "margin_shock": 0.03,
     "rate_shock": 0.02
   },
   "thresholds": {
-    "debt_ebitda": {"label": "Debt / EBITDA above 4.0x", "op": ">", "value": 4.0},
-    "interest_coverage": {"label": "EBITDA / interest below 2.0x", "op": "<", "value": 2.0},
-    "dscr": {"label": "DSCR below 1.0x (proposed)", "op": "<", "value": 1.0}
-  }
+    "debt_ebitda": {
+      "label": "Debt / EBITDA above 4.0x",
+      "op": ">",
+      "value": 4.0
+    },
+    "interest_coverage": {
+      "label": "EBITDA / interest below 2.0x",
+      "op": "<",
+      "value": 2.0
+    },
+    "dscr": {
+      "label": "DSCR below 1.0x",
+      "op": "<",
+      "value": 1.0
+    }
+  },
+  "_why_leverage_without_leases": "The stress leverage test uses funded debt / EBITDA, the way bank covenants are usually written. The grade uses (debt + leases) / EBITDAR, the way rating agencies compare companies with different lease books. Same result on either measure for all three companies (FY2025 stressed): DVA 5.47x / 4.99x, UNP 3.44x / 3.43x, KSS 5.66x / 6.92x."
 }

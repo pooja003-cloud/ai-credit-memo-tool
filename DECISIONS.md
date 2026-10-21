@@ -74,7 +74,8 @@ EBITDA is reported EBITDA: no add-backs. Unusual items are shown on their own li
 - Stressed EBITDA = stressed revenue × (base EBITDA margin − 3 percentage points)
 - Extra interest = 2% × floating-rate share × total debt
 - Capex, cash taxes, lease cost and scheduled principal held at base (conservative)
-- Thresholds flagged: leverage above 4.0x, interest coverage below 2.0x
+- Thresholds flagged: debt / EBITDA above 4.0x, interest coverage below 2.0x, DSCR below 1.0x (cash flow doesn't cover interest plus scheduled principal)
+- Why the stress uses leverage without leases while the grade uses leverage with leases: the stress mimics a bank covenant (funded debt / EBITDA); the grade mimics agency practice (lease-adjusted). FY2025 stressed results are the same either way: DaVita 5.47x / 4.99x (breaks), Union Pacific 3.44x / 3.43x (holds), Kohl's 5.66x / 6.92x (breaks)
 
 ## Data rules
 
@@ -90,15 +91,19 @@ EBITDA is reported EBITDA: no add-backs. Unusual items are shown on their own li
 - Fiscal year labels follow the company. Kohl's year ending 31 Jan 2026 is FY2025.
 - EDGAR: User-Agent with a contact (from `SEC_USER_AGENT`), at most 4 requests a second, every response cached.
 
-## Floating-rate share (DRAFT, 2026-10-21 - confirm)
+## Floating-rate share (2026-10-21)
 
-From each latest 10-K; the quote and page are also in `config/companies.json`.
+From each latest 10-K; quotes and pages are also in `config/companies.json`.
 
-| Company | Share | Source | Basis |
-|---|---|---|---|
-| DaVita | 38.1% | Note 12, p. F-26 and F-28 | Term Loans A-2 and B-2 (SOFR + margin) $3.87B of $10.16B debt principal. Caps (SOFR max 4.00-4.50%) cover all but $369M (3.6% unhedged); gross share used because caps limit but don't remove the cost of a +200bp shock and most expire 2025-2027 |
-| Union Pacific | 0% | Item 7 Other Matters (Item 7A refers there), p. 39 | "At both December 31, 2025, and 2024, we did not have variable-rate debt." |
-| Kohl's | 0% | Item 7A, p. 37 | All long-term debt fixed; revolver SOFR-based but undrawn at year end. Rating-linked coupon step-ups on $425M notes are a repricing risk for the memo, not floating exposure |
+| Company | Share | Status | Source | Basis |
+|---|---|---|---|---|
+| DaVita | 3.6% | Confirmed | Note 12: debt table p. F-26, unhedged balance p. F-28, cap table p. F-29; Item 7A p. 69 | Term Loans A-2 and B-2 ($3.87B, SOFR + margin). Caps cover $3.5B in each year 2025–2028 and $1.0B in 2029, leaving $369M of $10.16B debt principal unhedged (3.6%). Item 7A agrees: +100bp cuts net income by about $5.3M after caps |
+| Union Pacific | 0% | Draft | Item 7 Other Matters (Item 7A refers there), p. 39 | "At both December 31, 2025, and 2024, we did not have variable-rate debt." |
+| Kohl's | 0% | Draft | Item 7A, p. 37 | All long-term debt fixed; revolver SOFR-based but undrawn at year end. Rating-linked coupon step-ups on $425M notes are a repricing risk for the memo, not floating exposure |
+
+Correction: the first draft used 38.1% for DaVita, saying most caps "expire 2025–2027". That misread the cap table: total notional coverage is $3.5B through 2028 (p. F-29), and MD&A says the caps shield exposure "through 2029". The unhedged share is the accurate input. What it leaves out goes in the memo as risks:
+- the caps only pay above their strikes: weighted average SOFR strike 4.32% (2026), 4.46% (2027), 4.43% (2028), 4.50% (2029), with 25bp step-ups at end-2026 and end-2027;
+- cover falls to $1.0B in 2029, inside the requested 5-year loan.
 
 ## Memo rules
 
@@ -108,7 +113,7 @@ From each latest 10-K; the quote and page are also in `config/companies.json`.
 - The draft fails on any hand-typed number (years, FY labels, Item/Note numbers, 10-K and instrument names like Term Loan A-2 are allowed), unknown placeholder, bad citation, uncited sentence, misquote, or a missing "Recommendation: Approve/Decline" line.
 - The recommendation is the one judgment Claude makes; it is compared with the grade afterwards.
 
-## Risk grade (DRAFT - awaiting sign-off; freeze before looking up any agency rating)
+## Risk grade (FROZEN 2026-10-21, signed off before any agency rating was looked up)
 
 1 = best, 10 = worst. Latest fiscal year, base case. Rules in `config/grade.json`, code in `creditmemo/grade.py`.
 
@@ -130,4 +135,5 @@ From each latest 10-K; the quote and page are also in `config/companies.json`.
 - Stress overlay: one notch worse per stress threshold broken (leverage > 4.0x, coverage < 2.0x, DSCR < 1.0x), at most two.
 - Why these choices: leverage is lease-adjusted so retailers and railroads compare fairly; leverage and coverage carry 70% because they drive agency ratings; DSCR adds the maturity wall; the current ratio gets little weight because some strong credits (railroads) run below 1.0x by design. Scale, business mix and management are left out on purpose: the grade is purely financial, and that is a known reason it will differ from agency ratings.
 - Agency comparison map (used only after grading): 1 = AAA to AA, 2 = AA-/A+, 3 = A, 4 = A-/BBB+, 5 = BBB, 6 = BBB-, 7 = BB+/BB, 8 = BB-/B+, 9 = B/B-, 10 = CCC and below. Grade 6 and better is investment grade.
+- Frozen: `config/grade.sha256` pins the file, and a test fails if it changes.
 - Known limit: I (Claude) have rough memories of these companies' ratings, so the bands were set from generic conventions without running them on the three companies. The grades are computed only after sign-off.

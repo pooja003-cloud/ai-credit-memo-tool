@@ -15,11 +15,15 @@
       "name": "DaVita Inc.",
       "role": "High yield, healthcare services",
       "fiscal_label": "end_year",
-      "floating_rate_share": 0.381,
-      "floating_rate_source": "10-K FY2025, Note 12 Long-term debt, p. F-26 (debt table) and p. F-28 (caps)",
-      "floating_rate_status": "DRAFT - confirm",
-      "floating_rate_basis": "Term Loan A-2 $2,000,000k + Term Loan B-2 $1,868,559k (SOFR + margin) = $3,868,559k of $10,159,463k debt principal (38.1%). Interest rate caps (SOFR max 4.00-4.50%) cover all of TLB-2 and part of TLA-2; only $368,559k is fully unhedged (3.6%). Gross share used: the caps limit but do not remove the cost of a +200bp shock, and most expire 2025-2027.",
-      "floating_rate_quote": "The remaining $368,559 outstanding principal balance of Term Loan A-2 is subject to SOFR-based interest rate volatility."
+      "floating_rate_share": 0.0363,
+      "floating_rate_source": "10-K FY2025, Note 12 Long-term debt: debt table p. F-26, unhedged balance p. F-28 [DEBT \u00b661], cap table p. F-29 [DEBT \u00b673, \u00b695-\u00b6100]; Item 7A p. 69 [7A \u00b65]",
+      "floating_rate_status": "CONFIRMED 2026-10-21 (Pooja): unhedged share only",
+      "floating_rate_basis": "Floating debt is Term Loan A-2 $2,000,000k + Term Loan B-2 $1,868,559k (SOFR + margin). Interest rate caps cover $3,500,000k of it in each year 2025-2028 and $1,000,000k in 2029, so only $368,559k of $10,159,463k debt principal (3.6%) is unhedged. Item 7A agrees: +100bp would cut net income by about $5.3M after caps. Not captured by 3.6%: the caps only pay above their strikes (weighted average 4.32% in 2026 rising to 4.50% in 2029, with 25bp step-ups at end-2026 and end-2027), and cover falls to $1.0B in 2029, inside a 5-year loan. Both are memo risks, not stress inputs.",
+      "floating_rate_quote": "The remaining $368,559 outstanding principal balance of Term Loan A-2 is subject to SOFR-based interest rate volatility.",
+      "memo_points": [
+        "Interest rate caps protect only above their strikes: weighted average SOFR strike 4.32% in 2026, 4.46% in 2027, 4.43% in 2028, 4.50% in 2029, with 25bp step-ups at end-2026 and end-2027 [DEBT \u00b696, \u00b697-\u00b6100].",
+        "Cap coverage drops from $3.5B (2025-2028) to $1.0B in 2029, inside the requested 5-year tenor [DEBT \u00b695]; management describes the caps as shielding exposure 'through 2029' [7 \u00b632]."
+      ]
     },
     "UNP": {
       "cik": 100885,

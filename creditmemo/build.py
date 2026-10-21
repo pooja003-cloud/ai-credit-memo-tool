@@ -25,6 +25,7 @@ from .ratios import RATIO_LABELS, compute_period
 from .spread import LOG_FIELDS, build_spread, load_override, load_tag_spec, log_rows
 from .standard import build_standard
 from .stress import load_config as load_stress, run as run_stress
+from .grade import grade as compute_grade, load_config as load_grade
 
 FACTS_DIR = ROOT / "outputs" / "xbrl_facts"
 
@@ -121,6 +122,8 @@ def assemble(ticker: str, company: dict, facility: dict, cf: dict, spec: dict, o
     stress = run_stress(ratio_inputs[latest], company.get("floating_rate_share") or 0.0,
                         sc["scenario"], sc["thresholds"])
     stress["period"] = latest
+    gr = compute_grade(ratios[latest], stress["stressed"]["breaches"], load_grade())
+    gr["period"] = latest
     if company.get("floating_rate_share") is None:
         warnings.append("Floating-rate share not set; stress uses 0%")
     elif "DRAFT" in (company.get("floating_rate_status") or ""):
@@ -146,6 +149,7 @@ def assemble(ticker: str, company: dict, facility: dict, cf: dict, spec: dict, o
         "ties_ok": std["ties_ok"],
         "cross_check": cross,
         "stress": stress,
+        "grade": gr,
         "warnings": warnings,
     }, facts
 
@@ -195,6 +199,10 @@ def main(argv=None) -> int:
               + "  ".join(f"{RATIO_LABELS[k]} {fmt_ratio(st['stressed']['ratios'][k])}"
                           for k in ("debt_ebitda", "interest_coverage", "dscr"))
               + (f"  BREAKS: {'; '.join(flags)}" if flags else "  no breaches"))
+        g = spread["grade"]
+        print(f"  Grade {g['grade']} (base {g['base_grade']}, weighted score {g['weighted_score']:.2f}, "
+              f"stress +{g['stress_notches']}): "
+              + ", ".join(f"{k} {v['score']}" for k, v in g["scores"].items()))
         for x in spread["cross_check"]:
             if not x["ok"]:
                 print(f"  ~ cross-check {x['period']} {x['line']}: standard {x['standard']/1e6:,.1f}m "

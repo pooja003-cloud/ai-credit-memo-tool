@@ -3018,11 +3018,45 @@
         "value": 2.0
       },
       "dscr": {
-        "label": "DSCR below 1.0x (proposed)",
+        "label": "DSCR below 1.0x",
         "op": "<",
         "value": 1.0
       }
     },
+    "period": "FY2025"
+  },
+  "grade": {
+    "grade": 8,
+    "base_grade": 6,
+    "weighted_score": 6.1,
+    "stress_notches": 2,
+    "stress_breaches": [
+      "debt_ebitda",
+      "dscr"
+    ],
+    "scores": {
+      "lease_adj_debt_ebitdar": {
+        "value": 4.156739811912225,
+        "score": 8,
+        "weight": 0.4
+      },
+      "interest_coverage": {
+        "value": 4.597222222222222,
+        "score": 6,
+        "weight": 0.3
+      },
+      "dscr": {
+        "value": 3.1284722222222223,
+        "score": 3,
+        "weight": 0.2
+      },
+      "current_ratio": {
+        "value": 1.4583168708020546,
+        "score": 5,
+        "weight": 0.1
+      }
+    },
+    "status": "FROZEN 2026-10-21. Signed off by Pooja before any agency rating was looked up. Do not edit: tests/test_grade.py checks this file's SHA-256.",
     "period": "FY2025"
   },
   "warnings": [

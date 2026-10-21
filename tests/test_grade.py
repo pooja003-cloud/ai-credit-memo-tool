@@ -46,3 +46,13 @@ def test_agency_map():
     assert agency_equivalent("Ba2", CFG) == 7
     assert agency_equivalent("A-", CFG) == 4
     assert agency_equivalent("XYZ", CFG) is None
+
+
+def test_grade_config_is_frozen():
+    """config/grade.json was signed off before any agency rating was looked up.
+    Changing it means re-opening that decision, so the hash is pinned."""
+    import hashlib
+    from creditmemo import CONFIG_DIR
+    expected = (CONFIG_DIR / "grade.sha256").read_text().split()[0]
+    assert hashlib.sha256((CONFIG_DIR / "grade.json").read_bytes()).hexdigest() == expected
+    assert CFG["status"].startswith("FROZEN")

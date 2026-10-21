@@ -11,11 +11,11 @@
     "purpose": "General corporate purposes",
     "note": "Hypothetical request. It gives the memo a specific facility to approve or decline."
   },
-  "floating_rate_share": 0.381,
-  "floating_rate_source": "10-K FY2025, Note 12 Long-term debt, p. F-26 (debt table) and p. F-28 (caps)",
-  "floating_rate_status": "DRAFT - confirm",
+  "floating_rate_share": 0.0363,
+  "floating_rate_source": "10-K FY2025, Note 12 Long-term debt: debt table p. F-26, unhedged balance p. F-28 [DEBT \u00b661], cap table p. F-29 [DEBT \u00b673, \u00b695-\u00b6100]; Item 7A p. 69 [7A \u00b65]",
+  "floating_rate_status": "CONFIRMED 2026-10-21 (Pooja): unhedged share only",
   "floating_rate_quote": "The remaining $368,559 outstanding principal balance of Term Loan A-2 is subject to SOFR-based interest rate volatility.",
-  "floating_rate_basis": "Term Loan A-2 $2,000,000k + Term Loan B-2 $1,868,559k (SOFR + margin) = $3,868,559k of $10,159,463k debt principal (38.1%). Interest rate caps (SOFR max 4.00-4.50%) cover all of TLB-2 and part of TLA-2; only $368,559k is fully unhedged (3.6%). Gross share used: the caps limit but do not remove the cost of a +200bp shock, and most expire 2025-2027.",
+  "floating_rate_basis": "Floating debt is Term Loan A-2 $2,000,000k + Term Loan B-2 $1,868,559k (SOFR + margin). Interest rate caps cover $3,500,000k of it in each year 2025-2028 and $1,000,000k in 2029, so only $368,559k of $10,159,463k debt principal (3.6%) is unhedged. Item 7A agrees: +100bp would cut net income by about $5.3M after caps. Not captured by 3.6%: the caps only pay above their strikes (weighted average 4.32% in 2026 rising to 4.50% in 2029, with 25bp step-ups at end-2026 and end-2027), and cover falls to $1.0B in 2029, inside a 5-year loan. Both are memo risks, not stress inputs.",
   "periods": [
     {
       "label": "FY2023"
@@ -3829,8 +3829,8 @@
       "margin_shock": 0.03,
       "rate_shock": 0.02
     },
-    "floating_rate_share": 0.381,
-    "extra_interest": 78281700.18,
+    "floating_rate_share": 0.0363,
+    "extra_interest": 7458335.214,
     "base_margin": 0.20222451414707351,
     "stressed_margin": 0.17222451414707352,
     "base": {
@@ -3873,8 +3873,8 @@
         "net_debt_ebitda": 5.105369691065634,
         "lease_adj_debt_ebitdar": 4.986346298701567,
         "lease_adj_net_debt_ebitdar": 4.7243556665202835,
-        "interest_coverage": 2.855841314961749,
-        "dscr": 1.4688193445495372,
+        "interest_coverage": 3.200181944442153,
+        "dscr": 1.6181574417637064,
         "current_ratio": 1.2916854732282628
       },
       "ratio_notes": {},
@@ -3896,14 +3896,45 @@
         "value": 2.0
       },
       "dscr": {
-        "label": "DSCR below 1.0x (proposed)",
+        "label": "DSCR below 1.0x",
         "op": "<",
         "value": 1.0
       }
     },
     "period": "FY2025"
   },
-  "warnings": [
-    "Floating-rate share 38.1% is a draft; confirm it"
-  ]
+  "grade": {
+    "grade": 7,
+    "base_grade": 6,
+    "weighted_score": 5.7,
+    "stress_notches": 1,
+    "stress_breaches": [
+      "debt_ebitda"
+    ],
+    "scores": {
+      "lease_adj_debt_ebitdar": {
+        "value": 3.7196761301107757,
+        "score": 7,
+        "weight": 0.4
+      },
+      "interest_coverage": {
+        "value": 4.75743974231195,
+        "score": 6,
+        "weight": 0.3
+      },
+      "dscr": {
+        "value": 2.911525741989503,
+        "score": 3,
+        "weight": 0.2
+      },
+      "current_ratio": {
+        "value": 1.2916854732282628,
+        "score": 5,
+        "weight": 0.1
+      }
+    },
+    "status": "FROZEN 2026-10-21. Signed off by Pooja before any agency rating was looked up. Do not edit: tests/test_grade.py checks this file's SHA-256.",
+    "period": "FY2025"
+  },
+  "warnings": []
 }
