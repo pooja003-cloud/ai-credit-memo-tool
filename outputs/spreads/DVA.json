@@ -11,8 +11,11 @@
     "purpose": "General corporate purposes",
     "note": "Hypothetical request. It gives the memo a specific facility to approve or decline."
   },
-  "floating_rate_share": null,
-  "floating_rate_source": "TODO: 10-K Item 7A, page __",
+  "floating_rate_share": 0.381,
+  "floating_rate_source": "10-K FY2025, Note 12 Long-term debt, p. F-26 (debt table) and p. F-28 (caps)",
+  "floating_rate_status": "DRAFT - confirm",
+  "floating_rate_quote": "The remaining $368,559 outstanding principal balance of Term Loan A-2 is subject to SOFR-based interest rate volatility.",
+  "floating_rate_basis": "Term Loan A-2 $2,000,000k + Term Loan B-2 $1,868,559k (SOFR + margin) = $3,868,559k of $10,159,463k debt principal (38.1%). Interest rate caps (SOFR max 4.00-4.50%) cover all of TLB-2 and part of TLA-2; only $368,559k is fully unhedged (3.6%). Gross share used: the caps limit but do not remove the cost of a +200bp shock, and most expire 2025-2027.",
   "periods": [
     {
       "label": "FY2023"
@@ -3820,5 +3823,87 @@
       "ok": true
     }
   ],
-  "warnings": []
+  "stress": {
+    "scenario": {
+      "revenue_shock": 0.2,
+      "margin_shock": 0.03,
+      "rate_shock": 0.02
+    },
+    "floating_rate_share": 0.381,
+    "extra_interest": 78281700.18,
+    "base_margin": 0.20222451414707351,
+    "stressed_margin": 0.17222451414707352,
+    "base": {
+      "derived": {
+        "ebitda": 2758963000.0,
+        "ebitda_margin": 0.20222451414707351,
+        "ebitdar": 3461143000.0,
+        "total_debt": 10273189000.0,
+        "net_debt": 9596751000.0,
+        "lease_adj_debt": 12874331000.0,
+        "fcf": 1310636000.0
+      },
+      "ratios": {
+        "debt_ebitda": 3.7235689641361627,
+        "net_debt_ebitda": 3.478390612704846,
+        "lease_adj_debt_ebitdar": 3.7196761301107757,
+        "lease_adj_net_debt_ebitdar": 3.5242383802113926,
+        "interest_coverage": 4.75743974231195,
+        "dscr": 2.911525741989503,
+        "current_ratio": 1.2916854732282628
+      },
+      "breaches": {
+        "debt_ebitda": false,
+        "interest_coverage": false,
+        "dscr": false
+      }
+    },
+    "stressed": {
+      "derived": {
+        "ebitda": 1879736744.0,
+        "ebitda_margin": 0.17222451414707352,
+        "ebitdar": 2581916744.0,
+        "total_debt": 10273189000.0,
+        "net_debt": 9596751000.0,
+        "lease_adj_debt": 12874331000.0,
+        "fcf": 1310636000.0
+      },
+      "ratios": {
+        "debt_ebitda": 5.465227528690582,
+        "net_debt_ebitda": 5.105369691065634,
+        "lease_adj_debt_ebitdar": 4.986346298701567,
+        "lease_adj_net_debt_ebitdar": 4.7243556665202835,
+        "interest_coverage": 2.855841314961749,
+        "dscr": 1.4688193445495372,
+        "current_ratio": 1.2916854732282628
+      },
+      "ratio_notes": {},
+      "breaches": {
+        "debt_ebitda": true,
+        "interest_coverage": false,
+        "dscr": false
+      }
+    },
+    "thresholds": {
+      "debt_ebitda": {
+        "label": "Debt / EBITDA above 4.0x",
+        "op": ">",
+        "value": 4.0
+      },
+      "interest_coverage": {
+        "label": "EBITDA / interest below 2.0x",
+        "op": "<",
+        "value": 2.0
+      },
+      "dscr": {
+        "label": "DSCR below 1.0x (proposed)",
+        "op": "<",
+        "value": 1.0
+      }
+    },
+    "period": "FY2025"
+  },
+  "warnings": [
+    "Floating-rate share 38.1% is a draft; confirm it"
+  ]
 }

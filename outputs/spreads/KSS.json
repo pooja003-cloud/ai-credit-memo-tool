@@ -11,8 +11,11 @@
     "purpose": "General corporate purposes",
     "note": "Hypothetical request. It gives the memo a specific facility to approve or decline."
   },
-  "floating_rate_share": null,
-  "floating_rate_source": "TODO: 10-K Item 7A, page __",
+  "floating_rate_share": 0.0,
+  "floating_rate_source": "10-K FY2025, Item 7A, p. 37",
+  "floating_rate_status": "DRAFT - confirm",
+  "floating_rate_quote": "All other long-term debt is at fixed interest rates and, therefore, is not affected by changes in interest rates. ... There were no outstanding borrowings under the revolving credit facility as of January 31, 2026.",
+  "floating_rate_basis": "All long-term debt is fixed rate. The $1.5B revolver is SOFR-based but undrawn at January 31, 2026 ($290M drawn a year earlier). $425M of 2021 notes carry rating-linked coupon step-ups, already triggered; that is a fixed-rate repricing, not floating exposure.",
   "periods": [
     {
       "label": "FY2023"
@@ -2942,9 +2945,90 @@
       "ok": false
     }
   ],
+  "stress": {
+    "scenario": {
+      "revenue_shock": 0.2,
+      "margin_shock": 0.03,
+      "rate_shock": 0.02
+    },
+    "floating_rate_share": 0.0,
+    "extra_interest": 0.0,
+    "base_margin": 0.08527081857409674,
+    "stressed_margin": 0.05527081857409674,
+    "base": {
+      "derived": {
+        "ebitda": 1324000000.0,
+        "ebitda_margin": 0.08527081857409674,
+        "ebitdar": 1595000000.0,
+        "total_debt": 3886000000.0,
+        "net_debt": 3212000000.0,
+        "lease_adj_debt": 6630000000.0,
+        "fcf": 1008000000.0
+      },
+      "ratios": {
+        "debt_ebitda": 2.9350453172205437,
+        "net_debt_ebitda": 2.4259818731117826,
+        "lease_adj_debt_ebitdar": 4.156739811912225,
+        "lease_adj_net_debt_ebitdar": 3.7341692789968652,
+        "interest_coverage": 4.597222222222222,
+        "dscr": 3.1284722222222223,
+        "current_ratio": 1.4583168708020546
+      },
+      "breaches": {
+        "debt_ebitda": false,
+        "interest_coverage": false,
+        "dscr": false
+      }
+    },
+    "stressed": {
+      "derived": {
+        "ebitda": 686552000.0000001,
+        "ebitda_margin": 0.05527081857409674,
+        "ebitdar": 957552000.0000001,
+        "total_debt": 3886000000.0,
+        "net_debt": 3212000000.0,
+        "lease_adj_debt": 6630000000.0,
+        "fcf": 1008000000.0
+      },
+      "ratios": {
+        "debt_ebitda": 5.660168494156305,
+        "net_debt_ebitda": 4.67845115883429,
+        "lease_adj_debt_ebitdar": 6.923905960198505,
+        "lease_adj_net_debt_ebitdar": 6.220027737397029,
+        "interest_coverage": 2.3838611111111114,
+        "dscr": 0.9151111111111115,
+        "current_ratio": 1.4583168708020546
+      },
+      "ratio_notes": {},
+      "breaches": {
+        "debt_ebitda": true,
+        "interest_coverage": false,
+        "dscr": true
+      }
+    },
+    "thresholds": {
+      "debt_ebitda": {
+        "label": "Debt / EBITDA above 4.0x",
+        "op": ">",
+        "value": 4.0
+      },
+      "interest_coverage": {
+        "label": "EBITDA / interest below 2.0x",
+        "op": "<",
+        "value": 2.0
+      },
+      "dscr": {
+        "label": "DSCR below 1.0x (proposed)",
+        "op": "<",
+        "value": 1.0
+      }
+    },
+    "period": "FY2025"
+  },
   "warnings": [
     "FY2023 Scheduled principal, next 12 months: Scheduled principal, next 12 months not tagged; used Current portion of long-term debt (itself not tagged, counted as 0)",
     "FY2024 Scheduled principal, next 12 months: Scheduled principal, next 12 months not tagged; used Current portion of long-term debt",
-    "FY2025 Scheduled principal, next 12 months: Scheduled principal, next 12 months not tagged; used Current portion of long-term debt"
+    "FY2025 Scheduled principal, next 12 months: Scheduled principal, next 12 months not tagged; used Current portion of long-term debt",
+    "Floating-rate share 0.0% is a draft; confirm it"
   ]
 }

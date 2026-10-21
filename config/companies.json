@@ -15,24 +15,32 @@
       "name": "DaVita Inc.",
       "role": "High yield, healthcare services",
       "fiscal_label": "end_year",
-      "floating_rate_share": null,
-      "floating_rate_source": "TODO: 10-K Item 7A, page __"
+      "floating_rate_share": 0.381,
+      "floating_rate_source": "10-K FY2025, Note 12 Long-term debt, p. F-26 (debt table) and p. F-28 (caps)",
+      "floating_rate_status": "DRAFT - confirm",
+      "floating_rate_basis": "Term Loan A-2 $2,000,000k + Term Loan B-2 $1,868,559k (SOFR + margin) = $3,868,559k of $10,159,463k debt principal (38.1%). Interest rate caps (SOFR max 4.00-4.50%) cover all of TLB-2 and part of TLA-2; only $368,559k is fully unhedged (3.6%). Gross share used: the caps limit but do not remove the cost of a +200bp shock, and most expire 2025-2027.",
+      "floating_rate_quote": "The remaining $368,559 outstanding principal balance of Term Loan A-2 is subject to SOFR-based interest rate volatility."
     },
     "UNP": {
       "cik": 100885,
       "name": "Union Pacific Corporation",
       "role": "Investment grade, capital-heavy",
       "fiscal_label": "end_year",
-      "floating_rate_share": null,
-      "floating_rate_source": "TODO: 10-K Item 7A, page __"
+      "floating_rate_share": 0.0,
+      "floating_rate_source": "10-K FY2025, Item 7A (refers to Item 7 Other Matters), p. 39",
+      "floating_rate_status": "DRAFT - confirm",
+      "floating_rate_quote": "Interest rates \u2013 At both December 31, 2025, and 2024, we did not have variable-rate debt."
     },
     "KSS": {
       "cik": 885639,
       "name": "Kohl's Corporation",
       "role": "Stressed retailer, large lease book",
       "fiscal_label": "start_year",
-      "floating_rate_share": null,
-      "floating_rate_source": "TODO: 10-K Item 7A, page __"
+      "floating_rate_share": 0.0,
+      "floating_rate_source": "10-K FY2025, Item 7A, p. 37",
+      "floating_rate_status": "DRAFT - confirm",
+      "floating_rate_basis": "All long-term debt is fixed rate. The $1.5B revolver is SOFR-based but undrawn at January 31, 2026 ($290M drawn a year earlier). $425M of 2021 notes carry rating-linked coupon step-ups, already triggered; that is a fixed-rate repricing, not floating exposure.",
+      "floating_rate_quote": "All other long-term debt is at fixed interest rates and, therefore, is not affected by changes in interest rates. ... There were no outstanding borrowings under the revolving credit facility as of January 31, 2026."
     }
   }
 }

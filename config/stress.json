@@ -1,0 +1,13 @@
+{
+  "_readme": "Stress scenario and threshold flags. The demo page reads this file, so its sliders start at these values and use the same formulas (see creditmemo/stress.py).",
+  "scenario": {
+    "revenue_shock": 0.20,
+    "margin_shock": 0.03,
+    "rate_shock": 0.02
+  },
+  "thresholds": {
+    "debt_ebitda": {"label": "Debt / EBITDA above 4.0x", "op": ">", "value": 4.0},
+    "interest_coverage": {"label": "EBITDA / interest below 2.0x", "op": "<", "value": 2.0},
+    "dscr": {"label": "DSCR below 1.0x (proposed)", "op": "<", "value": 1.0}
+  }
+}

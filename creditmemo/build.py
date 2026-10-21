@@ -24,6 +24,7 @@ from .edgar import companyfacts_path, load_companies
 from .ratios import RATIO_LABELS, compute_period
 from .spread import LOG_FIELDS, build_spread, load_override, load_tag_spec, log_rows
 from .standard import build_standard
+from .stress import load_config as load_stress, run as run_stress
 
 FACTS_DIR = ROOT / "outputs" / "xbrl_facts"
 
@@ -115,12 +116,25 @@ def assemble(ticker: str, company: dict, facility: dict, cf: dict, spec: dict, o
     warnings += [w for w in facts["warnings"]
                  if any(facts["concept_labels"][c] in w for c in NOTE_ITEMS)]
 
+    sc = load_stress()
+    latest = labels[-1]
+    stress = run_stress(ratio_inputs[latest], company.get("floating_rate_share") or 0.0,
+                        sc["scenario"], sc["thresholds"])
+    stress["period"] = latest
+    if company.get("floating_rate_share") is None:
+        warnings.append("Floating-rate share not set; stress uses 0%")
+    elif "DRAFT" in (company.get("floating_rate_status") or ""):
+        warnings.append(f"Floating-rate share {company['floating_rate_share']:.1%} is a draft; confirm it")
+
     return {
         "spread_version": 2,
         "ticker": ticker, "name": company["name"], "cik": company["cik"],
         "role": company.get("role"), "facility": facility,
         "floating_rate_share": company.get("floating_rate_share"),
         "floating_rate_source": company.get("floating_rate_source"),
+        "floating_rate_status": company.get("floating_rate_status"),
+        "floating_rate_quote": company.get("floating_rate_quote"),
+        "floating_rate_basis": company.get("floating_rate_basis"),
         "periods": [{"label": lab} for lab in labels],
         "as_reported": asrep,
         "standard": std,
@@ -131,6 +145,7 @@ def assemble(ticker: str, company: dict, facility: dict, cf: dict, spec: dict, o
         "ratio_notes": ratio_notes,
         "ties_ok": std["ties_ok"],
         "cross_check": cross,
+        "stress": stress,
         "warnings": warnings,
     }, facts
 
@@ -174,6 +189,12 @@ def main(argv=None) -> int:
         for key, name in RATIO_LABELS.items():
             vals = "  ".join(f"{fmt_ratio(spread['ratios'][l][key]):>8}" for l in labels)
             print(f"  {name:32}{vals}")
+        st = spread["stress"]
+        flags = [st["thresholds"][k]["label"] for k, b in st["stressed"]["breaches"].items() if b]
+        print(f"  Stress {st['period']} (floating {st['floating_rate_share']:.0%}): "
+              + "  ".join(f"{RATIO_LABELS[k]} {fmt_ratio(st['stressed']['ratios'][k])}"
+                          for k in ("debt_ebitda", "interest_coverage", "dscr"))
+              + (f"  BREAKS: {'; '.join(flags)}" if flags else "  no breaches"))
         for x in spread["cross_check"]:
             if not x["ok"]:
                 print(f"  ~ cross-check {x['period']} {x['line']}: standard {x['standard']/1e6:,.1f}m "
