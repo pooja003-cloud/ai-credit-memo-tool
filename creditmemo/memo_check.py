@@ -17,7 +17,8 @@ Placeholders
   {{stress.debt_ebitda}}            stressed ratio; also stress.ebitda, stress.extra_interest,
                                     stress.base_margin, stress.stressed_margin
   {{facility.amount_usd}}, {{facility.tenor_years}}, {{floating_rate_share}}
-  {{grade.grade}} and other keys of the grade block, once grading exists
+  {{grade.grade}}, {{grade.base_grade}}, {{grade.stress_notches}}, {{grade.weighted_score}},
+  {{grade.score.dscr}} (a metric's 1-10 score)
 
 Citations
   [1A ¶12]  section key and paragraph number from outputs/sections/<TICKER>.json
@@ -164,7 +165,12 @@ class Values:
             return True, fmt(name, self.s.get("floating_rate_share"), "pct")
         if head == "grade" and self.grade is not None and len(parts) == 2 and parts[1] in self.grade:
             v = self.grade[parts[1]]
-            return True, str(v) if not isinstance(v, float) else fmt(parts[1], v)
+            if isinstance(v, (dict, list)):
+                return False, ""
+            return True, f"{v:.2f}" if isinstance(v, float) else str(v)
+        if head == "grade" and self.grade is not None and len(parts) == 3 and parts[1] == "score" \
+                and parts[2] in self.grade.get("scores", {}):
+            return True, str(self.grade["scores"][parts[2]]["score"])
         return False, ""
 
 
