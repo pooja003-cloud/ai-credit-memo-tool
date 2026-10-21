@@ -1,0 +1,1057 @@
+{
+  "spread_version": 1,
+  "ticker": "DVA",
+  "name": "DaVita Inc.",
+  "cik": 927066,
+  "role": "High yield, healthcare services",
+  "entity_name_sec": "DAVITA INC.",
+  "source": "SEC EDGAR XBRL company facts API",
+  "rule": "Latest 10-K reporting each period; flows 340-380 days",
+  "periods": [
+    {
+      "label": "FY2023",
+      "end": "2023-12-31"
+    },
+    {
+      "label": "FY2024",
+      "end": "2024-12-31"
+    },
+    {
+      "label": "FY2025",
+      "end": "2025-12-31"
+    }
+  ],
+  "concept_labels": {
+    "revenue": "Revenue",
+    "operating_income": "Operating income",
+    "da": "Depreciation and amortization",
+    "interest_expense": "Interest expense",
+    "pretax_income": "Pre-tax income",
+    "net_income": "Net income",
+    "cfo": "Cash from operations",
+    "capex": "Capital expenditures",
+    "cash_taxes": "Cash taxes paid",
+    "operating_lease_cost": "Operating lease cost (rent)",
+    "cash": "Cash and equivalents",
+    "current_assets": "Current assets",
+    "current_liabilities": "Current liabilities",
+    "total_assets": "Total assets",
+    "equity": "Shareholders' equity",
+    "short_term_borrowings": "Short-term borrowings",
+    "commercial_paper": "Commercial paper",
+    "current_ltd": "Current portion of long-term debt",
+    "noncurrent_ltd": "Long-term debt, noncurrent",
+    "finance_lease_liabilities": "Finance lease liabilities",
+    "operating_lease_liabilities": "Operating lease liabilities",
+    "scheduled_principal": "Scheduled principal, next 12 months"
+  },
+  "lines": {
+    "revenue": {
+      "FY2023": {
+        "value": 12140147000.0,
+        "source": "xbrl",
+        "tag": "Revenues",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 12815550000.0,
+        "source": "xbrl",
+        "tag": "Revenues",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 13643069000.0,
+        "source": "xbrl",
+        "tag": "Revenues",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "operating_income": {
+      "FY2023": {
+        "value": 1602784000.0,
+        "source": "xbrl",
+        "tag": "OperatingIncomeLoss",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 2090483000.0,
+        "source": "xbrl",
+        "tag": "OperatingIncomeLoss",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 2043615000.0,
+        "source": "xbrl",
+        "tag": "OperatingIncomeLoss",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "da": {
+      "FY2023": {
+        "value": 736474000.0,
+        "source": "xbrl",
+        "tag": "DepreciationDepletionAndAmortization",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 716396000.0,
+        "source": "xbrl",
+        "tag": "DepreciationDepletionAndAmortization",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 708252000.0,
+        "source": "xbrl",
+        "tag": "DepreciationDepletionAndAmortization",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "interest_expense": {
+      "FY2023": {
+        "value": 373951000.0,
+        "source": "xbrl",
+        "tag": "InterestExpenseDebt",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 435203000.0,
+        "source": "xbrl",
+        "tag": "InterestExpenseDebt",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 539924000.0,
+        "source": "xbrl",
+        "tag": "InterestExpenseDebt",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "pretax_income": {
+      "FY2023": {
+        "value": 1177094000.0,
+        "source": "xbrl",
+        "tag": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 1530393000.0,
+        "source": "xbrl",
+        "tag": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 1346823000.0,
+        "source": "xbrl",
+        "tag": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "net_income": {
+      "FY2023": {
+        "value": 691535000.0,
+        "source": "xbrl",
+        "tag": "NetIncomeLoss",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 936342000.0,
+        "source": "xbrl",
+        "tag": "NetIncomeLoss",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 746803000.0,
+        "source": "xbrl",
+        "tag": "NetIncomeLoss",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "cfo": {
+      "FY2023": {
+        "value": 2059031000.0,
+        "source": "xbrl",
+        "tag": "NetCashProvidedByUsedInOperatingActivities",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 2022038000.0,
+        "source": "xbrl",
+        "tag": "NetCashProvidedByUsedInOperatingActivities",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 1886500000.0,
+        "source": "xbrl",
+        "tag": "NetCashProvidedByUsedInOperatingActivities",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "capex": {
+      "FY2023": {
+        "value": 567985000.0,
+        "source": "xbrl",
+        "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 555443000.0,
+        "source": "xbrl",
+        "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 575864000.0,
+        "source": "xbrl",
+        "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "cash_taxes": {
+      "FY2023": {
+        "value": 268091000.0,
+        "source": "xbrl",
+        "tag": "IncomeTaxesPaidNet",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 387940000.0,
+        "source": "xbrl",
+        "tag": "IncomeTaxesPaidNet",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 176688000.0,
+        "source": "xbrl",
+        "tag": "IncomeTaxesPaidNet",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "operating_lease_cost": {
+      "FY2023": {
+        "value": 692834000.0,
+        "source": "xbrl",
+        "tag": "OperatingLeaseCost",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 689130000.0,
+        "source": "xbrl",
+        "tag": "OperatingLeaseCost",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 702180000.0,
+        "source": "xbrl",
+        "tag": "OperatingLeaseCost",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "cash": {
+      "FY2023": {
+        "value": 380063000.0,
+        "source": "xbrl",
+        "tag": "CashAndCashEquivalentsAtCarryingValue",
+        "unit": "USD",
+        "accn": "0000927066-25-000012",
+        "form": "10-K",
+        "filed": "2025-02-13",
+        "start": null,
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 794933000.0,
+        "source": "xbrl",
+        "tag": "CashAndCashEquivalentsAtCarryingValue",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 676438000.0,
+        "source": "xbrl",
+        "tag": "CashAndCashEquivalentsAtCarryingValue",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "current_assets": {
+      "FY2023": {
+        "value": 3137906000.0,
+        "source": "xbrl",
+        "tag": "AssetsCurrent",
+        "unit": "USD",
+        "accn": "0000927066-25-000012",
+        "form": "10-K",
+        "filed": "2025-02-13",
+        "start": null,
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 3746072000.0,
+        "source": "xbrl",
+        "tag": "AssetsCurrent",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 4058003000.0,
+        "source": "xbrl",
+        "tag": "AssetsCurrent",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "current_liabilities": {
+      "FY2023": {
+        "value": 2642214000.0,
+        "source": "xbrl",
+        "tag": "LiabilitiesCurrent",
+        "unit": "USD",
+        "accn": "0000927066-25-000012",
+        "form": "10-K",
+        "filed": "2025-02-13",
+        "start": null,
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 2973410000.0,
+        "source": "xbrl",
+        "tag": "LiabilitiesCurrent",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 3141634000.0,
+        "source": "xbrl",
+        "tag": "LiabilitiesCurrent",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "total_assets": {
+      "FY2023": {
+        "value": 16893578000.0,
+        "source": "xbrl",
+        "tag": "Assets",
+        "unit": "USD",
+        "accn": "0000927066-25-000012",
+        "form": "10-K",
+        "filed": "2025-02-13",
+        "start": null,
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 17285268000.0,
+        "source": "xbrl",
+        "tag": "Assets",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 17480103000.0,
+        "source": "xbrl",
+        "tag": "Assets",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "equity": {
+      "FY2023": {
+        "value": 1056097000.0,
+        "source": "xbrl",
+        "tag": "StockholdersEquity",
+        "unit": "USD",
+        "accn": "0000927066-25-000012",
+        "form": "10-K",
+        "filed": "2025-02-13",
+        "start": null,
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 121122000.0,
+        "source": "xbrl",
+        "tag": "StockholdersEquity",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": -651082000.0,
+        "source": "xbrl",
+        "tag": "StockholdersEquity",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "short_term_borrowings": {
+      "FY2023": {
+        "value": 0.0,
+        "source": "assumed_zero",
+        "proxy": false,
+        "note": "Not tagged; counted as 0. Confirm in the 10-K.",
+        "end": "2023-12-31"
+      },
+      "FY2024": {
+        "value": 0.0,
+        "source": "assumed_zero",
+        "proxy": false,
+        "note": "Not tagged; counted as 0. Confirm in the 10-K.",
+        "end": "2024-12-31"
+      },
+      "FY2025": {
+        "value": 0.0,
+        "source": "assumed_zero",
+        "proxy": false,
+        "note": "Not tagged; counted as 0. Confirm in the 10-K.",
+        "end": "2025-12-31"
+      }
+    },
+    "commercial_paper": {
+      "FY2023": {
+        "value": 0.0,
+        "source": "assumed_zero",
+        "proxy": false,
+        "note": "Not tagged; counted as 0. Confirm in the 10-K.",
+        "end": "2023-12-31"
+      },
+      "FY2024": {
+        "value": 0.0,
+        "source": "assumed_zero",
+        "proxy": false,
+        "note": "Not tagged; counted as 0. Confirm in the 10-K.",
+        "end": "2024-12-31"
+      },
+      "FY2025": {
+        "value": 0.0,
+        "source": "assumed_zero",
+        "proxy": false,
+        "note": "Not tagged; counted as 0. Confirm in the 10-K.",
+        "end": "2025-12-31"
+      }
+    },
+    "current_ltd": {
+      "FY2023": {
+        "value": 123299000.0,
+        "source": "xbrl",
+        "tag": "LongTermDebtAndCapitalLeaseObligationsCurrent",
+        "unit": "USD",
+        "accn": "0000927066-25-000012",
+        "form": "10-K",
+        "filed": "2025-02-13",
+        "start": null,
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 270867000.0,
+        "source": "xbrl",
+        "tag": "LongTermDebtAndCapitalLeaseObligationsCurrent",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 109201000.0,
+        "source": "xbrl",
+        "tag": "LongTermDebtAndCapitalLeaseObligationsCurrent",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "noncurrent_ltd": {
+      "FY2023": {
+        "value": 8268334000.0,
+        "source": "xbrl",
+        "tag": "LongTermDebtAndCapitalLeaseObligations",
+        "unit": "USD",
+        "accn": "0000927066-25-000012",
+        "form": "10-K",
+        "filed": "2025-02-13",
+        "start": null,
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 9175903000.0,
+        "source": "xbrl",
+        "tag": "LongTermDebtAndCapitalLeaseObligations",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 10163988000.0,
+        "source": "xbrl",
+        "tag": "LongTermDebtAndCapitalLeaseObligations",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "finance_lease_liabilities": {
+      "FY2023": {
+        "value": 0.0,
+        "source": "included_in_debt",
+        "tag": "FinanceLeaseLiability",
+        "unit": "USD",
+        "accn": "0000927066-24-000013",
+        "form": "10-K",
+        "filed": "2024-02-14",
+        "start": null,
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706624000013/0000927066-24-000013-index.htm",
+        "proxy": false,
+        "note": "Already inside the long-term debt tags; not added again",
+        "reported_value": 255491000.0
+      },
+      "FY2024": {
+        "value": 0.0,
+        "source": "included_in_debt",
+        "tag": "FinanceLeaseLiability",
+        "unit": "USD",
+        "accn": "0000927066-25-000012",
+        "form": "10-K",
+        "filed": "2025-02-13",
+        "start": null,
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
+        "proxy": false,
+        "note": "Already inside the long-term debt tags; not added again",
+        "reported_value": 216401000.0
+      },
+      "FY2025": {
+        "value": 0.0,
+        "source": "included_in_debt",
+        "tag": "FinanceLeaseLiability",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": "Already inside the long-term debt tags; not added again",
+        "reported_value": 185120000.0
+      }
+    },
+    "operating_lease_liabilities": {
+      "FY2023": {
+        "value": 2724788000.0,
+        "source": "xbrl",
+        "tag": "OperatingLeaseLiability",
+        "unit": "USD",
+        "accn": "0000927066-24-000013",
+        "form": "10-K",
+        "filed": "2024-02-14",
+        "start": null,
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706624000013/0000927066-24-000013-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 2620066000.0,
+        "source": "xbrl",
+        "tag": "OperatingLeaseLiability",
+        "unit": "USD",
+        "accn": "0000927066-25-000012",
+        "form": "10-K",
+        "filed": "2025-02-13",
+        "start": null,
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 2601142000.0,
+        "source": "xbrl",
+        "tag": "OperatingLeaseLiability",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    },
+    "scheduled_principal": {
+      "FY2023": {
+        "value": 123299000.0,
+        "source": "xbrl",
+        "tag": "LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths",
+        "unit": "USD",
+        "accn": "0000927066-24-000013",
+        "form": "10-K",
+        "filed": "2024-02-14",
+        "start": null,
+        "end": "2023-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706624000013/0000927066-24-000013-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2024": {
+        "value": 270867000.0,
+        "source": "xbrl",
+        "tag": "LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths",
+        "unit": "USD",
+        "accn": "0000927066-25-000012",
+        "form": "10-K",
+        "filed": "2025-02-13",
+        "start": null,
+        "end": "2024-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706625000012/0000927066-25-000012-index.htm",
+        "proxy": false,
+        "note": null
+      },
+      "FY2025": {
+        "value": 109201000.0,
+        "source": "xbrl",
+        "tag": "LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths",
+        "unit": "USD",
+        "accn": "0000927066-26-000012",
+        "form": "10-K",
+        "filed": "2026-02-11",
+        "start": null,
+        "end": "2025-12-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/0000927066-26-000012-index.htm",
+        "proxy": false,
+        "note": null
+      }
+    }
+  },
+  "derived": {
+    "FY2023": {
+      "ebitda": 2339258000.0,
+      "ebitda_margin": 0.1926877821166416,
+      "ebitdar": 3032092000.0,
+      "total_debt": 8391633000.0,
+      "net_debt": 8011570000.0,
+      "lease_adj_debt": 11116421000.0,
+      "fcf": 1491046000.0
+    },
+    "FY2024": {
+      "ebitda": 2806879000.0,
+      "ebitda_margin": 0.2190213451627125,
+      "ebitdar": 3496009000.0,
+      "total_debt": 9446770000.0,
+      "net_debt": 8651837000.0,
+      "lease_adj_debt": 12066836000.0,
+      "fcf": 1466595000.0
+    },
+    "FY2025": {
+      "ebitda": 2751867000.0,
+      "ebitda_margin": 0.2017043965694229,
+      "ebitdar": 3454047000.0,
+      "total_debt": 10273189000.0,
+      "net_debt": 9596751000.0,
+      "lease_adj_debt": 12874331000.0,
+      "fcf": 1310636000.0
+    }
+  },
+  "ratios": {
+    "FY2023": {
+      "debt_ebitda": 3.5873054618173796,
+      "net_debt_ebitda": 3.424833857573641,
+      "lease_adj_debt_ebitdar": 3.6662545199815835,
+      "lease_adj_net_debt_ebitdar": 3.540907729712687,
+      "interest_coverage": 6.255520108249477,
+      "dscr": 3.022990447461036,
+      "current_ratio": 1.1876047890140617
+    },
+    "FY2024": {
+      "debt_ebitda": 3.3655779248054514,
+      "net_debt_ebitda": 3.0823690654281855,
+      "lease_adj_debt_ebitdar": 3.4516032424401653,
+      "lease_adj_net_debt_ebitdar": 3.224220246572592,
+      "interest_coverage": 6.449585595687529,
+      "dscr": 2.6392510657583528,
+      "current_ratio": 1.2598572009914542
+    },
+    "FY2025": {
+      "debt_ebitda": 3.7331706074457816,
+      "net_debt_ebitda": 3.487360035931969,
+      "lease_adj_debt_ebitdar": 3.727317839045039,
+      "lease_adj_net_debt_ebitdar": 3.5314785815016414,
+      "interest_coverage": 5.096767322808395,
+      "dscr": 3.08001540535336,
+      "current_ratio": 1.2916854732282628
+    }
+  },
+  "ratio_notes": {
+    "FY2023": {},
+    "FY2024": {},
+    "FY2025": {}
+  },
+  "warnings": [
+    "FY2023 Short-term borrowings: not tagged, counted as 0",
+    "FY2024 Short-term borrowings: not tagged, counted as 0",
+    "FY2025 Short-term borrowings: not tagged, counted as 0",
+    "FY2023 Commercial paper: not tagged, counted as 0",
+    "FY2024 Commercial paper: not tagged, counted as 0",
+    "FY2025 Commercial paper: not tagged, counted as 0"
+  ],
+  "facility": {
+    "type": "Senior unsecured term loan",
+    "amount_usd": 500000000,
+    "tenor_years": 5,
+    "purpose": "General corporate purposes",
+    "note": "Hypothetical request. It gives the memo a specific facility to approve or decline."
+  }
+}

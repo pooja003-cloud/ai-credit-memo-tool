@@ -158,3 +158,80 @@ def test_company_override_tags_go_first():
 def test_no_revenue_raises():
     with pytest.raises(ValueError):
         build_spread(CF().data, "TST", COMPANY, SPEC)
+
+
+def test_tag_switch_over_time_keeps_latest_years():
+    # UNP pattern: Revenues until 2020, then the ASC 606 tag.
+    cf = CF()
+    for y in (2018, 2019, 2020):
+        cf.flow("Revenues", 100, y, accn=f"A-{y}", filed=f"{y+1}-02-01")
+    for y in (2020, 2021, 2022, 2023):
+        cf.flow("RevenueFromContractWithCustomerExcludingAssessedTax", 200, y,
+                accn=f"B-{y}", filed=f"{y+1}-02-02")
+    s = build_spread(cf.data, "TST", COMPANY, SPEC)
+    assert [p["label"] for p in s["periods"]] == ["FY2021", "FY2022", "FY2023"]
+
+
+def test_tag_from_newest_10k_beats_higher_priority_tag_from_older_10k():
+    cf = CF()
+    cf.flow("Revenues", 100, 2020, accn="OLD", filed="2021-02-01")
+    cf.flow("RevenueFromContractWithCustomerExcludingAssessedTax", 103, 2020,
+            accn="NEW", filed="2022-02-01")  # restated in a later 10-K
+    s = build_spread(cf.data, "TST", COMPANY, SPEC, years=1)
+    assert s["lines"]["revenue"]["FY2020"]["value"] == 103
+
+
+def test_proxy_only_used_when_no_real_tag():
+    cf = full_company()
+    for y in (2023, 2024, 2025):
+        cf.flow("InterestPaidNet", 99, y, accn="LATER", filed="2027-01-01")
+    s = build_spread(cf.data, "TST", COMPANY, SPEC)
+    assert s["lines"]["interest_expense"]["FY2025"]["value"] == 40
+
+
+def test_cash_taxes_from_jurisdiction_components_with_sign_flip():
+    # UNP FY2025 10-K: no total tag, federal/state/foreign reported as negatives.
+    cf = full_company()
+    del cf.data["facts"]["us-gaap"]["IncomeTaxesPaidNet"]
+    for y in (2023, 2024, 2025):
+        cf.flow("IncomeTaxPaidFederalAfterRefundReceived", -15, y)
+        cf.flow("IncomeTaxPaidStateAndLocalAfterRefundReceived", -4, y)
+        cf.flow("IncomeTaxPaidForeignAfterRefundReceived", -1, y)
+        cf.flow("CurrentIncomeTaxExpenseBenefit", 99, y)
+    s = build_spread(cf.data, "TST", COMPANY, SPEC)
+    rec = s["lines"]["cash_taxes"]["FY2025"]
+    assert rec["source"] == "sum" and rec["value"] == 20 and not rec["proxy"]
+
+
+def test_current_tax_expense_only_as_last_resort_proxy():
+    cf = full_company()
+    del cf.data["facts"]["us-gaap"]["IncomeTaxesPaidNet"]
+    for y in (2023, 2024, 2025):
+        cf.flow("CurrentIncomeTaxExpenseBenefit", 25, y)
+    rec = build_spread(cf.data, "TST", COMPANY, SPEC)["lines"]["cash_taxes"]["FY2025"]
+    assert rec["proxy"] and rec["value"] == 25
+
+
+def test_finance_leases_detected_inside_debt_tag():
+    cf = full_company()
+    g = cf.data["facts"]["us-gaap"]
+    g["LongTermDebtAndCapitalLeaseObligations"] = g.pop("LongTermDebtNoncurrent")
+    s = build_spread(cf.data, "TST", COMPANY, SPEC)
+    rec = s["lines"]["finance_lease_liabilities"]["FY2025"]
+    assert rec["source"] == "included_in_debt" and rec["reported_value"] == 50
+    assert s["derived"]["FY2025"]["total_debt"] == 550
+    # override can overrule the detection
+    s2 = build_spread(cf.data, "TST", COMPANY, SPEC, {"finance_leases_in_debt": False})
+    assert s2["derived"]["FY2025"]["total_debt"] == 600
+
+
+def test_principal_fallback_carries_an_untagged_zero():
+    cf = full_company()
+    g = cf.data["facts"]["us-gaap"]
+    del g["LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths"]
+    del g["LongTermDebtCurrent"]
+    s = build_spread(cf.data, "TST", COMPANY, SPEC)
+    rec = s["lines"]["scheduled_principal"]["FY2025"]
+    assert rec["value"] == 0 and rec["source"] == "fallback:current_ltd"
+    assert "counted as 0" in rec["note"]
+    assert s["ratios"]["FY2025"]["dscr"] == pytest.approx(120 / 40)

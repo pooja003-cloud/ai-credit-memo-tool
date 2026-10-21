@@ -19,7 +19,7 @@ Fixed before coding, 2026-10-21. Change any of them here first, then in the code
 ## Definitions
 
 - **EBITDA** = operating income + D&A
-- **Total debt** = short-term borrowings + commercial paper + current portion of LTD + LTD (noncurrent) + finance lease liabilities. If a company's debt tags already include finance leases, `finance_leases_in_debt: true` in its override stops double counting.
+- **Total debt** = short-term borrowings + commercial paper + current portion of LTD + LTD (noncurrent) + finance lease liabilities. If the debt tag already includes finance leases (`LongTermDebtAndCapitalLeaseObligations`, used by DaVita and Union Pacific), the separate finance lease line is not added again. This is detected from the tag name; `finance_leases_in_debt` in a company override overrules it.
 - **Net debt** = total debt − cash and equivalents
 - **Leverage** = debt / EBITDA and net debt / EBITDA
 - **Lease-adjusted leverage** = (debt + operating lease liabilities) / EBITDAR, where EBITDAR = EBITDA + operating lease cost. Under ASC 842, rent is already deducted inside EBITDA, so adding lease debt without adding back rent overstates leverage.
@@ -43,5 +43,9 @@ Fixed before coding, 2026-10-21. Change any of them here first, then in the code
 - Tag priority lists in `config/tags.json`; per-company overrides in `config/overrides/`.
 - **Proxies are flagged, not just logged.** A proxy measures something slightly different: cash interest paid for interest expense, current tax expense for cash taxes, lease payments for lease cost, cash including restricted cash. They show as PROXY in the spread warnings and get a footnote in the demo.
 - Hand-entered values must cite a source, or the build fails.
+- Fiscal years come from all revenue tags combined. Companies switch tags (Union Pacific moved from `Revenues` to the ASC 606 tag after 2020).
+- When two tags report the same period, the one from the newest 10-K wins; ties go to tag priority. Proxy tags are tried only when no real tag, component sum or fallback exists.
+- Cash taxes: when no total is tagged, federal + state + foreign taxes paid are summed (new ASU 2023-09 disclosure; Union Pacific FY2025). Absolute values are used, because filers flip the sign of taxes paid between filings.
+- A missing current portion of LTD counts as 0, and that zero carries into scheduled principal, flagged (Kohl's FY2023).
 - Fiscal year labels follow the company. Kohl's year ending 31 Jan 2026 is FY2025.
 - EDGAR: User-Agent with a contact (from `SEC_USER_AGENT`), at most 4 requests a second, every response cached.

@@ -1,7 +1,6 @@
 {
-  "_readme": "See UNP.json for the format.",
+  "_readme": "See UNP.json for the format. Add \"finance_leases_in_debt\": true/false only to overrule the automatic check on the debt tag name.",
   "tags": {},
   "manual": {},
-  "finance_leases_in_debt": false,
   "_todo": "Check after the first fetch: (1) whether Kohl's tags its 'Interest expense, net' line, so cash interest paid isn't needed; (2) whether the finance lease and financing obligations line is already inside the debt tags."
 }

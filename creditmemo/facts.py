@@ -85,14 +85,14 @@ def instants(companyfacts: dict, tag: str, **kw) -> Dict[date, Fact]:
 def fiscal_year_ends(companyfacts: dict, anchor_tags, n: int) -> list:
     """The latest n fiscal year-end dates, oldest first.
 
-    Taken from the first anchor tag (normally revenue) that has annual
-    10-K values, so the periods match what the company actually reports.
+    Taken from all anchor tags combined (normally the revenue tags).
+    Companies switch tags over time: Union Pacific used Revenues up to
+    2020 and RevenueFromContractWithCustomerExcludingAssessedTax after.
     """
+    ends = set()
     for tag in anchor_tags:
-        ends = sorted(annual_flows(companyfacts, tag))
-        if ends:
-            return ends[-n:]
-    return []
+        ends.update(annual_flows(companyfacts, tag))
+    return sorted(ends)[-n:]
 
 
 def fiscal_label(end: date, convention: str = "end_year") -> str:

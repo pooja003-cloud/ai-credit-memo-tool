@@ -83,6 +83,13 @@ class _Resolver:
         }
 
     def resolve(self, concept: str, end: date, label: str, _seen=()) -> dict:
+        rec = self._resolve(concept, end, label, _seen)
+        if self.spec[concept].get("abs") and rec.get("value") is not None and rec["value"] < 0:
+            rec["value"] = -rec["value"]
+            rec["note"] = ((rec.get("note") or "") + " Sign flipped: filer reports it as negative.").strip()
+        return rec
+
+    def _resolve(self, concept: str, end: date, label: str, _seen=()) -> dict:
         cs = self.spec[concept]
         kind = cs["kind"]
 
@@ -94,15 +101,32 @@ class _Resolver:
                     "manual_source": manual["source"], "proxy": bool(manual.get("proxy", False)),
                     "note": manual.get("note"), "end": end.isoformat()}
 
-        entries = [_norm(t) for t in self.override.get("tags", {}).get(concept, [])]
-        entries += [_norm(t) for t in cs.get("tags", [])]
-        for entry in entries:
-            fact = self.facts_for(entry["tag"], kind).get(end)
-            if fact is not None:
-                return self._from_fact(fact, entry)
+        # Three tiers: company override tags, default tags, proxy tags.
+        # Within a tier the fact from the newest 10-K wins (same rule as
+        # facts.py); ties go to the earlier tag in the list. This stops an
+        # old tag from an old 10-K beating the tag the latest 10-K uses.
+        defaults = [_norm(t) for t in cs.get("tags", [])]
+        tiers = [
+            [_norm(t) for t in self.override.get("tags", {}).get(concept, [])],
+            [e for e in defaults if not e.get("proxy")],
+            [e for e in defaults if e.get("proxy")],
+        ]
+        for tier in tiers:
+            best = None
+            for rank, entry in enumerate(tier):
+                fact = self.facts_for(entry["tag"], kind).get(end)
+                if fact is None:
+                    continue
+                key = (fact.filed, fact.accn, -rank)
+                if best is None or key > best[0]:
+                    best = (key, fact, entry)
+            if best is not None:
+                return self._from_fact(best[1], best[2])
 
-        parts = cs.get("sum_of")
-        if parts:
+        sums = cs.get("sum_of") or []
+        if sums and isinstance(sums[0], str):
+            sums = [sums]
+        for parts in sums:
             found = [self.facts_for(t, kind).get(end) for t in parts]
             if all(found):
                 rec = self._from_fact(found[0], {})
@@ -111,16 +135,25 @@ class _Resolver:
                     "source": "sum",
                     "tag": " + ".join(parts),
                     "components": [self._from_fact(f, {}) for f in found],
+                    "note": None,
                 })
                 return rec
 
         fb = cs.get("fallback")
         if fb and fb not in _seen:
             rec = dict(self.resolve(fb, end, label, _seen + (concept,)))
-            if rec.get("value") is not None and rec["source"] != "assumed_zero":
+            if rec.get("value") is not None:
+                zero = " (itself not tagged, counted as 0)" if rec["source"] == "assumed_zero" else ""
                 rec["source"] = f"fallback:{fb}"
-                rec["note"] = f"{self.spec[concept]['label']} not tagged; used {self.spec[fb]['label']}"
+                rec["note"] = (f"{self.spec[concept]['label']} not tagged; "
+                               f"used {self.spec[fb]['label']}{zero}")
                 return rec
+
+        for entry in (_norm(t) for t in cs.get("proxy_tags", [])):
+            fact = self.facts_for(entry["tag"], kind).get(end)
+            if fact is not None:
+                entry.setdefault("proxy", True)
+                return self._from_fact(fact, entry)
 
         if cs.get("default_zero"):
             return {"value": 0.0, "source": "assumed_zero", "proxy": False,
@@ -148,8 +181,16 @@ def build_spread(companyfacts: dict, ticker: str, company: dict, spec: dict,
         for concept in spec:
             lines[concept][p["label"]] = res.resolve(concept, end, p["label"])
 
-    if override.get("finance_leases_in_debt"):
-        for rec in lines["finance_lease_liabilities"].values():
+    # Finance leases are already inside the debt figure when the debt tag
+    # says so (LongTermDebtAndCapitalLeaseObligations...). The override
+    # finance_leases_in_debt (true/false) beats this detection.
+    forced = override.get("finance_leases_in_debt")
+    for label, rec in lines["finance_lease_liabilities"].items():
+        debt_tags = " ".join(str(lines[c][label].get("tag") or "")
+                             for c in ("current_ltd", "noncurrent_ltd"))
+        included = forced if forced is not None else (
+            "CapitalLease" in debt_tags or "FinanceLease" in debt_tags)
+        if included:
             rec["reported_value"] = rec["value"]
             rec["value"] = 0.0
             rec["source"] = "included_in_debt"
