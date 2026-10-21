@@ -419,7 +419,7 @@ def compare(ticker: str, target: float = 0.01) -> str:
     """
     from openpyxl import load_workbook
 
-    wb = load_workbook(_path(ticker))
+    wb = load_workbook(_path(ticker), data_only=True)  # typed values, or what typed formulas evaluate to
     spread = json.loads((SPREAD_DIR / f"{ticker}.json").read_text())
     ar = spread["as_reported"]["statements"]
     unit = wb["Summary"]["B3"].value
