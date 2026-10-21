@@ -3,33 +3,67 @@
   "looked_up": "2026-10-21",
   "companies": {
     "UNP": {
-      "sp": {"rating": "A-", "outlook": null, "as_of": "2025-07-29",
-             "source": "Investing.com report on S&P's Norfolk Southern action: 'Union Pacific maintains its A- rating'",
-             "url": "https://www.investing.com/news/stock-market-news/norfolk-southern-outlook-revised-to-positive-at-sp-on-union-pacific-merger-plan-93CH-4158305"},
-      "moodys": {"rating": "A3", "outlook": "Stable", "as_of": "2025-07-30",
-                 "source": "Cbonds: Moody's affirmed A3, outlook revised to stable",
-                 "url": "https://cbonds.com/news/3516333/"},
-      "fitch": {"rating": "A-", "outlook": "Rating Watch Positive", "as_of": "2025-07-29",
-                "source": "Investing.com: Fitch placed UNP on Rating Watch Positive after the Norfolk Southern merger announcement",
-                "url": "https://www.investing.com/news/stock-market-news/union-pacific-placed-on-rating-watch-positive-after-norfolk-southern-merger-93CH-4158303"},
+      "sp": {
+        "rating": "A-",
+        "outlook": null,
+        "as_of": "2025-07-29",
+        "source": "Investing.com report on S&P's Norfolk Southern action: 'Union Pacific maintains its A- rating'",
+        "url": "https://www.investing.com/news/stock-market-news/norfolk-southern-outlook-revised-to-positive-at-sp-on-union-pacific-merger-plan-93CH-4158305"
+      },
+      "moodys": {
+        "rating": "A3",
+        "outlook": "Stable",
+        "as_of": "2025-07-30",
+        "source": "Cbonds: Moody's affirmed A3, outlook revised to stable",
+        "url": "https://cbonds.com/news/3516333/"
+      },
+      "fitch": {
+        "rating": "A-",
+        "outlook": "Rating Watch Positive (per earlier report; not shown on the entity card)",
+        "as_of": "2026-07-15",
+        "source": "Fitch Ratings entity page for Union Pacific Corporation: 'Ratings (15-Jul-2026): Long-term A-, Short-term F1' (checked by Pooja 2026-10-21)",
+        "url": "https://www.fitchratings.com",
+        "checked": true
+      },
       "note": "Pending Norfolk Southern merger (closing expected late 2027) could move the rating either way."
     },
     "DVA": {
-      "sp": {"rating": "BB", "outlook": "Stable", "as_of": "2025-09-17",
-             "source": "Cbonds: S&P affirmed DaVita at BB, outlook stable", "url": "https://cbonds.com/news/3590241/"},
-      "moodys": {"rating": "Ba2", "outlook": "Stable", "as_of": "2021-12-10",
-                 "source": "Moody's periodic review (Ba2 corporate family rating); newer Moody's actions rate the unsecured notes Ba3, consistent with a Ba2 CFR",
-                 "url": "https://finance.yahoo.com/news/davita-inc-moodys-announces-completion-151509082.html",
-                 "stale": true},
+      "sp": {
+        "rating": "BB",
+        "outlook": "Stable",
+        "as_of": "2025-09-17",
+        "source": "Cbonds: S&P affirmed DaVita at BB, outlook stable",
+        "url": "https://cbonds.com/news/3590241/"
+      },
+      "moodys": {
+        "rating": "Ba2",
+        "outlook": "Stable",
+        "as_of": "2021-12-10",
+        "source": "Moody's periodic review (Ba2 corporate family rating); newer Moody's actions rate the unsecured notes Ba3, consistent with a Ba2 CFR",
+        "url": "https://finance.yahoo.com/news/davita-inc-moodys-announces-completion-151509082.html",
+        "stale": true
+      },
       "fitch": null
     },
     "KSS": {
-      "sp": {"rating": "B+", "outlook": "Negative", "as_of": "2026-01-31",
-             "source": "Kohl's 10-K FY2025, Item 7 Liquidity, p. 33 [7-LIQ ¶57-¶69]"},
-      "moodys": {"rating": "B2", "outlook": "Stable", "as_of": "2026-01-31",
-                 "source": "Kohl's 10-K FY2025, Item 7 Liquidity, p. 33 [7-LIQ ¶57-¶69]"},
-      "fitch": {"rating": "BB-", "outlook": "Negative", "as_of": "2026-01-31",
-                "source": "Kohl's 10-K FY2025, Item 7 Liquidity, p. 33 [7-LIQ ¶57-¶69]"}
+      "sp": {
+        "rating": "B+",
+        "outlook": "Negative",
+        "as_of": "2026-01-31",
+        "source": "Kohl's 10-K FY2025, Item 7 Liquidity, p. 33 [7-LIQ \u00b657-\u00b669]"
+      },
+      "moodys": {
+        "rating": "B2",
+        "outlook": "Stable",
+        "as_of": "2026-01-31",
+        "source": "Kohl's 10-K FY2025, Item 7 Liquidity, p. 33 [7-LIQ \u00b657-\u00b669]"
+      },
+      "fitch": {
+        "rating": "BB-",
+        "outlook": "Negative",
+        "as_of": "2026-01-31",
+        "source": "Kohl's 10-K FY2025, Item 7 Liquidity, p. 33 [7-LIQ \u00b657-\u00b669]"
+      }
     }
   }
 }
