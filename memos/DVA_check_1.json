@@ -1,0 +1,48 @@
+{
+  "ok": false,
+  "errors": [
+    {
+      "line": 42,
+      "type": "typed_number",
+      "text": "Equity is now {{FY2025.balance.equity}}. *Mitigant:* the covenant package proposed in Section 8.",
+      "detail": "8."
+    },
+    {
+      "line": 44,
+      "type": "uncited_claim",
+      "text": "**Rate caps only pay above their strikes.** The caps protect only once SOFR rises above the strike."
+    },
+    {
+      "line": 62,
+      "type": "uncited_claim",
+      "text": "One threshold breaks: debt to EBITDA rises above our leverage limit."
+    },
+    {
+      "line": 62,
+      "type": "uncited_claim",
+      "text": "The real risk under stress is leverage, not cash service."
+    },
+    {
+      "line": 75,
+      "type": "uncited_claim",
+      "text": "Leverage is the weakest part of the grade, and debt service is the strongest."
+    },
+    {
+      "line": 81,
+      "type": "uncited_claim",
+      "text": "The main concern is behaviour, not capacity."
+    },
+    {
+      "line": 81,
+      "type": "uncited_claim",
+      "text": "The conditions below address each of these points."
+    }
+  ],
+  "warnings": [],
+  "recommendation": "Approve",
+  "stats": {
+    "placeholders": 89,
+    "citations": 44,
+    "sentences_checked": 73
+  }
+}

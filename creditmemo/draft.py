@@ -128,8 +128,10 @@ STRUCTURE (Markdown):
 ## 4. Strengths
 ## 5. Risks and mitigants
 ## 6. Stress test  (explain the scenario using the stress placeholders and say which thresholds break)
-## 7. Risk grade  (the internal 1-to-10 grade, 1 = best, from {{{{grade.grade}}}} and its parts)
+## 7. Risk grade  (the internal 1-to-10 grade, 1 = best, from {{{{grade.grade}}}} and its parts; stress notches make the grade WORSE, i.e. a higher number)
 ## 8. Recommendation  (your own judgment on approve or decline; it may differ from what the grade suggests, but explain why)
+
+Paraphrase figures from the 10-K text precisely: if a paragraph says about 36%, don't write 'roughly a third'. Don't attach a citation that doesn't support the sentence; for a pure judgment sentence, tie it to a placeholder instead.
 
 Keep it to about 900-1,300 words. Be specific and balanced. A credit committee reads this.
 """

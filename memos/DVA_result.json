@@ -1,0 +1,27 @@
+{
+  "ticker": "DVA",
+  "attempts": 2,
+  "recommendation": "Approve",
+  "grade": 7,
+  "stats": {
+    "placeholders": 94,
+    "citations": 46,
+    "sentences_checked": 73
+  },
+  "review_edits": [
+    {
+      "was": "The stress result then removes {{grade.stress_notches}} notch.",
+      "now": "The stress result then makes it worse by {{grade.stress_notches}} notch, because stressed debt to EBITDA of {{stress.debt_ebitda}} breaks the leverage threshold.",
+      "why": "Wrong direction: the stress notch worsens the grade (6 to 7).",
+      "note": "The first version of this edit typed '4.0x' by hand; the checker rejected it as a typed number, so it uses a placeholder."
+    },
+    {
+      "was": "Management estimates it has roughly a third of the U.S. dialysis market by patient count [7 \u00b659].",
+      "now": "Management estimates it serves more than a third of U.S. dialysis patients [7 \u00b659].",
+      "why": "The 10-K says approximately 36%."
+    }
+  ],
+  "citation_spot_check": "21 citations read against the full 10-K paragraph on 2026-10-21; all support their sentence. Confirmed: max leverage covenant 5.00x through 2028 [DEBT \u00b658], subsidiary guarantees on the 6.75% notes [DEBT \u00b663], no single commercial payor above 10% [1 \u00b676].",
+  "recommendation_vs_grade": "Approve with conditions vs internal grade 7 (BB+/BB equivalent; S&P BB, Moody's Ba2). Consistent: sub-investment-grade but serviceable. The conditions target what the grade and stress flag: a leverage covenant set between base ({{FY2025.debt_ebitda}}) and stressed ({{stress.debt_ebitda}}) leverage, no buybacks from proceeds, matching subsidiary guarantees, and hedging past 2028.",
+  "known_weakness": "Rule 2 (every sentence needs a placeholder or citation) pushes Claude to attach citations to pure judgment sentences, e.g. 'The conditions below address each of these points [DEBT \u00b658, \u00b663, \u00b695]'. The citations are relevant but decorative."
+}

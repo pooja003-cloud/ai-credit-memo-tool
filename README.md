@@ -45,6 +45,17 @@ python -m creditmemo.handcheck make DVA
 python -m creditmemo.handcheck compare DVA      # writes handcheck/DVA_result.md
 ```
 
+## Example memo: DaVita
+
+[memos/DVA_memo.md](memos/DVA_memo.md). Recommendation: **Approve with conditions**. Internal grade 7 (S&P BB, Moody's Ba2).
+
+How it was made (`python -m creditmemo.draft DVA`):
+- Claude (`claude -p`) got a fact sheet of placeholder names with their values, two analyst points on the interest-rate caps, and 1,052 numbered 10-K paragraphs. It wrote placeholders only.
+- **Attempt 1 failed the checker with 7 errors**: six sentences with no placeholder or citation, and one stray number ("Section 8"). The errors went back to Claude; **attempt 2 passed** (94 placeholders, 46 citations, 0 errors). Every prompt, draft and check report is in `memos/`.
+- Review after the pass: 21 citations read against the full 10-K paragraphs, and all support their sentence. Two wording edits, both re-checked: the stress notch was described in the wrong direction, and "roughly a third" became "more than a third" (the 10-K says about 36%). The first version of one edit typed "4.0x" by hand, and the checker rejected it. Edits are logged in `memos/DVA_result.json`.
+- Recommendation vs grade: consistent. Grade 7 is sub-investment-grade but serviceable; the conditions target what the stress test flags (a leverage covenant set between base and stressed debt / EBITDA, no buybacks from proceeds, matching subsidiary guarantees, hedging past 2028). Claude also spotted that stressed leverage would likely breach DaVita's own 5.00x credit-agreement covenant [DEBT ¶58].
+- Known weakness: the every-sentence-cited rule makes Claude attach relevant-but-decorative citations to pure judgment sentences.
+
 ## Grade vs agency ratings
 
 The 1-to-10 grade was frozen (`config/grade.sha256`) before any rating was looked up. Ratings, sources and dates: `config/agency_ratings.json`; table: [outputs/benchmark.md](outputs/benchmark.md).
@@ -81,4 +92,4 @@ tests/                    worked examples and edge cases
 
 ## Results
 
-To come: example memo, ratio and stress tables.
+To come: ratio and stress tables across all three companies, memos for UNP and KSS, the demo page.
