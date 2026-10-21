@@ -93,7 +93,8 @@ def html_to_lines(page: str, with_pages: bool = False):
             seq, n = m.group(1) or "", int(line.replace("F-", ""))
             prev = last[seq]
             # a footer must continue its page sequence; anything else is content
-            if (prev is None and n <= 5) or (prev is not None and prev < n <= prev + 3):
+            # and close a real page (an index of page numbers has almost nothing between them)
+            if pending >= 4 and ((prev is None and n <= 5) or (prev is not None and prev < n <= prev + 3)):
                 last[seq] = n
                 pages[len(pages) - pending:] = [line] * pending
                 pending = 0

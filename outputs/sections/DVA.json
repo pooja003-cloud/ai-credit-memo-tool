@@ -342,11 +342,15 @@
     },
     {
      "text": "Location of our U.S. dialysis centers",
-     "page": "9"
+     "page": "10"
     },
     {
      "text": "We operated 2,657 outpatient dialysis centers in the U.S. as of December 31, 2025 and 2,605 of these centers are consolidated in our financial statements. Of the remaining 52 nonconsolidated U.S. outpatient dialysis centers, we own noncontrolling interests in 49 centers and provide management and administrative services to three centers that are wholly-owned by third parties. The locations of the 2,605 U.S. outpatient dialysis centers consolidated in our financial statements at December 31, 2025, were as follows:",
-     "page": "9"
+     "page": "10"
+    },
+    {
+     "text": "9",
+     "page": "10"
     },
     {
      "text": "Ancillary services, including our international operations",
@@ -901,7 +905,7 @@
      "page": "22"
     }
    ],
-   "chars": 101893
+   "chars": 101894
   },
   "1A": {
    "title": "Item 1A. Risk Factors",
@@ -1477,15 +1481,19 @@
     },
     {
      "text": "We regularly review, monitor and implement multiple layers of security measures through technology, processes and our people. We utilize security technologies designed to protect and maintain the integrity of our information systems and data, and our defenses are monitored and routinely tested internally and by external parties. Despite these efforts, our facilities and systems, and those of our third-party service providers may be vulnerable to privacy and security incidents; security attacks and breaches; acts of vandalism or theft; computer viruses and other malicious code; coordinated attacks by a variety of actors, including, among others, activist entities or state sponsored cyberattacks; emerging cybersecurity risks; cyber risk related to connected devices; misplaced or lost data; programming and/or human errors; or other similar events that could impact the security, reliability and availability of our systems and the availability, authenticity, integrity and/or confidentiality of information stored on those systems, such as personal or other sensitive information. Internal and external parties have attempted to, and will continue to attempt to, circumvent our security systems, and we have in the past, and expect that we will in the future, defend against, experience, and respond to attacks on our network including, without limitation, reconnaissance probes, denial of service attempts, malicious software attacks including ransomware or other attacks intended to render our internal operating systems or data unavailable, and phishing attacks or business email compromise. For example, we became aware of a cybersecurity incident in April 2025 that impacted our network, resulting in the exfiltration of certain data, including PII and PHI, and disruption to our operations. We have restored all relevant business functions and patient care continued throughout the incident and incident response. The incident adversely impacted our billing and revenue collection cycles, our ability to accept new patients and our ability to perform certain business functions and, as a result, we continue to incur expenses and experience lost revenue as a result of the incident.",
-     "page": "39"
+     "page": "40"
     },
     {
      "text": "Cybersecurity requires ongoing investment and diligence against evolving threats. For example, healthcare companies, including our Company and certain of our third-party service providers, strategic partners, consultants and contractors, are increasingly incorporating into information technology capabilities machine learning or automation for real-time prevention utilizing artificial intelligence for anomaly-based detection, among other uses. The reliability and performance of these new capabilities remain unknown, and it is possible they may not perform as desired, by being either too restrictive and inhibiting operation or not restrictive enough and allowing attacker traffic. The increasing use of this rapidly evolving technology intensifies the cybersecurity and reputational risks we face given its novel and untested nature, particularly to the extent such technology involves the use of PHI or PII. Threat actors continue to evolve their methods with ever increasing sophistication, and are also increasingly utilizing artificial intelligence and other technologies as part of their efforts to infiltrate information systems. Emerging and increasingly advanced cybersecurity threats, including, without limitation, coordinated attacks, may require us to implement or maintain additional layers of security which may disrupt or impact efficiency of our operations. As with any information security program, there always exists the risk that employees will violate our policies despite our compliance efforts or that certain attacks may be beyond the ability of our security and other systems to prevent or detect. There can be no assurance that investments, diligence and/or our internal controls will be sufficient to prevent or timely discover an attack.",
-     "page": "39"
+     "page": "40"
     },
     {
      "text": "Any security breach involving the misappropriation, loss or other unauthorized disclosure or use of confidential information, including, among others, PHI, PII, financial data, competitively sensitive information, trade secrets or other proprietary data, whether by us or a third party, could have a material adverse effect on our business, results of operations, financial condition, and cash flows and could materially harm our reputation. As security threats evolve, we may be required to invest significant additional resources to modify our protective measures and programmatic cybersecurity controls, to investigate and remediate vulnerabilities or other exposures, and to make notifications required under applicable regulations or contractual obligations. The occurrence of any such events could, among other potential things, result in interruptions, or delays in our operations, the loss or corruption of data, cessations in the availability of systems and liability under privacy and information security laws or regulations. Failure to adequately protect and maintain the integrity of our information systems (including our networks) and data, or to defend against cybersecurity attacks, could subject us to monetary fines, civil suits, civil penalties or criminal sanctions and requirements to disclose the breach publicly, could subject our legal representatives or senior management to liability and/or a temporary suspension during which they cannot exercise managerial duties. As malicious cyber activity escalates, including activity that originates outside of the U.S., and as we continue with certain remote work arrangements and a broadened technology footprint, the risks we face relating to the transmission, storage and processing of data within our network and our use of service providers outside of our network have intensified. There have been increased international, federal, state and other privacy, data protection and security enforcement efforts and we expect this trend to continue. While we plan to continue to maintain cyber liability insurance, which we have consistently maintained for years, there can be no assurance that we will successfully be able to obtain such insurance on terms and conditions that are favorable to us or at all, and such liability insurance may not cover us for all types of losses or harms, or otherwise be sufficient to protect us against the amount of all losses. Any of these foregoing risks or developments, either individually or in the aggregate, could have a material adverse effect on our business, results of operations, financial condition and cash flows, materially harm our reputation, harm our relationships with our patients, physicians, vendors and other business partners, and could subject us to regulatory actions, private party litigation and other potential liability.",
-     "page": "39"
+     "page": "40"
+    },
+    {
+     "text": "39",
+     "page": "40"
     },
     {
      "text": "For additional information about our assessment of our cybersecurity risks, see discussion in Part I Item 1C. \"Cybersecurity.\" Privacy and information security laws are complex, and if we fail to comply with applicable laws, regulations and standards, including with respect to third-party service providers that utilize sensitive personally identifiable information on our behalf, it could have a material adverse effect on our business, results of operations, financial condition and cash flows and could materially harm our reputation.",
@@ -1644,7 +1652,7 @@
      "page": "45"
     }
    ],
-   "chars": 129698
+   "chars": 129700
   },
   "7": {
    "title": "Item 7. Management's Discussion and Analysis",
