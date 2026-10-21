@@ -17,6 +17,9 @@ Placeholders
   {{stress.debt_ebitda}}            stressed ratio; also stress.ebitda, stress.extra_interest,
                                     stress.base_margin, stress.stressed_margin
   {{facility.amount_usd}}, {{facility.tenor_years}}, {{floating_rate_share}}
+  {{abs:FY2025.cashflow.buybacks}}  any placeholder without its minus sign (for 'fell', 'buybacks of')
+  {{fact.covenant_max_leverage}}    a 10-K figure entered by hand in config/companies.json with its citation
+  {{rating.sp}}                     agency rating from config/agency_ratings.json, with its last action date
   {{grade.grade}}, {{grade.base_grade}}, {{grade.stress_notches}}, {{grade.weighted_score}},
   {{grade.score.dscr}} (a metric's 1-10 score)
 
@@ -29,7 +32,10 @@ The draft fails if it has
   * a number typed by hand (allowed: years, FY labels, Item/Note numbers, 10-K/10-Q,
     and the 1-to-10 scale)
   * a sentence with neither a placeholder nor a citation (headings, table rows
-    of placeholders and the recommendation line excepted)
+    of placeholders and the recommendation line excepted); in the Recommendation
+    section an opinion may carry [judgment] instead
+  * a sign mismatch: a negative value after 'fell'/'declined'/'buybacks of'
+    (use {{abs:...}}), or 'rose'/'grew' with a negative change
   * a citation to a section or paragraph that doesn't exist
   * a quotation (5+ words in double quotes) that isn't in the cited paragraph
   * no recommendation line: "Recommendation: Approve" or "Recommendation: Decline"
@@ -50,7 +56,12 @@ SECTIONS_DIR = ROOT / "outputs" / "sections"
 SECTION_TITLES = {"1": "Item 1", "1A": "Item 1A", "7": "Item 7", "7-LIQ": "Item 7, Liquidity",
                   "7A": "Item 7A", "DEBT": "Debt note"}
 
-PH_RE = re.compile(r"\{\{\s*([A-Za-z0-9_.\-]+)\s*\}\}")
+PH_RE = re.compile(r"\{\{\s*((?:abs:)?[A-Za-z0-9_.\-]+)\s*\}\}")
+JUDG_RE = re.compile(r"\[judgment\]", re.I)
+# a change word followed by a placeholder: the sign must agree with the word
+DOWN_RE = re.compile(r"\b(fell|declined|decreased|dropped|shrank|buybacks of|repurchases of|capex of|capital expenditures of)\s+(?:by\s+)?\{\{\s*((?:abs:)?[A-Za-z0-9_.\-]+)\s*\}\}", re.I)
+UP_RE = re.compile(r"\b(rose|increased|grew|climbed)\s+(?:by\s+)?\{\{\s*((?:abs:)?growth\.[A-Za-z0-9_.\-]+)\s*\}\}", re.I)
+AGENCY_NAMES = {"sp": "S&P", "moodys": "Moody's", "fitch": "Fitch"}
 CITE_RE = re.compile(r"\[(1A|1|7-LIQ|7A|7|DEBT)\s*¶\s*(\d+)(?:\s*[,;]\s*¶?\s*(\d+))*\]")
 CITE_ANY_RE = re.compile(r"\[[^\]]*¶[^\]]*\]")
 REC_RE = re.compile(r"^\**\s*Recommendation\s*:?\**\s*:?\s*\**\s*(Approve|Decline)\b", re.I | re.M)
@@ -95,10 +106,13 @@ def fmt(key: str, v, kind: Optional[str] = None) -> str:
 class Values:
     """Resolves placeholder names against one spread."""
 
-    def __init__(self, spread: dict, grade: Optional[dict] = None):
+    def __init__(self, spread: dict, grade: Optional[dict] = None, facts: Optional[dict] = None,
+                 ratings: Optional[dict] = None):
         self.s = spread
         self.grade = grade or spread.get("grade")
         self.labels = [p["label"] for p in spread["periods"]]
+        self.facts = facts or {}        # hand-entered 10-K figures with citations (config/companies.json)
+        self.ratings = ratings or {}    # agency ratings (config/agency_ratings.json)
 
     def _line(self, statement: str, key: str, label: str):
         std = self.s["standard"]
@@ -127,7 +141,25 @@ class Values:
             return True, self.s["ratio_inputs"][label][key], None
         return False, None, None
 
+    def raw(self, name: str):
+        """The underlying number for sign checks (None if not numeric)."""
+        parts = name.split(".")
+        if parts[0] in self.labels and len(parts) >= 2:
+            found, v, _ = self._period_value(parts[0], ".".join(parts[1:]))
+            return v if found else None
+        if parts[0] == "growth" and len(parts) == 3 and parts[1] in self.labels:
+            i = self.labels.index(parts[1])
+            if i == 0:
+                return None
+            _, cur, _ = self._period_value(parts[1], parts[2])
+            _, prev, _ = self._period_value(self.labels[i - 1], parts[2])
+            return None if not prev or cur is None else (cur - prev) / abs(prev)
+        return None
+
     def resolve(self, name: str) -> Tuple[bool, str]:
+        if name.startswith("abs:"):
+            ok, txt = self.resolve(name[4:])
+            return ok, txt.lstrip("-") if ok else ""
         parts = name.split(".")
         head = parts[0]
         if head in self.labels and len(parts) >= 2:
@@ -154,6 +186,8 @@ class Values:
                 return True, fmt(k, st[k], "money")
             if k in ("base_margin", "stressed_margin", "floating_rate_share"):
                 return True, fmt(k, st[k], "pct")
+            if k in ("margin_shock", "rate_shock"):      # shifts in rates and margins read as basis points
+                return True, f"{st['scenario'][k] * 1e4:.0f}bp"
             if k in st["scenario"]:
                 return True, fmt(k, st["scenario"][k], "pct")
             return False, ""
@@ -168,6 +202,14 @@ class Values:
             if isinstance(v, (dict, list)):
                 return False, ""
             return True, f"{v:.2f}" if isinstance(v, float) else str(v)
+        if head == "fact" and len(parts) == 2 and parts[1] in self.facts:
+            f = self.facts[parts[1]]
+            return True, fmt(parts[1], f["value"], f.get("kind", "money"))
+        if head == "rating" and len(parts) == 2 and self.ratings.get(parts[1]):
+            r = self.ratings[parts[1]]
+            outlook = f" {r['outlook'].split(' (')[0].lower()}" if r.get("outlook") else ""
+            when = f"last action {r['last_action']}" if r.get("last_action") else "no dated action found"
+            return True, f"{r['rating']}{outlook} ({AGENCY_NAMES.get(parts[1], parts[1])}, {when})"
         if head == "grade" and self.grade is not None and len(parts) == 3 and parts[1] == "score" \
                 and parts[2] in self.grade.get("scores", {}):
             return True, str(self.grade["scores"][parts[2]]["score"])
@@ -176,14 +218,20 @@ class Values:
 
 # --------------------------------------------------------------- checking
 
-def _sentences(text: str) -> List[Tuple[int, str]]:
-    """(line number, sentence) for prose lines; headings, table rules and
-    blank lines are skipped. Abbreviations like 'U.S.' and decimals are
-    protected before splitting."""
+def _sentences(text: str) -> List[Tuple[int, str, str]]:
+    """(line number, sentence, section heading) for prose lines; headings,
+    table rules and blank lines are skipped. Quote-block lines are checked
+    like any other line. Abbreviations like 'U.S.' and decimals are protected
+    before splitting."""
     out = []
+    section = ""
     for n, line in enumerate(text.splitlines(), 1):
         s = line.strip()
-        if not s or s.startswith("#") or re.fullmatch(r"[|:\-\s]+", s) or s.startswith(">"):
+        if s.startswith("#"):
+            section = s.lstrip("#").strip()
+            continue
+        s = re.sub(r"^(>\s*)+", "", s)
+        if not s or re.fullmatch(r"[|:\-\s]+", s):
             continue
         s = re.sub(r"^([-*+]|\d+\.)\s+", "", s)
         protected = re.sub(r"\b(U\.S|e\.g|i\.e|vs|Inc|Co|Corp|No|approx)\.", lambda m: m.group(0).replace(".", "§"), s)
@@ -192,13 +240,14 @@ def _sentences(text: str) -> List[Tuple[int, str]]:
         for part in re.split(r"(?<=[.!?])\s+(?=[A-Z\"“(\[])", protected):
             part = part.replace("§", ".").strip()
             if part:
-                out.append((n, part))
+                out.append((n, part, section))
     return out
 
 
 def _strip_allowed(s: str) -> str:
     s = PH_RE.sub(" ", s)
     s = CITE_ANY_RE.sub(" ", s)
+    s = JUDG_RE.sub(" ", s)
     for r in ALLOWED_NUMBER_RES:
         s = re.sub(r, " ", s, flags=re.I)
     return s
@@ -239,7 +288,26 @@ def check(draft: str, values: Values, sections: dict) -> dict:
                        "text": "Missing 'Recommendation: Approve' or 'Recommendation: Decline'"})
 
     n_sent = 0
-    for line, sent in _sentences(draft):
+    for name, f in values.facts.items():
+        cm = CITE_RE.fullmatch(f.get("cite", "") or "")
+        if not cm or cm.group(1) not in secs:
+            errors.append({"line": None, "type": "fact_without_source", "text": name,
+                           "detail": "every fact in config needs a valid 10-K citation in 'cite'"})
+    for m in DOWN_RE.finditer(draft):
+        v = values.raw(m.group(2).replace("abs:", ""))
+        bad = v is not None and ((m.group(2).startswith("abs:") and v > 0) or
+                                 (not m.group(2).startswith("abs:") and v < 0))
+        if bad:
+            errors.append({"line": draft.count("\n", 0, m.start()) + 1, "type": "sign_mismatch",
+                           "text": m.group(0), "detail": "after a word like 'fell', use {{abs:...}} on a value that "
+                           "is actually negative; a plain placeholder here would print a minus sign"})
+    for m in UP_RE.finditer(draft):
+        v = values.raw(m.group(2).replace("abs:", ""))
+        if v is not None and v < 0:
+            errors.append({"line": draft.count("\n", 0, m.start()) + 1, "type": "sign_mismatch",
+                           "text": m.group(0), "detail": "says it rose but the change is negative"})
+
+    for line, sent, section in _sentences(draft):
         is_table = sent.startswith("|")
         bare = _strip_allowed(sent)
         stray = re.findall(r"(?<![A-Za-z])[$€£]?\d[\d,]*(\.\d+)?\s*(%|x\b|bp\b|billion|million)?", bare)
@@ -250,7 +318,9 @@ def check(draft: str, values: Values, sections: dict) -> dict:
         if is_table or REC_RE.match(sent) or len(sent.split()) < 6:
             continue
         n_sent += 1
-        if not PH_RE.search(sent) and not CITE_RE.search(sent):
+        if JUDG_RE.search(sent) and not re.search(r"recommendation", section, re.I):
+            errors.append({"line": line, "type": "judgment_outside_recommendation", "text": sent[:160]})
+        elif not PH_RE.search(sent) and not CITE_RE.search(sent) and not JUDG_RE.search(sent):
             errors.append({"line": line, "type": "uncited_claim", "text": sent[:160]})
         for q in re.findall(r"[\"“]([^\"”]+)[\"”]", sent):
             if len(q.split()) < 5:
@@ -287,13 +357,24 @@ def render(draft: str, values: Values, sections: dict) -> str:
         label = f"10-K {SECTION_TITLES.get(key, key)} ¶{', ¶'.join(map(str, nums))}{pg}"
         return f"[{label}]({url})" if url else f"[{label}]"
 
-    return CITE_RE.sub(cite, PH_RE.sub(ph, draft))
+    out = CITE_RE.sub(cite, PH_RE.sub(ph, draft))
+    return JUDG_RE.sub("*(analyst judgment)*", out)
 
 
 def load(ticker: str):
     spread = json.loads((SPREAD_DIR / f"{ticker}.json").read_text())
     sections = json.loads((SECTIONS_DIR / f"{ticker}.json").read_text())
     return spread, sections
+
+
+def make_values(ticker: str, spread: dict) -> Values:
+    """Values with the company's cited 10-K facts and its agency ratings."""
+    from . import CONFIG_DIR
+    co = json.loads((CONFIG_DIR / "companies.json").read_text())["companies"].get(ticker, {})
+    rpath = CONFIG_DIR / "agency_ratings.json"
+    ratings = json.loads(rpath.read_text())["companies"].get(ticker, {}) if rpath.exists() else {}
+    return Values(spread, facts=co.get("facts"), ratings={k: v for k, v in ratings.items()
+                                                         if k in AGENCY_NAMES})
 
 
 def main(argv=None) -> int:
@@ -305,7 +386,7 @@ def main(argv=None) -> int:
     ticker = (args.ticker or args.draft.name.split("_")[0]).upper()
     spread, sections = load(ticker)
     draft = args.draft.read_text()
-    values = Values(spread)
+    values = make_values(ticker, spread)
     report = check(draft, values, sections)
     report_path = args.draft.with_name(args.draft.stem.replace("_draft", "") + "_check.json")
     report_path.write_text(json.dumps(report, indent=2))

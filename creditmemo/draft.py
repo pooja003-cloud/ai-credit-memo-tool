@@ -31,11 +31,10 @@ import re
 import shlex
 import subprocess
 import sys
-from pathlib import Path
 
 from . import ROOT, SPREAD_DIR
 from .edgar import load_companies
-from .memo_check import SECTIONS_DIR, Values, check, render
+from .memo_check import SECTIONS_DIR, check, make_values, render
 
 MEMO_DIR = ROOT / "memos"
 DEFAULT_CMD = "claude -p --output-format text"
@@ -53,8 +52,7 @@ FACT_LINES = {
 }
 
 
-def fact_sheet(spread: dict) -> str:
-    v = Values(spread)
+def fact_sheet(spread: dict, v) -> str:
     labels = [p["label"] for p in spread["periods"]]
     rows = ["| Placeholder | " + " | ".join(labels) + " |", "|---|" + "---|" * len(labels)]
 
@@ -67,14 +65,14 @@ def fact_sheet(spread: dict) -> str:
 
     for key in spread["ratios"][labels[-1]]:
         add(lambda l, k=key: f"{l}.{k}", "")
-    for key in ("ebitda_margin", "ebitdar", "net_debt", "lease_adj_debt"):
+    for key in ("ebitda_margin", "ebitdar", "net_debt", "lease_adj_debt", "ebitda_ex_unusual"):
         add(lambda l, k=key: f"{l}.{k}", "")
     for st, keys in FACT_LINES.items():
         for key in keys:
             add(lambda l, s=st, k=key: f"{l}.{s}.{k}", "")
     for key in ("cash_taxes", "scheduled_principal", "operating_lease_cost", "operating_lease_liabilities"):
         add(lambda l, k=key: f"{l}.{k}", "(from the notes)")
-    for key in ("revenue", "ebitda", "operating_income", "total_debt"):
+    for key in ("revenue", "ebitda", "ebitda_ex_unusual", "operating_income", "cfo", "total_debt"):
         add(lambda l, k=key: f"growth.{l}.{k}", "(change on prior year)")
 
     out = ["Use the placeholder with the real year in place of FYxxxx, e.g. `{{" + labels[-1] + ".debt_ebitda}}`.",
@@ -90,6 +88,13 @@ def fact_sheet(spread: dict) -> str:
         ok, txt = v.resolve(n)
         if ok:
             out.append(f"- `{{{{{n}}}}}` = {txt}")
+    for k in sorted(v.facts):
+        ok, txt = v.resolve("fact." + k)
+        out.append(f"- `{{{{fact.{k}}}}}` = {txt}: {v.facts[k].get('label', '')} {v.facts[k]['cite']}")
+    for k in v.ratings:
+        ok, txt = v.resolve("rating." + k)
+        if ok:
+            out.append(f"- `{{{{rating.{k}}}}}` = {txt}")
     br = [st["thresholds"][k]["label"] for k, b in st["stressed"]["breaches"].items() if b]
     out.append(f"- Stress thresholds broken (for your reasoning; describe them in words): "
                f"{', '.join(br) if br else 'none'}")
@@ -117,11 +122,16 @@ RULES (a script checks every one; a draft that breaks any rule is rejected):
 1. Never type a number. Every figure, ratio, percentage, amount, multiple and count must be a placeholder from the fact sheet, written exactly like {{{{FY2025.debt_ebitda}}}}. Write "{{{{facility.tenor_years}}}}-year", not "5-year". Words like "one notch" or "two thresholds" are fine. Allowed as typed text: years (2025), FY labels (FY2025), "Item 1A", "Note 12", "10-K", instrument names like "Term Loan A-2", and "1-to-10".
 2. Every sentence of six words or more must contain a placeholder or a citation. Cite the 10-K as [1A ¶12] using the section key and paragraph number shown in front of each paragraph, e.g. [7-LIQ ¶3] or [DEBT ¶61]. Several paragraphs: [DEBT ¶95, ¶96].
 3. Quotations of five or more words, in double quotes, must be copied word for word from the cited paragraph. Prefer paraphrase with a citation.
-4. Do not invent placeholders. If a value is not in the fact sheet, describe it in words with a citation, or leave it out.
-5. End with a line in exactly this form: "Recommendation: Approve" or "Recommendation: Decline", optionally followed by " with conditions" and then the conditions.
+4. Signs: placeholders print negative values with a minus sign (capex, buybacks, gains, falls). After words like "fell", "declined", "buybacks of" or "capex of", write {{{{abs:...}}}} (e.g. "buybacks of {{{{abs:FY2025.cashflow.buybacks}}}}", "EBITDA fell {{{{abs:growth.FY2025.ebitda}}}}"). The checker rejects a sign that contradicts the word.
+5. Do not invent placeholders. If a value is not in the fact sheet, describe it in words with a citation, or leave it out.
+6. In section 8 only, an opinion that no number or paragraph supports may end with [judgment] instead of a citation. Do not attach citations that don't support the sentence.
+7. End with a line in exactly this form: "Recommendation: Approve" or "Recommendation: Decline", optionally followed by " with conditions" and then the conditions.
 
 STRUCTURE (Markdown):
 # Credit memo: {name}
+
+A summary table right under the title, with rows: Internal grade ({{{{grade.grade}}}} on 1-to-10), Recommendation, Agency ratings ({{{{rating.sp}}}}; {{{{rating.moodys}}}}), and three short "Key reason" rows, each with a placeholder or citation.
+
 ## 1. Request
 ## 2. Borrower overview
 ## 3. Financial analysis  (include one table of key ratios for the three fiscal years using placeholders; then discuss trends)
@@ -145,7 +155,7 @@ def build_prompt(ticker: str) -> str:
     points = co.get("memo_points") or []
     parts = [INSTRUCTIONS.format(name=spread["name"]),
              "## FACT SHEET (values are shown only so you can reason; write the placeholder, never the value)",
-             fact_sheet(spread)]
+             fact_sheet(spread, make_values(ticker, spread))]
     if co.get("floating_rate_basis"):
         parts += ["", "Floating-rate basis (analyst note): " + co["floating_rate_basis"]]
     if points:
@@ -190,7 +200,7 @@ def main(argv=None) -> int:
 
     spread = json.loads((SPREAD_DIR / f"{t}.json").read_text())
     sections = json.loads((SECTIONS_DIR / f"{t}.json").read_text())
-    values = Values(spread)
+    values = make_values(t, spread)
     current = prompt
     for attempt in range(MAX_REVISIONS + 1):
         print(f"attempt {attempt + 1}: running claude ...", flush=True)

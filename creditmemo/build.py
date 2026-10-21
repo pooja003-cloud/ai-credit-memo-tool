@@ -96,6 +96,11 @@ def assemble(ticker: str, company: dict, facility: dict, cf: dict, spec: dict, o
         }
         ratio_inputs[lab] = v
         derived[lab], ratios[lab], ratio_notes[lab] = compute_period(v)
+        # EBITDA excluding unusual operating items (gains negative, charges positive),
+        # for discussion only; EBITDA itself and every ratio stay as reported
+        unusual = get("income", "unusual_operating").get(lab)
+        e = derived[lab]["ebitda"]
+        derived[lab]["ebitda_ex_unusual"] = None if e is None else e + (unusual or 0.0)
 
     cross = []
     for statement, key, concept, sign in CROSS_CHECK:

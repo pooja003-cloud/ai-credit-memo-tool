@@ -111,3 +111,50 @@ def test_misquote_fails():
 
 def test_missing_recommendation_fails():
     assert "no_recommendation" in errors(GOOD.replace("Recommendation: Decline", ""))
+
+
+FACTS = {"covenant_max_leverage": {"value": 5.0, "kind": "ratio", "cite": "[1A ¶2]"}}
+RATINGS = {"sp": {"rating": "BB", "outlook": "Stable", "last_action": "2025-09-16"}}
+VF = Values(dict(SPREAD, standard=dict(SPREAD["standard"], cashflow=[
+    {"key": "da", "values": [723860000.0, 715348000.0]},
+    {"key": "buybacks", "values": [-1385932000.0, -1792999000.0]}])), facts=FACTS, ratings=RATINGS)
+
+
+def errs(draft, v=VF):
+    return [e["type"] for e in check(draft, v, SECTIONS)["errors"]]
+
+
+def test_abs_fact_and_rating_placeholders():
+    assert VF.resolve("FY2025.cashflow.buybacks") == (True, "-$1.8 billion")
+    assert VF.resolve("abs:FY2025.cashflow.buybacks") == (True, "$1.8 billion")
+    assert VF.resolve("fact.covenant_max_leverage") == (True, "5.00x")
+    assert VF.resolve("rating.sp") == (True, "BB stable (S&P, last action 2025-09-16)")
+    assert VF.resolve("rating.moodys")[0] is False
+
+
+def test_sign_checks():
+    ok = GOOD.replace("Reimbursement risk is", "Buybacks of {{abs:FY2025.cashflow.buybacks}} show risk is")
+    assert errs(ok) == []
+    bad = GOOD.replace("Reimbursement risk is", "Buybacks of {{FY2025.cashflow.buybacks}} show risk is")
+    assert "sign_mismatch" in errs(bad)
+    # revenue grew 6.5%: saying it fell is a contradiction even with abs:
+    assert "sign_mismatch" in errs(GOOD.replace("up {{growth.FY2025.revenue}}", "but fell {{abs:growth.FY2025.revenue}}"))
+    assert errs(GOOD.replace("up {{growth.FY2025.revenue}}", "it rose {{growth.FY2025.revenue}}")) == []
+
+
+def test_judgment_only_in_recommendation():
+    d = GOOD.replace("Recommendation: Decline", "## 8. Recommendation\nWe think the borrower is a reasonable risk overall [judgment].\n\nRecommendation: Decline")
+    assert errs(d) == []
+    d2 = GOOD.replace("Reimbursement risk is the main threat to revenue [1A ¶2].",
+                      "Reimbursement risk is the main threat to revenue overall [judgment].")
+    assert "judgment_outside_recommendation" in errs(d2)
+    assert "*(analyst judgment)*" in render(d, VF, SECTIONS)
+
+
+def test_quote_block_is_checked_too():
+    assert "typed_number" in errs(GOOD.replace("# Credit memo: DaVita Inc.", "# Credit memo: DaVita Inc.\n\n> Grade is 7 on our scale."))
+
+
+def test_fact_needs_valid_citation():
+    v = Values(SPREAD, facts={"x": {"value": 1.0, "kind": "ratio", "cite": "[DEBT ¶999]"}})
+    assert "fact_without_source" in errs(GOOD, v)

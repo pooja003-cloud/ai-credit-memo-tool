@@ -23,7 +23,69 @@
       "memo_points": [
         "Interest rate caps protect only above their strikes: weighted average SOFR strike 4.32% in 2026, 4.46% in 2027, 4.43% in 2028, 4.50% in 2029, with 25bp step-ups at end-2026 and end-2027 [DEBT \u00b696, \u00b697-\u00b6100].",
         "Cap coverage drops from $3.5B (2025-2028) to $1.0B in 2029, inside the requested 5-year tenor [DEBT \u00b695]; management describes the caps as shielding exposure 'through 2029' [7 \u00b632]."
-      ]
+      ],
+      "facts": {
+        "covenant_max_leverage": {
+          "value": 5.0,
+          "kind": "ratio",
+          "cite": "[DEBT \u00b658]",
+          "label": "Credit agreement maximum leverage ratio covenant, tested quarterly, through December 31, 2028"
+        },
+        "covenant_max_leverage_after_2028": {
+          "value": 4.5,
+          "kind": "ratio",
+          "cite": "[DEBT \u00b658]",
+          "label": "Maximum leverage ratio covenant after December 31, 2028 (5.00x for four quarters after a material acquisition)"
+        },
+        "covenant_restriction_leverage": {
+          "value": 4.0,
+          "kind": "ratio",
+          "cite": "[DEBT \u00b658]",
+          "label": "Leverage below which many credit-agreement restrictions (incl. share repurchases) do not apply"
+        },
+        "revolver_undrawn": {
+          "value": 1500000000.0,
+          "kind": "money",
+          "cite": "[7-LIQ \u00b681]",
+          "label": "Undrawn revolving credit capacity at December 31, 2025"
+        },
+        "nci_puts_2026": {
+          "value": 1408000000.0,
+          "kind": "money",
+          "cite": "[7 \u00b6352]",
+          "label": "Noncontrolling interests subject to put provisions, 2026 column of the contractual obligations table (total $1,532M)"
+        },
+        "unhedged_floating_debt": {
+          "value": 368559000.0,
+          "kind": "money",
+          "cite": "[DEBT \u00b661]",
+          "label": "Term Loan A-2 principal not covered by interest rate caps at December 31, 2025"
+        },
+        "cap_coverage_2025_2028": {
+          "value": 3500000000.0,
+          "kind": "money",
+          "cite": "[DEBT \u00b695]",
+          "label": "Interest rate cap notional coverage in each year 2025-2028"
+        },
+        "cap_coverage_2029": {
+          "value": 1000000000.0,
+          "kind": "money",
+          "cite": "[DEBT \u00b695]",
+          "label": "Interest rate cap notional coverage in 2029"
+        },
+        "cap_strike_2026": {
+          "value": 0.0432,
+          "kind": "pct",
+          "cite": "[DEBT \u00b696]",
+          "label": "Weighted average SOFR cap strike, 2026"
+        },
+        "cap_strike_2029": {
+          "value": 0.045,
+          "kind": "pct",
+          "cite": "[DEBT \u00b696]",
+          "label": "Weighted average SOFR cap strike, 2029"
+        }
+      }
     },
     "UNP": {
       "cik": 100885,
@@ -46,5 +108,6 @@
       "floating_rate_basis": "All long-term debt is fixed rate. The $1.5B revolver is SOFR-based but undrawn at January 31, 2026 ($290M drawn a year earlier). $425M of 2021 notes carry rating-linked coupon step-ups, already triggered; that is a fixed-rate repricing, not floating exposure.",
       "floating_rate_quote": "All other long-term debt is at fixed interest rates and, therefore, is not affected by changes in interest rates. ... There were no outstanding borrowings under the revolving credit facility as of January 31, 2026."
     }
-  }
+  },
+  "_facts_readme": "'facts' are 10-K figures that are not in the spread, typed in by hand from the filing. Each carries the 10-K paragraph it comes from in 'cite' (section key and paragraph number in outputs/sections/<TICKER>.json); the memo checker fails if a citation doesn't exist. kind: money (dollars), ratio (x), pct (fraction)."
 }
