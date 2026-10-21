@@ -180,9 +180,9 @@
     },
     "interest_expense": {
       "FY2023": {
-        "value": 373951000.0,
+        "value": 398551000.0,
         "source": "xbrl",
-        "tag": "InterestExpenseDebt",
+        "tag": "InterestAndDebtExpense",
         "unit": "USD",
         "accn": "0000927066-26-000012",
         "form": "10-K",
@@ -194,9 +194,9 @@
         "note": null
       },
       "FY2024": {
-        "value": 435203000.0,
+        "value": 470469000.0,
         "source": "xbrl",
-        "tag": "InterestExpenseDebt",
+        "tag": "InterestAndDebtExpense",
         "unit": "USD",
         "accn": "0000927066-26-000012",
         "form": "10-K",
@@ -208,9 +208,9 @@
         "note": null
       },
       "FY2025": {
-        "value": 539924000.0,
+        "value": 579926000.0,
         "source": "xbrl",
-        "tag": "InterestExpenseDebt",
+        "tag": "InterestAndDebtExpense",
         "unit": "USD",
         "accn": "0000927066-26-000012",
         "form": "10-K",
@@ -1011,8 +1011,8 @@
       "net_debt_ebitda": 3.424833857573641,
       "lease_adj_debt_ebitdar": 3.6662545199815835,
       "lease_adj_net_debt_ebitdar": 3.540907729712687,
-      "interest_coverage": 6.255520108249477,
-      "dscr": 3.022990447461036,
+      "interest_coverage": 5.869406926591578,
+      "dscr": 2.880486729903229,
       "current_ratio": 1.1876047890140617
     },
     "FY2024": {
@@ -1020,8 +1020,8 @@
       "net_debt_ebitda": 3.0823690654281855,
       "lease_adj_debt_ebitdar": 3.4516032424401653,
       "lease_adj_net_debt_ebitdar": 3.224220246572592,
-      "interest_coverage": 6.449585595687529,
-      "dscr": 2.6392510657583528,
+      "interest_coverage": 5.966129543072976,
+      "dscr": 2.5136995910086655,
       "current_ratio": 1.2598572009914542
     },
     "FY2025": {
@@ -1029,8 +1029,8 @@
       "net_debt_ebitda": 3.487360035931969,
       "lease_adj_debt_ebitdar": 3.727317839045039,
       "lease_adj_net_debt_ebitdar": 3.5314785815016414,
-      "interest_coverage": 5.096767322808395,
-      "dscr": 3.08001540535336,
+      "interest_coverage": 4.7452036984029,
+      "dscr": 2.9012286559661717,
       "current_ratio": 1.2916854732282628
     }
   },

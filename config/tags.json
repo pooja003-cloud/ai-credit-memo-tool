@@ -36,8 +36,8 @@
     "tags": [
       "InterestExpense",
       "InterestExpenseNonoperating",
-      "InterestExpenseDebt",
       "InterestAndDebtExpense",
+      "InterestExpenseDebt",
       {
         "tag": "InterestIncomeExpenseNonoperatingNet",
         "negate": true,

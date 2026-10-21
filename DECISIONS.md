@@ -16,6 +16,40 @@ Fixed before coding, 2026-10-21. Change any of them here first, then in the code
 | Agency ratings | Fetched with source and date, stored unopened until grade thresholds are frozen | Otherwise the grade is fitted to the ratings |
 | Demo | Export script writes `demo.json`; a static page reads it | Site is plain HTML/CSS/JS |
 
+## Two layers (decided 2026-10-21)
+
+1. **As reported.** Each company's income statement, balance sheet and cash flow statement exactly as in the 10-K: same line names, order and subtotals, parsed from the SEC's rendered statement pages (R files) for the latest two 10-Ks. Each line keeps its XBRL tag, filing and page.
+2. **Standard bank spread.** One fixed template for every company, built only from Layer 1 lines. Each standard line lists the as-reported lines it came from. Anything not mapped goes to a visible "other" line in its section, so the totals tie. Tie-outs check that the standard totals equal the reported totals. Ratios run off this layer.
+
+The company-facts route (`creditmemo/spread.py`) stays as an independent cross-check, plus the source for the note-level items (lease cost, lease liabilities, next-year maturities).
+
+### Standard template
+
+| Income statement | Balance sheet | Cash flow |
+|---|---|---|
+| Revenue | Cash and equivalents | Cash from operations **(tie)** |
+| Operating costs excl. D&A | Receivables | of which D&A |
+| D&A (from the cash flow statement) | Inventory | Capex |
+| Unusual operating items (impairments, gains) | Other current assets | Acquisitions |
+| Operating income **(tie)** | Total current assets **(tie)** | Other investing |
+| Interest expense (the face-of-statement line) | PP&E, net | Cash from investing **(tie)** |
+| Other non-operating items | Operating lease assets | Debt issued |
+| Pre-tax income **(tie)** | Goodwill and intangibles | Debt repaid |
+| Income tax | Other non-current assets | Dividends |
+| Discontinued operations | Total assets **(tie)** | Share buybacks |
+| Non-controlling interests | Short-term debt and current LTD | Other financing (incl. NCI distributions) |
+| Net income to the company **(tie)** | Accounts payable | Cash from financing **(tie)** |
+| EBITDA = operating income + D&A | Other current liabilities | FCF = CFO − capex |
+| | Total current liabilities **(tie)** | |
+| | Long-term debt (incl. finance leases if reported inside) | |
+| | Operating lease liabilities | |
+| | Other non-current liabilities | |
+| | Non-controlling / redeemable interests | |
+| | Shareholders' equity | |
+| | Total liabilities and equity **(tie)** | |
+
+EBITDA is reported EBITDA: no add-backs. Unusual items are shown on their own line so a reader can see them, but they are not removed.
+
 ## Definitions
 
 - **EBITDA** = operating income + D&A
@@ -23,7 +57,7 @@ Fixed before coding, 2026-10-21. Change any of them here first, then in the code
 - **Net debt** = total debt − cash and equivalents
 - **Leverage** = debt / EBITDA and net debt / EBITDA
 - **Lease-adjusted leverage** = (debt + operating lease liabilities) / EBITDAR, where EBITDAR = EBITDA + operating lease cost. Under ASC 842, rent is already deducted inside EBITDA, so adding lease debt without adding back rent overstates leverage.
-- **Interest coverage** = EBITDA / interest expense
+- **Interest coverage** = EBITDA / interest expense. Interest expense is the line on the face of the income statement (DaVita's "Debt expense", which includes finance lease interest and financing costs), not the narrower debt-note figure
 - **DSCR** = (EBITDA − capex − cash taxes) / (interest + scheduled principal). Scheduled principal = principal due in the next 12 months at year end (forward-looking), or the current portion of LTD if that isn't tagged.
 - **Liquidity** = current ratio and cash on hand
 - **Not meaningful (n.m.)**: leverage when EBITDA ≤ 0; any ratio whose denominator is ≤ 0. Negative coverage is kept, since it is a real, failing result.
