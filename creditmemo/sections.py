@@ -20,12 +20,10 @@ still come from the spread, never from this text.
 from __future__ import annotations
 
 import argparse
-import html as _html
 import json
 import re
 import sys
 from html.parser import HTMLParser
-from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 from . import ROOT

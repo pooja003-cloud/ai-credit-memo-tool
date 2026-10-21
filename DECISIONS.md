@@ -89,3 +89,45 @@ EBITDA is reported EBITDA: no add-backs. Unusual items are shown on their own li
 - A missing current portion of LTD counts as 0, and that zero carries into scheduled principal, flagged (Kohl's FY2023).
 - Fiscal year labels follow the company. Kohl's year ending 31 Jan 2026 is FY2025.
 - EDGAR: User-Agent with a contact (from `SEC_USER_AGENT`), at most 4 requests a second, every response cached.
+
+## Floating-rate share (DRAFT, 2026-10-21 - confirm)
+
+From each latest 10-K; the quote and page are also in `config/companies.json`.
+
+| Company | Share | Source | Basis |
+|---|---|---|---|
+| DaVita | 38.1% | Note 12, p. F-26 and F-28 | Term Loans A-2 and B-2 (SOFR + margin) $3.87B of $10.16B debt principal. Caps (SOFR max 4.00-4.50%) cover all but $369M (3.6% unhedged); gross share used because caps limit but don't remove the cost of a +200bp shock and most expire 2025-2027 |
+| Union Pacific | 0% | Item 7 Other Matters (Item 7A refers there), p. 39 | "At both December 31, 2025, and 2024, we did not have variable-rate debt." |
+| Kohl's | 0% | Item 7A, p. 37 | All long-term debt fixed; revolver SOFR-based but undrawn at year end. Rating-linked coupon step-ups on $425M notes are a repricing risk for the memo, not floating exposure |
+
+## Memo rules
+
+- Numbers only as placeholders, filled by `creditmemo/memo_check.py` from the spread (`{{FY2025.debt_ebitda}}`, `{{stress.dscr}}`, `{{growth.FY2025.revenue}}`, ...).
+- Every sentence carries a placeholder or a citation to the extracted 10-K text: `[1A ¶12]` = Item 1A, paragraph 12 in `outputs/sections/<TICKER>.json`. Rendered as "10-K Item 1A ¶12, p. 24" with a link to the filing.
+- Quotations of five words or more must appear verbatim in the cited paragraph.
+- The draft fails on any hand-typed number (years, FY labels, Item/Note numbers, 10-K and instrument names like Term Loan A-2 are allowed), unknown placeholder, bad citation, uncited sentence, misquote, or a missing "Recommendation: Approve/Decline" line.
+- The recommendation is the one judgment Claude makes; it is compared with the grade afterwards.
+
+## Risk grade (DRAFT - awaiting sign-off; freeze before looking up any agency rating)
+
+1 = best, 10 = worst. Latest fiscal year, base case. Rules in `config/grade.json`, code in `creditmemo/grade.py`.
+
+| Score | (Debt + leases) / EBITDAR | EBITDA / interest | DSCR | Current ratio |
+|---|---|---|---|---|
+| 1 | ≤ 1.0x | ≥ 15x | ≥ 4.0x | ≥ 2.5x |
+| 2 | ≤ 1.5x | ≥ 12x | ≥ 3.25x | ≥ 2.0x |
+| 3 | ≤ 2.0x | ≥ 9x | ≥ 2.75x | ≥ 1.75x |
+| 4 | ≤ 2.5x | ≥ 7x | ≥ 2.25x | ≥ 1.5x |
+| 5 | ≤ 3.0x | ≥ 5.5x | ≥ 1.75x | ≥ 1.25x |
+| 6 | ≤ 3.5x | ≥ 4.5x | ≥ 1.5x | ≥ 1.1x |
+| 7 | ≤ 4.0x | ≥ 3.5x | ≥ 1.25x | ≥ 1.0x |
+| 8 | ≤ 5.0x | ≥ 2.5x | ≥ 1.1x | ≥ 0.8x |
+| 9 | ≤ 6.0x | ≥ 1.5x | ≥ 1.0x | ≥ 0.6x |
+| 10 | > 6.0x or n.m. | < 1.5x | < 1.0x or n.m. | < 0.6x |
+| **Weight** | **40%** | **30%** | **20%** | **10%** |
+
+- Base grade = weighted average of the four scores, rounded half up. No interest at all scores 1 on coverage.
+- Stress overlay: one notch worse per stress threshold broken (leverage > 4.0x, coverage < 2.0x, DSCR < 1.0x), at most two.
+- Why these choices: leverage is lease-adjusted so retailers and railroads compare fairly; leverage and coverage carry 70% because they drive agency ratings; DSCR adds the maturity wall; the current ratio gets little weight because some strong credits (railroads) run below 1.0x by design. Scale, business mix and management are left out on purpose: the grade is purely financial, and that is a known reason it will differ from agency ratings.
+- Agency comparison map (used only after grading): 1 = AAA to AA, 2 = AA-/A+, 3 = A, 4 = A-/BBB+, 5 = BBB, 6 = BBB-, 7 = BB+/BB, 8 = BB-/B+, 9 = B/B-, 10 = CCC and below. Grade 6 and better is investment grade.
+- Known limit: I (Claude) have rough memories of these companies' ratings, so the bands were set from generic conventions without running them on the three companies. The grades are computed only after sign-off.

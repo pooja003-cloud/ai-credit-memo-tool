@@ -1,0 +1,49 @@
+{
+  "status": "DRAFT - awaiting sign-off. Freeze before any agency rating is looked up.",
+  "_readme": "1 = best, 10 = worst. Each metric gets a 1-10 score from its bands; the base grade is the weighted average, rounded half up. Stress overlay: one notch worse for each threshold the stress case breaks (config/stress.json), at most two. Bands for 'higher is better' metrics list minimum values; for leverage they list maximum values.",
+  "period": "latest",
+  "metrics": {
+    "lease_adj_debt_ebitdar": {
+      "label": "(Debt + leases) / EBITDAR",
+      "weight": 0.40,
+      "direction": "lower_is_better",
+      "bands": [1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 5.0, 6.0],
+      "nm_score": 10
+    },
+    "interest_coverage": {
+      "label": "EBITDA / interest",
+      "weight": 0.30,
+      "direction": "higher_is_better",
+      "bands": [15.0, 12.0, 9.0, 7.0, 5.5, 4.5, 3.5, 2.5, 1.5],
+      "nm_score": 1
+    },
+    "dscr": {
+      "label": "DSCR",
+      "weight": 0.20,
+      "direction": "higher_is_better",
+      "bands": [4.0, 3.25, 2.75, 2.25, 1.75, 1.5, 1.25, 1.1, 1.0],
+      "nm_score": 10
+    },
+    "current_ratio": {
+      "label": "Current ratio",
+      "weight": 0.10,
+      "direction": "higher_is_better",
+      "bands": [2.5, 2.0, 1.75, 1.5, 1.25, 1.1, 1.0, 0.8, 0.6],
+      "nm_score": 10
+    }
+  },
+  "stress_overlay": {"notch_per_breach": 1, "max_notches": 2},
+  "agency_map": {
+    "_readme": "Used only for the benchmark comparison, after the grades are computed.",
+    "1": ["AAA", "AA+", "AA", "Aaa", "Aa1", "Aa2"],
+    "2": ["AA-", "A+", "Aa3", "A1"],
+    "3": ["A", "A2"],
+    "4": ["A-", "BBB+", "A3", "Baa1"],
+    "5": ["BBB", "Baa2"],
+    "6": ["BBB-", "Baa3"],
+    "7": ["BB+", "BB", "Ba1", "Ba2"],
+    "8": ["BB-", "B+", "Ba3", "B1"],
+    "9": ["B", "B-", "B2", "B3"],
+    "10": ["CCC+", "CCC", "CCC-", "CC", "C", "D", "Caa1", "Caa2", "Caa3", "Ca", "C"]
+  }
+}
