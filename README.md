@@ -29,7 +29,7 @@ pytest
 
 ## Hand check
 
-`handcheck/DVA_handcheck.xlsx` lists every spread line for the latest two years with the tool's value, its XBRL tag and a link to the filing. Type each figure from the 10-K into the yellow column; the sheet shows the difference against the 1% target, and a second sheet rebuilds the ratios in Excel from your figures so the Python ratio code is checked independently.
+`handcheck/DVA_handcheck.xlsx` has one tab per statement (income statement, cash flow, balance sheet, notes), lines in statement order and the latest two years side by side. Each line shows the tool's value, its XBRL tag and a link to the filing. Type each figure from the 10-K into the yellow cells; differences above the 1% target turn red, the Summary tab shows the match rate per tab, and a Ratios tab rebuilds every ratio in Excel from your figures so the Python ratio code is checked independently.
 
 ```bash
 python -m creditmemo.handcheck make DVA --unit 1000     # DaVita reports in $ thousands
