@@ -56,7 +56,7 @@ from . import ROOT, SPREAD_DIR
 
 SECTIONS_DIR = ROOT / "outputs" / "sections"
 SECTION_TITLES = {"1": "Item 1", "1A": "Item 1A", "7": "Item 7", "7-LIQ": "Item 7, Liquidity",
-                  "7A": "Item 7A", "DEBT": "Debt note"}
+                  "7A": "Item 7A", "ACQ": "Acquisition note", "DEBT": "Debt note"}
 
 PH_RE = re.compile(r"\{\{\s*((?:abs:)?[A-Za-z0-9_.\-]+)\s*\}\}")
 JUDG_RE = re.compile(r"\[judgment\]", re.I)
@@ -64,7 +64,7 @@ JUDG_RE = re.compile(r"\[judgment\]", re.I)
 DOWN_RE = re.compile(r"\b(fell|declined|decreased|dropped|shrank|buybacks of|repurchases of|capex of|capital expenditures of)\s+(?:by\s+)?\{\{\s*((?:abs:)?[A-Za-z0-9_.\-]+)\s*\}\}", re.I)
 UP_RE = re.compile(r"\b(rose|increased|grew|climbed)\s+(?:by\s+)?\{\{\s*((?:abs:)?growth\.[A-Za-z0-9_.\-]+)\s*\}\}", re.I)
 AGENCY_NAMES = {"sp": "S&P", "moodys": "Moody's", "fitch": "Fitch"}
-CITE_RE = re.compile(r"\[(1A|1|7-LIQ|7A|7|DEBT)\s*¶\s*(\d+)(?:\s*[,;]\s*¶?\s*(\d+))*\]")
+CITE_RE = re.compile(r"\[(1A|1|7-LIQ|7A|7|DEBT|ACQ)\s*¶\s*(\d+)(?:\s*[,;]\s*¶?\s*(\d+))*\]")
 CITE_ANY_RE = re.compile(r"\[[^\]]*¶[^\]]*\]")
 REC_RE = re.compile(r"^\**\s*Recommendation\s*:?\**\s*:?\s*\**\s*(Approve|Decline)\b", re.I | re.M)
 ALLOWED_NUMBER_RES = [
@@ -100,6 +100,8 @@ def fmt(key: str, v, kind: Optional[str] = None) -> str:
         return f"{v:.2f}x"
     if kind == "pct":
         return f"{v * 100:.1f}%"
+    if kind == "bp":                        # basis points from a fraction (0.0175 -> 175bp)
+        return f"{v * 1e4:.0f}bp"
     if kind == "rate":                      # interest rates: two decimals (6.75%, not 6.8%)
         return f"{v * 100:.2f}%"
     if kind == "int":

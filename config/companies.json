@@ -116,8 +116,55 @@
           "cite": "[DEBT \u00b632, \u00b633]",
           "secured": false,
           "label": "Coupon on Union Pacific's most recent senior unsecured issue: 5.100% notes due 2035, issued February 13, 2025 (same day as 5.600% notes due 2054; 2035 is closer to the 5-year tenor)"
+        },
+        "merger_cash_consideration": {
+          "value": 20000000000.0,
+          "kind": "money",
+          "cite": "[ACQ \u00b64]",
+          "label": "Approximate cash consideration for Norfolk Southern, to be funded by new debt and cash from operations"
+        },
+        "merger_termination_fee": {
+          "value": 2500000000.0,
+          "kind": "money",
+          "cite": "[ACQ \u00b617]",
+          "label": "Termination fee either party may have to pay"
+        },
+        "revolver_undrawn": {
+          "value": 2000000000.0,
+          "kind": "money",
+          "cite": "[DEBT \u00b626]",
+          "label": "Undrawn revolving credit facility (expires 2027; supports commercial paper)"
+        },
+        "receivables_facility_undrawn": {
+          "value": 600000000.0,
+          "kind": "money",
+          "cite": "[7-LIQ \u00b65]",
+          "label": "Undrawn Receivables Facility capacity; access may shrink if bond ratings fall below investment grade"
+        },
+        "covenant_debt_capacity": {
+          "value": 47700000000.0,
+          "kind": "money",
+          "cite": "[DEBT \u00b627]",
+          "label": "Debt allowed under the revolver's adjusted debt-to-EBITDA covenant at December 31, 2025 (facility definition)"
+        },
+        "covenant_debt_outstanding": {
+          "value": 33500000000.0,
+          "kind": "money",
+          "cite": "[DEBT \u00b627]",
+          "label": "Debt as defined in the facility at December 31, 2025"
         }
-      }
+      },
+      "extra_sections": {
+        "ACQ": {
+          "title": "Note 20. Pending Acquisition (Norfolk Southern)",
+          "head": "^20\\.\\s*Pending Acquisition"
+        }
+      },
+      "memo_points": [
+        "The pending Norfolk Southern acquisition dominates the credit: about $20 billion of cash consideration is to be funded through new debt and operating cash [ACQ \u00b64], closing expected in 2027 after STB approval [ACQ \u00b67, \u00b68]. FY2025 figures show Union Pacific standalone; the requested 5-year loan would run mostly against the combined, more indebted company [1A \u00b665]. Do not compute a merger pro forma (no Norfolk Southern figures are in the fact sheet); treat it as the main qualitative risk.",
+        "Share repurchases were paused after the merger announcement [7 \u00b6193]; dividends continue.",
+        "Revolver covenant headroom at year end: debt as defined of $33.5B against $47.7B allowed [DEBT \u00b627]; use the fact placeholders."
+      ]
     },
     "KSS": {
       "cik": 885639,
@@ -136,8 +183,45 @@
           "cite": "[DEBT \u00b661]",
           "secured": true,
           "label": "Coupon on Kohl's most recent senior issue: 10.000% senior secured notes due 2030, issued in the second quarter of 2025. Secured, so the pro forma interest on an unsecured loan is a lower bound"
+        },
+        "revolver_capacity": {
+          "value": 1500000000.0,
+          "kind": "money",
+          "cite": "[DEBT \u00b665]",
+          "label": "Senior secured asset-based revolving credit facility; $0 drawn at January 31, 2026 ($290M a year earlier)"
+        },
+        "letters_of_credit": {
+          "value": 44000000.0,
+          "kind": "money",
+          "cite": "[DEBT \u00b665]",
+          "label": "Letters of credit outstanding under the revolver, reducing availability"
+        },
+        "stepup_notes": {
+          "value": 425000000.0,
+          "kind": "money",
+          "cite": "[7A \u00b62]",
+          "label": "2031 notes with rating-linked coupon step-ups (already triggered)"
+        },
+        "stepup_total": {
+          "value": 0.0175,
+          "kind": "bp",
+          "cite": "[7-LIQ \u00b670]",
+          "label": "Total coupon increase on the 2031 notes since issuance from downgrades"
+        },
+        "secured_notes_2030": {
+          "value": 360000000.0,
+          "kind": "money",
+          "cite": "[DEBT \u00b661]",
+          "label": "10.000% senior secured notes due 2030, guaranteed by subsidiaries and secured by distribution and e-commerce fulfillment centers"
         }
-      }
+      },
+      "memo_points": [
+        "Our loan would be unsecured, while the revolver is secured and asset-based and the 2030 notes are secured by distribution and fulfillment centers [DEBT \u00b661, 7-LIQ \u00b6125]: we would rank behind both in a downside.",
+        "The pro forma rate comes from secured notes, so the pro forma interest is a lower bound; with stressed coverage close to the threshold, say plainly that a realistic unsecured rate would likely push it below.",
+        "Downgrades have already raised the coupon on the 2031 notes by 175bp in total [7-LIQ \u00b670]; use the fact placeholders.",
+        "Rating outlooks improved after the 10-K date (Moody's to positive, S&P to stable): use {{rating.moodys}} and {{rating.sp}}.",
+        "The revolver has a springing fixed charge coverage covenant [7-LIQ \u00b6125]."
+      ]
     }
   },
   "_facts_readme": "'facts' are 10-K figures that are not in the spread, typed in by hand from the filing. Each carries the 10-K paragraph it comes from in 'cite' (section key and paragraph number in outputs/sections/<TICKER>.json); the memo checker fails if a citation doesn't exist. kind: money (dollars), ratio (x), pct (fraction)."

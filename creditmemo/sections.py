@@ -181,7 +181,7 @@ XREF_RE = re.compile(r"set forth (?:under|in) .*?[-–—]\s*([A-Z][A-Za-z ,&'�
 CAPS_HEAD = r"^[A-Z][A-Z0-9 ,&'’()/-]{5,}$"
 
 
-def extract(page: str) -> dict:
+def extract(page: str, extra: Optional[dict] = None) -> dict:
     lines, pages = html_to_lines(page, with_pages=True)
     items = find_items(lines)
     out = {}
@@ -211,6 +211,10 @@ def extract(page: str) -> dict:
             if span:
                 add("7A", "Item 7A. Market Risk (in Item 7, " + target + ")", span,
                     note=f"Item 7A refers to '{target}' in Item 7; that part is used here")
+    for key, spec in (extra or {}).items():     # company-specific notes, from config/companies.json
+        if "8" in items:
+            add(key, spec["title"], _sub_span(lines, items["8"][0], len(lines), spec["head"],
+                                              DEBT_STOP + r"|^item\s+\d", 60000))
     if "8" in items:
         add("DEBT", "Debt note (financial statements)",
             _sub_span(lines, items["8"][0], len(lines), DEBT_HEAD, DEBT_STOP, 60000))
@@ -229,13 +233,14 @@ def main(argv=None) -> int:
                          key=lambda d: json.loads((d / "index.json").read_text())["filingDate"])
         index = json.loads((folders[-1] / "index.json").read_text())
         doc = folders[-1] / index["main_document"]
-        secs = extract(doc.read_text(errors="replace"))
+        extra = cfg["companies"][t].get("extra_sections")
+        secs = extract(doc.read_text(errors="replace"), extra)
         result = {"ticker": t, "accn": index["accessionNumber"], "filed": index["filingDate"],
                   "url": f"{index['base_url']}/{index['main_document']}", "sections": secs}
         (SECTIONS_DIR / f"{t}.json").write_text(json.dumps(result, indent=1))
         print(f"{t}: " + ", ".join(f"{k} {v['chars']:,} chars/{len(v['paragraphs'])} ¶"
                                     for k, v in secs.items()))
-        missing = [k for k in ("1", "1A", "7", "7-LIQ", "7A", "DEBT") if k not in secs]
+        missing = [k for k in ("1", "1A", "7", "7-LIQ", "7A", "DEBT", *(extra or {})) if k not in secs]
         if missing:
             print(f"  missing: {missing}", file=sys.stderr)
             ok = False
