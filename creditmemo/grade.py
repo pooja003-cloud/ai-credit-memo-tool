@@ -37,6 +37,13 @@ def metric_score(value: Optional[float], spec: dict) -> int:
     return len(bands) + 1
 
 
+def round_half_up(x: float) -> int:
+    """Half rounds up. Rounding to 6 decimals first stops floating-point noise
+    (4.4999999999 from summing weights in a different order) from pushing a
+    score that is exactly on a boundary down a grade."""
+    return math.floor(round(x, 6) + 0.5)
+
+
 def grade(ratios: Dict[str, Optional[float]], stress_breaches: Dict[str, bool], cfg: dict) -> dict:
     scores, weighted = {}, 0.0
     for key, spec in cfg["metrics"].items():
@@ -45,7 +52,7 @@ def grade(ratios: Dict[str, Optional[float]], stress_breaches: Dict[str, bool], 
         weighted += s * spec["weight"]
     total_w = sum(spec["weight"] for spec in cfg["metrics"].values())
     avg = weighted / total_w
-    base = min(10, max(1, math.floor(avg + 0.5)))
+    base = min(10, max(1, round_half_up(avg)))
     ov = cfg["stress_overlay"]
     broken = [k for k, b in stress_breaches.items() if b]
     notches = min(ov["max_notches"], ov["notch_per_breach"] * len(broken))

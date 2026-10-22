@@ -4,10 +4,10 @@
 |---|---|
 | Internal grade | {{grade.grade}} on 1-to-10 |
 | Recommendation | Approve with conditions |
-| Agency ratings | S&P {{rating.sp}}; Moody's {{rating.moodys}} |
+| Agency ratings | S&P {{rating.sp}}; Moody's {{rating.moodys}}; Fitch {{rating.fitch}} |
 | Key reason | Standalone leverage of {{FY2025.debt_ebitda}} and interest coverage of {{FY2025.interest_coverage}} |
 | Key reason | Stressed pro forma DSCR stays at {{proforma.stress.dscr}} and no stress threshold breaks |
-| Key reason | About {{fact.merger_cash_consideration}} of Norfolk Southern cash consideration is to be debt-funded [ACQ ¶4] |
+| Key risk | About {{fact.merger_cash_consideration}} of Norfolk Southern cash consideration is to be funded largely with new debt, more than the {{calc.covenant_headroom}} of standalone covenant headroom [ACQ ¶4] [DEBT ¶27] |
 
 ## 1. Request
 
@@ -44,7 +44,7 @@ Union Pacific Railroad is the main operating company of the group and a Class I 
 ## 4. Strengths
 
 - **Franchise and margins:** the EBITDA margin of {{FY2025.ebitda_margin}} reflects core pricing gains and strong productivity [7 ¶14], on a network spanning the western two-thirds of the country [1 ¶3].
-- **Debt capacity:** debt as defined is {{fact.covenant_debt_outstanding}} against a covenant ceiling of {{fact.covenant_debt_capacity}} [DEBT ¶27], and the revolver has no rating triggers apart from pricing [DEBT ¶27].
+- **Standalone debt capacity:** debt as defined is {{fact.covenant_debt_outstanding}} against a covenant ceiling of {{fact.covenant_debt_capacity}}, and the revolver has no rating triggers apart from pricing [DEBT ¶27]. This headroom does not cover the {{fact.merger_cash_consideration}} merger funding (see Risks).
 - **Rate risk:** {{floating_rate_share}} of debt is floating [7A ¶4].
 - **Maturity profile:** annual maturities through 2030 are small compared with CFO of {{FY2025.cashflow.cfo}} [DEBT ¶17, ¶18, ¶19, ¶20, ¶21].
 - **Ratings:** S&P {{rating.sp}}, Moody's {{rating.moodys}} and Fitch {{rating.fitch}}.
@@ -52,7 +52,7 @@ Union Pacific Railroad is the main operating company of the group and a Class I 
 
 ## 5. Risks and mitigants
 
-- **Norfolk Southern acquisition (main risk).** About {{fact.merger_cash_consideration}} of cash consideration is to be funded with new debt and operating cash [ACQ ¶4]. Closing needs STB approval and is expected in 2027 [ACQ ¶7, ¶8]. The combined company will carry more debt, and servicing it will take more cash than either company needs today [1A ¶65]. The merger financing is expected to include a leverage covenant [1A ¶66, ¶67]. *Mitigants:* buybacks are paused [7 ¶193], and covenant headroom of {{fact.covenant_debt_capacity}} against {{fact.covenant_debt_outstanding}} is large [DEBT ¶27]. Beyond the {{fact.merger_cash_consideration}} funding need, we cannot size combined leverage, because no Norfolk Southern figures are available.
+- **Norfolk Southern acquisition (main risk).** About {{fact.merger_cash_consideration}} of cash consideration is to be funded with new debt and operating cash [ACQ ¶4]. Closing needs STB approval and is expected in 2027 [ACQ ¶7, ¶8]. The combined company will carry more debt, and servicing it will take more cash than either company needs today [1A ¶65]. The merger financing is expected to include a leverage covenant [1A ¶66, ¶67]. *Mitigant:* buybacks are paused [7 ¶193]. Covenant headroom is not a mitigant here: standalone, debt as defined could rise by only {{calc.covenant_headroom}} before reaching the {{fact.covenant_debt_capacity}} limit, less than the {{fact.merger_cash_consideration}} cash consideration [DEBT ¶27] [ACQ ¶4]. Because the limit is set by an adjusted debt-to-EBITDA ratio, compliance after closing depends on combined EBITDA, which we cannot measure without Norfolk Southern figures [DEBT ¶26].
 - **Deal failure.** If the deal fails, the company could owe a termination fee of {{fact.merger_termination_fee}} [ACQ ¶17]. *Mitigant:* the fee equals less than one year of free cash flow of {{FY2025.cashflow.fcf}}.
 - **Integration and regulation.** Neither company has completed a deal of this size [1A ¶50]. The STB may impose conditions that reduce the benefits [1A ¶41, ¶42]. *Mitigant:* the standalone business is performing well on safety and service [7 ¶11, ¶12].
 - **Refinancing.** The revolver expires in 2027 [DEBT ¶26], around the expected closing [ACQ ¶8]. If bond ratings fell below investment grade, access to the Receivables Facility could be reduced [7-LIQ ¶5].
@@ -64,7 +64,7 @@ The scenario applies a revenue decline of {{stress.revenue_shock}}, a margin cut
 
 ## 7. Risk grade
 
-The weighted score of {{grade.weighted_score}} gives a base grade of {{grade.base_grade}} on the 1-to-10 scale. The component scores are:
+The weighted score of {{grade.weighted_score}} gives a base grade of {{grade.base_grade}} on the 1-to-10 scale. That score sits exactly on a grade boundary and rounds up to {{grade.base_grade}}; a fraction lower and it would land one notch better, on the grade that S&P {{rating.sp}}, Moody's {{rating.moodys}} and Fitch {{rating.fitch}} map to on our scale. The boundary, not a different view of the credit, explains the one-notch gap to the agencies at {{grade.weighted_score}}. The component scores are:
 - lease-adjusted leverage: {{grade.score.lease_adj_debt_ebitdar}}
 - interest coverage: {{grade.score.interest_coverage}}
 - DSCR: {{grade.score.dscr}}
@@ -74,11 +74,11 @@ The current ratio score of {{grade.score.current_ratio}} pulls the grade down, a
 
 ## 8. Recommendation
 
-I recommend approval. The {{facility.amount_usd}} exposure is small against covenant headroom of {{fact.covenant_debt_capacity}} versus {{fact.covenant_debt_outstanding}} outstanding [DEBT ¶27]. Even stressed and pro forma, DSCR holds at {{proforma.stress.dscr}} and coverage at {{proforma.stress.interest_coverage}}. A grade of {{grade.grade}} understates standalone quality, because the current ratio score of {{grade.score.current_ratio}} reflects a structural working capital deficit rather than weak liquidity [7-LIQ ¶3]. The real uncertainty is the post-merger balance sheet, which we cannot measure today [ACQ ¶4]. Structure should therefore protect us if combined leverage overshoots [judgment]. Approval should not be repeated without combined-company projections [judgment].
+I recommend approval with conditions. The {{facility.amount_usd}} exposure is small against standalone operating cash flow of {{FY2025.cashflow.cfo}}, but standalone covenant headroom of {{calc.covenant_headroom}} is smaller than the merger's {{fact.merger_cash_consideration}} cash need, so the conditions must carry the merger risk [DEBT ¶27] [ACQ ¶4]. Even stressed and pro forma, DSCR holds at {{proforma.stress.dscr}} and coverage at {{proforma.stress.interest_coverage}}. A grade of {{grade.grade}} understates standalone quality, because the current ratio score of {{grade.score.current_ratio}} reflects a structural working capital deficit rather than weak liquidity [7-LIQ ¶3]. The real uncertainty is the post-merger balance sheet, which we cannot measure today [ACQ ¶4]. Structure should therefore protect us if combined leverage overshoots [judgment]. Approval should not be repeated without combined-company projections [judgment].
 
 Recommendation: Approve with conditions:
 - (a) the loan ranks pari passu with senior unsecured debt priced at least at {{proforma.rate}};
 - (b) the loan carries an adjusted debt-to-EBITDA covenant and cross-default no looser than the revolver's [DEBT ¶26, ¶27];
 - (c) a ratings-based pricing grid applies, plus a prepayment right if ratings fall below investment grade [7-LIQ ¶5];
-- (d) the borrower delivers the merger financing plan and combined projections, and we re-grade at closing [ACQ ¶4, ¶8];
+- (d) before the Norfolk Southern acquisition closes, the borrower delivers the merger financing plan and combined-company projections showing compliance with the revolver's adjusted debt-to-EBITDA covenant on a combined basis, and we re-grade the loan at closing [ACQ ¶4, ¶8] [DEBT ¶26, ¶27]. A combined grade below investment grade, or failure to deliver the plan, gives us the right to require prepayment [judgment];
 - (e) any floating-rate exposure on this loan is hedged, given the {{stress.rate_shock}} stress [7A ¶4].

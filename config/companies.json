@@ -164,7 +164,14 @@
         "The pending Norfolk Southern acquisition dominates the credit: about $20 billion of cash consideration is to be funded through new debt and operating cash [ACQ \u00b64], closing expected in 2027 after STB approval [ACQ \u00b67, \u00b68]. FY2025 figures show Union Pacific standalone; the requested 5-year loan would run mostly against the combined, more indebted company [1A \u00b665]. Do not compute a merger pro forma (no Norfolk Southern figures are in the fact sheet); treat it as the main qualitative risk.",
         "Share repurchases were paused after the merger announcement [7 \u00b6193]; dividends continue.",
         "Revolver covenant headroom at year end: debt as defined of $33.5B against $47.7B allowed [DEBT \u00b627]; use the fact placeholders."
-      ]
+      ],
+      "calcs": {
+        "covenant_headroom": {
+          "expr": "fact.covenant_debt_capacity - fact.covenant_debt_outstanding",
+          "kind": "money",
+          "label": "Standalone room under the revolver's adjusted debt-to-EBITDA covenant at December 31, 2025 (facility definition) [DEBT \u00b627]"
+        }
+      }
     },
     "KSS": {
       "cik": 885639,
@@ -213,6 +220,18 @@
           "kind": "money",
           "cite": "[DEBT \u00b661]",
           "label": "10.000% senior secured notes due 2030, guaranteed by subsidiaries and secured by distribution and e-commerce fulfillment centers"
+        },
+        "extinguishment_gain": {
+          "value": 11000000.0,
+          "kind": "money",
+          "cite": "[DEBT \u00b663]",
+          "label": "Gain on extinguishment of debt from open-market note repurchases, recognized in net interest expense in FY2025"
+        },
+        "settlement_gain": {
+          "value": 129000000.0,
+          "kind": "money",
+          "cite": "[7 \u00b6156]",
+          "label": "Credit card interchange fee lawsuit settlement gain, net of legal fees, FY2025"
         }
       },
       "memo_points": [
@@ -221,8 +240,16 @@
         "Downgrades have already raised the coupon on the 2031 notes by 175bp in total [7-LIQ \u00b670]; use the fact placeholders.",
         "Rating outlooks improved after the 10-K date (Moody's to positive, S&P to stable): use {{rating.moodys}} and {{rating.sp}}.",
         "The revolver has a springing fixed charge coverage covenant [7-LIQ \u00b6125]."
-      ]
+      ],
+      "calcs": {
+        "interest_coverage_ex_gain": {
+          "expr": "FY2025.ebitda / (FY2025.interest_expense + fact.extinguishment_gain)",
+          "kind": "ratio",
+          "label": "FY2025 EBITDA / interest expense with the extinguishment gain added back to interest [DEBT \u00b663]"
+        }
+      }
     }
   },
-  "_facts_readme": "'facts' are 10-K figures that are not in the spread, typed in by hand from the filing. Each carries the 10-K paragraph it comes from in 'cite' (section key and paragraph number in outputs/sections/<TICKER>.json); the memo checker fails if a citation doesn't exist. kind: money (dollars), ratio (x), pct (fraction)."
+  "_facts_readme": "'facts' are 10-K figures that are not in the spread, typed in by hand from the filing. Each carries the 10-K paragraph it comes from in 'cite' (section key and paragraph number in outputs/sections/<TICKER>.json); the memo checker fails if a citation doesn't exist. kind: money (dollars), ratio (x), pct (fraction).",
+  "_calcs_readme": "'calcs' are arithmetic over facts and spread values (e.g. fact.a - fact.b, FY2025.ebitda / ...), evaluated by memo_check.py; the memo uses {{calc.name}}."
 }

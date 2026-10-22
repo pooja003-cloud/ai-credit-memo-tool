@@ -4,9 +4,9 @@
   "recommendation": "Decline",
   "grade": 8,
   "stats": {
-    "placeholders": 140,
-    "citations": 44,
-    "sentences_checked": 77
+    "placeholders": 146,
+    "citations": 46,
+    "sentences_checked": 78
   },
   "review": {
     "date": "2026-10-22",
@@ -24,5 +24,15 @@
     ],
     "found_by_claude": "EBITDA's FY2025 rise rests on the one-off settlement gain; excluding unusual items EBITDA fell. Neither the analyst points nor earlier review had flagged it.",
     "recommendation_vs_grade": "Decline vs grade 8 (BB-/B+ equivalent; S&P B+, Moody's B2, Fitch BB-). Consistent: unsecured lender behind a secured ABL and secured notes, stressed DSCR 0.92x (0.78x pro forma), stressed pro forma coverage 2.03x on a lower-bound rate."
+  },
+  "review_round_2": {
+    "date": "2026-10-22",
+    "by": "Pooja (review), Claude (edits)",
+    "draft_before": "memos/KSS_draft_before_review2.md",
+    "changes": [
+      "$11M extinguishment gain inside interest expense [DEBT \u00b663] added as a fact; coverage with the gain added back is 4.43x (computed, {{calc.interest_coverage_ex_gain}}), one band lower; grade unchanged at 8 (weighted score 6.1 -> 6.4, base still 6)",
+      "Summary: pro forma stressed DSCR 'and lower at a realistic unsecured rate'; Fitch BB- negative added",
+      "The $129M settlement tied to the $114M net unusual gain (offset by impairment and store-closing costs)"
+    ]
   }
 }

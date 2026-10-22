@@ -95,6 +95,9 @@ def fact_sheet(spread: dict, v) -> str:
     for k in sorted(v.facts):
         ok, txt = v.resolve("fact." + k)
         out.append(f"- `{{{{fact.{k}}}}}` = {txt}: {v.facts[k].get('label', '')} {v.facts[k]['cite']}")
+    for k in sorted(v.calcs):
+        ok, txt = v.resolve("calc." + k)
+        out.append(f"- `{{{{calc.{k}}}}}` = {txt}: {v.calcs[k].get('label', '')} (computed: {v.calcs[k]['expr']})")
     for k in v.ratings:
         ok, txt = v.resolve("rating." + k)
         if ok:

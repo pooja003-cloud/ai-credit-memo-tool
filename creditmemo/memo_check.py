@@ -19,6 +19,7 @@ Placeholders
   {{facility.amount_usd}}, {{facility.tenor_years}}, {{floating_rate_share}}
   {{abs:FY2025.cashflow.buybacks}}  any placeholder without its minus sign (for 'fell', 'buybacks of')
   {{fact.covenant_max_leverage}}    a 10-K figure entered by hand in config/companies.json with its citation
+  {{calc.covenant_headroom}}        an expression over facts and spread values (config 'calcs')
   {{rating.sp}}                     agency rating from config/agency_ratings.json, with its last action date
   {{proforma.debt_ebitda}}          latest year with the requested facility added; also
                                     proforma.stress.<ratio>, proforma.rate, proforma.added_interest
@@ -113,11 +114,12 @@ class Values:
     """Resolves placeholder names against one spread."""
 
     def __init__(self, spread: dict, grade: Optional[dict] = None, facts: Optional[dict] = None,
-                 ratings: Optional[dict] = None):
+                 ratings: Optional[dict] = None, calcs: Optional[dict] = None):
         self.s = spread
         self.grade = grade or spread.get("grade")
         self.labels = [p["label"] for p in spread["periods"]]
         self.facts = facts or {}        # hand-entered 10-K figures with citations (config/companies.json)
+        self.calcs = calcs or {}        # small expressions over facts and spread values, evaluated here
         self.ratings = ratings or {}    # agency ratings (config/agency_ratings.json)
 
     def _line(self, statement: str, key: str, label: str):
@@ -148,8 +150,12 @@ class Values:
         return False, None, None
 
     def raw(self, name: str):
-        """The underlying number for sign checks (None if not numeric)."""
+        """The underlying number for sign checks and calcs (None if not numeric)."""
         parts = name.split(".")
+        if parts[0] == "fact" and len(parts) == 2 and parts[1] in self.facts:
+            return float(self.facts[parts[1]]["value"])
+        if parts[0] == "calc" and len(parts) == 2 and parts[1] in self.calcs:
+            return self.calc_value(parts[1])
         if parts[0] in self.labels and len(parts) >= 2:
             found, v, _ = self._period_value(parts[0], ".".join(parts[1:]))
             return v if found else None
@@ -161,6 +167,24 @@ class Values:
             _, prev, _ = self._period_value(self.labels[i - 1], parts[2])
             return None if not prev or cur is None else (cur - prev) / abs(prev)
         return None
+
+    def calc_value(self, key: str) -> Optional[float]:
+        """Evaluate a calc expression such as
+        'FY2025.ebitda / (FY2025.interest_expense + fact.extinguishment_gain)'.
+        Names are replaced by their numbers; only arithmetic is allowed."""
+        expr = self.calcs[key]["expr"]
+        names = re.findall(r"[A-Za-z_][A-Za-z0-9_]*(?:\.[A-Za-z0-9_]+)+", expr)
+        for n in sorted(set(names), key=len, reverse=True):
+            v = self.raw(n)
+            if v is None:
+                return None
+            expr = expr.replace(n, repr(float(v)))
+        if not re.fullmatch(r"[0-9eE.+\-*/() ]+", expr):
+            raise ValueError(f"calc {key}: unsupported expression")
+        try:
+            return eval(expr, {"__builtins__": {}}, {})   # digits and operators only, checked above
+        except ZeroDivisionError:
+            return None
 
     def resolve(self, name: str) -> Tuple[bool, str]:
         if name.startswith("abs:"):
@@ -227,6 +251,8 @@ class Values:
                 if parts[2] == "extra_interest":
                     return True, fmt("", pf["stress"]["extra_interest"], "money")
             return False, ""
+        if head == "calc" and len(parts) == 2 and parts[1] in self.calcs:
+            return True, fmt(parts[1], self.calc_value(parts[1]), self.calcs[parts[1]].get("kind", "money"))
         if head == "fact" and len(parts) == 2 and parts[1] in self.facts:
             f = self.facts[parts[1]]
             return True, fmt(parts[1], f["value"], f.get("kind", "money"))
@@ -400,8 +426,8 @@ def make_values(ticker: str, spread: dict) -> Values:
     co = json.loads((CONFIG_DIR / "companies.json").read_text())["companies"].get(ticker, {})
     rpath = CONFIG_DIR / "agency_ratings.json"
     ratings = json.loads(rpath.read_text())["companies"].get(ticker, {}) if rpath.exists() else {}
-    return Values(spread, facts=co.get("facts"), ratings={k: v for k, v in ratings.items()
-                                                         if k in AGENCY_NAMES})
+    return Values(spread, facts=co.get("facts"), calcs=co.get("calcs"),
+                  ratings={k: v for k, v in ratings.items() if k in AGENCY_NAMES})
 
 
 def main(argv=None) -> int:

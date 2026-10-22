@@ -4,10 +4,10 @@
 |---|---|
 | Internal grade | {{grade.grade}} on 1-to-10 (base {{grade.base_grade}} plus {{grade.stress_notches}} stress notches) |
 | Recommendation | Decline |
-| Agency ratings | S&P {{rating.sp}}; Moody's {{rating.moodys}} |
+| Agency ratings | S&P {{rating.sp}}; Moody's {{rating.moodys}}; Fitch {{rating.fitch}} |
 | Key reason | Our unsecured loan ranks behind the secured ABL revolver and secured 2030 notes [DEBT ¶61] [7-LIQ ¶125] |
 | Key reason | Stress breaks leverage at {{stress.debt_ebitda}} and DSCR at {{stress.dscr}} |
-| Key reason | Pro forma stressed DSCR of {{proforma.stress.dscr}} rests on a lower-bound rate of {{proforma.rate}} |
+| Key reason | Pro forma stressed DSCR of {{proforma.stress.dscr}}, and lower at a realistic unsecured rate than the secured {{proforma.rate}} assumed [DEBT ¶61] |
 
 ## 1. Request
 
@@ -30,11 +30,11 @@ Kohl's is an omnichannel retailer. It sells moderately priced proprietary and na
 | EBITDA margin | {{FY2023.ebitda_margin}} | {{FY2024.ebitda_margin}} | {{FY2025.ebitda_margin}} |
 | Free cash flow | {{FY2023.cashflow.fcf}} | {{FY2024.cashflow.fcf}} | {{FY2025.cashflow.fcf}} |
 
-EBITDA fell {{abs:growth.FY2024.ebitda}} in FY2024, then rose {{growth.FY2025.ebitda}} to {{FY2025.income.ebitda}} in FY2025. One-off items flatter that recovery. Net unusual operating items were a gain of {{abs:FY2025.income.unusual_operating}}, mainly from a credit card interchange fee settlement [7 ¶156]. Excluding unusual items, EBITDA fell {{abs:growth.FY2025.ebitda_ex_unusual}} to {{FY2025.ebitda_ex_unusual}}, compared with {{FY2023.ebitda_ex_unusual}} in FY2023. Adjusted operating income was essentially unchanged from the prior year [7 ¶16]. That means the improvement in leverage to {{FY2025.debt_ebitda}} partly rests on a gain that will not recur.
+EBITDA fell {{abs:growth.FY2024.ebitda}} in FY2024, then rose {{growth.FY2025.ebitda}} to {{FY2025.income.ebitda}} in FY2025. One-off items flatter that recovery. Net unusual operating items were a gain of {{abs:FY2025.income.unusual_operating}}: the {{fact.settlement_gain}} credit card interchange fee settlement, partly offset by impairment and store-closing costs [7 ¶156]. Excluding unusual items, EBITDA fell {{abs:growth.FY2025.ebitda_ex_unusual}} to {{FY2025.ebitda_ex_unusual}}, compared with {{FY2023.ebitda_ex_unusual}} in FY2023. Adjusted operating income was essentially unchanged from the prior year [7 ¶16]. That means the improvement in leverage to {{FY2025.debt_ebitda}} partly rests on a gain that will not recur.
 
 Cash flow from operations rose {{growth.FY2025.cfo}} to {{FY2025.cashflow.cfo}}, helped by the settlement cash and lower inventory [7-LIQ ¶49]. After capex of {{abs:FY2025.cashflow.capex}}, free cash flow was {{FY2025.cashflow.fcf}}. Dividends were cut to {{abs:FY2025.cashflow.dividends}} from {{abs:FY2024.cashflow.dividends}}. Kohl's repaid {{abs:FY2025.cashflow.debt_repaid}} and raised {{FY2025.cashflow.debt_issued}}, so total debt declined {{abs:growth.FY2025.total_debt}} to {{FY2025.balance.total_debt}} [7-LIQ ¶73, ¶74, ¶75]. Cash rose to {{FY2025.balance.cash}}, and the current ratio improved to {{FY2025.current_ratio}} [7-LIQ ¶123].
 
-Leases matter here. Lease liabilities of {{FY2025.balance.lease_liabilities}} bring lease-adjusted debt to {{FY2025.lease_adj_debt}} and lease-adjusted leverage to {{FY2025.lease_adj_debt_ebitdar}}. Interest expense eased to {{FY2025.income.interest_expense}}, but that figure includes a gain on extinguishment from open-market note repurchases [DEBT ¶63]. In FY2024, scheduled principal of {{FY2024.scheduled_principal}} pushed DSCR down to {{FY2024.dscr}}, which shows how thin the cushion can get in a weak year.
+Leases matter here. Lease liabilities of {{FY2025.balance.lease_liabilities}} bring lease-adjusted debt to {{FY2025.lease_adj_debt}} and lease-adjusted leverage to {{FY2025.lease_adj_debt_ebitdar}}. Interest expense eased to {{FY2025.income.interest_expense}}, but that figure is reduced by a {{fact.extinguishment_gain}} gain on extinguishment from open-market note repurchases [DEBT ¶63]. Adding the gain back, interest coverage is {{calc.interest_coverage_ex_gain}} rather than {{FY2025.interest_coverage}}, one band lower on our grade scale; the overall grade is unchanged at {{grade.grade}} [DEBT ¶63]. In FY2024, scheduled principal of {{FY2024.scheduled_principal}} pushed DSCR down to {{FY2024.dscr}}, which shows how thin the cushion can get in a weak year.
 
 **Pro forma.** Adding {{proforma.amount}} at {{proforma.rate}} adds {{proforma.added_interest}} of interest and brings total debt to {{proforma.total_debt}}. On a pro forma basis, debt/EBITDA would be {{proforma.debt_ebitda}}, net debt/EBITDA {{proforma.net_debt_ebitda}}, lease-adjusted leverage {{proforma.lease_adj_debt_ebitdar}}, interest coverage {{proforma.interest_coverage}}, DSCR {{proforma.dscr}} and the current ratio {{proforma.current_ratio}}. The rate comes from a secured issue, so for an unsecured loan this pro forma interest is a lower bound [DEBT ¶61].
 

@@ -56,3 +56,14 @@ def test_grade_config_is_frozen():
     expected = (CONFIG_DIR / "grade.sha256").read_text().split()[0]
     assert hashlib.sha256((CONFIG_DIR / "grade.json").read_bytes()).hexdigest() == expected
     assert CFG["status"].startswith("FROZEN")
+
+
+def test_exact_boundary_rounds_up_despite_float_noise():
+    from creditmemo.grade import round_half_up
+    assert round_half_up(4.5) == 5
+    assert round_half_up(4.499999999999) == 5      # float noise on an exact 4.5
+    assert round_half_up(4.4999) == 4               # genuinely below the boundary
+    # UNP's FY2025 pattern: scores 5, 3, 4, 8 -> 0.4*5 + 0.3*3 + 0.2*4 + 0.1*8 = 4.50 -> base 5
+    r = grade({"lease_adj_debt_ebitdar": 2.7, "interest_coverage": 9.5, "dscr": 2.3, "current_ratio": 0.9}, {}, CFG)
+    assert [r["scores"][k]["score"] for k in ("lease_adj_debt_ebitdar", "interest_coverage", "dscr", "current_ratio")] == [5, 3, 4, 8]
+    assert r["weighted_score"] == 4.5 and r["base_grade"] == 5

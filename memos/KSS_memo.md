@@ -1,4 +1,4 @@
-<!-- Rendered from memos/KSS_draft.md by creditmemo/memo_check.py. Every number comes from outputs/spreads/KSS.json, config/companies.json (cited 10-K facts) or config/agency_ratings.json; Claude (claude -p) wrote placeholders only. Check: 140 placeholders, 44 citations, 0 errors. Drafted in 2 attempts (attempt 1 failed with 7 errors, memos/KSS_check_1.json; 3 came from a citation format in the analyst's own notes), then one review round, re-checked; edits logged in memos/KSS_result.json. -->
+<!-- Rendered from memos/KSS_draft.md by creditmemo/memo_check.py. Every number comes from outputs/spreads/KSS.json, config/companies.json (cited 10-K facts and calcs) or config/agency_ratings.json; Claude (claude -p) wrote placeholders only. Check: 146 placeholders, 46 citations, 0 errors. Drafted in 2 attempts (attempt 1 failed with 7 errors, memos/KSS_check_1.json; 3 came from a citation format in the analyst's own notes), then two review rounds, all re-checked; edits logged in memos/KSS_result.json. -->
 
 # Credit memo: Kohl's Corporation
 
@@ -6,10 +6,10 @@
 |---|---|
 | Internal grade | 8 on 1-to-10 (base 6 plus 2 stress notches) |
 | Recommendation | Decline |
-| Agency ratings | S&P B+ stable (last action 2026-06-17); Moody's B2 positive (last action 2026-04-14) |
+| Agency ratings | S&P B+ stable (last action 2026-06-17); Moody's B2 positive (last action 2026-04-14); Fitch BB- negative (last action 2025-04-07) |
 | Key reason | Our unsecured loan ranks behind the secured ABL revolver and secured 2030 notes [10-K Debt note ¶61, p. 54](https://www.sec.gov/Archives/edgar/data/885639/000119312526115982/kss-20260131.htm) [10-K Item 7, Liquidity ¶125, p. 34](https://www.sec.gov/Archives/edgar/data/885639/000119312526115982/kss-20260131.htm) |
 | Key reason | Stress breaks leverage at 5.66x and DSCR at 0.92x |
-| Key reason | Pro forma stressed DSCR of 0.78x rests on a lower-bound rate of 10.00% |
+| Key reason | Pro forma stressed DSCR of 0.78x, and lower at a realistic unsecured rate than the secured 10.00% assumed [10-K Debt note ¶61, p. 54](https://www.sec.gov/Archives/edgar/data/885639/000119312526115982/kss-20260131.htm) |
 
 ## 1. Request
 
@@ -32,11 +32,11 @@ Kohl's is an omnichannel retailer. It sells moderately priced proprietary and na
 | EBITDA margin | 8.4% | 7.2% | 8.5% |
 | Free cash flow | $591 million | $182 million | $1.0 billion |
 
-EBITDA fell 19.8% in FY2024, then rose 12.6% to $1.3 billion in FY2025. One-off items flatter that recovery. Net unusual operating items were a gain of $114 million, mainly from a credit card interchange fee settlement [10-K Item 7 ¶156, p. 29](https://www.sec.gov/Archives/edgar/data/885639/000119312526115982/kss-20260131.htm). Excluding unusual items, EBITDA fell 3.4% to $1.2 billion, compared with $1.5 billion in FY2023. Adjusted operating income was essentially unchanged from the prior year [10-K Item 7 ¶16, p. 25](https://www.sec.gov/Archives/edgar/data/885639/000119312526115982/kss-20260131.htm). That means the improvement in leverage to 2.94x partly rests on a gain that will not recur.
+EBITDA fell 19.8% in FY2024, then rose 12.6% to $1.3 billion in FY2025. One-off items flatter that recovery. Net unusual operating items were a gain of $114 million: the $129 million credit card interchange fee settlement, partly offset by impairment and store-closing costs [10-K Item 7 ¶156, p. 29](https://www.sec.gov/Archives/edgar/data/885639/000119312526115982/kss-20260131.htm). Excluding unusual items, EBITDA fell 3.4% to $1.2 billion, compared with $1.5 billion in FY2023. Adjusted operating income was essentially unchanged from the prior year [10-K Item 7 ¶16, p. 25](https://www.sec.gov/Archives/edgar/data/885639/000119312526115982/kss-20260131.htm). That means the improvement in leverage to 2.94x partly rests on a gain that will not recur.
 
 Cash flow from operations rose 113.0% to $1.4 billion, helped by the settlement cash and lower inventory [10-K Item 7, Liquidity ¶49, p. 32](https://www.sec.gov/Archives/edgar/data/885639/000119312526115982/kss-20260131.htm). After capex of $372 million, free cash flow was $1.0 billion. Dividends were cut to $56 million from $222 million. Kohl's repaid $730 million and raised $357 million, so total debt declined 10.7% to $3.9 billion [10-K Item 7, Liquidity ¶73, ¶74, ¶75, p. 33](https://www.sec.gov/Archives/edgar/data/885639/000119312526115982/kss-20260131.htm). Cash rose to $674 million, and the current ratio improved to 1.46x [10-K Item 7, Liquidity ¶123, p. 34](https://www.sec.gov/Archives/edgar/data/885639/000119312526115982/kss-20260131.htm).
 
-Leases matter here. Lease liabilities of $2.7 billion bring lease-adjusted debt to $6.6 billion and lease-adjusted leverage to 4.16x. Interest expense eased to $288 million, but that figure includes a gain on extinguishment from open-market note repurchases [10-K Debt note ¶63, p. 54](https://www.sec.gov/Archives/edgar/data/885639/000119312526115982/kss-20260131.htm). In FY2024, scheduled principal of $353 million pushed DSCR down to 0.94x, which shows how thin the cushion can get in a weak year.
+Leases matter here. Lease liabilities of $2.7 billion bring lease-adjusted debt to $6.6 billion and lease-adjusted leverage to 4.16x. Interest expense eased to $288 million, but that figure is reduced by a $11 million gain on extinguishment from open-market note repurchases [10-K Debt note ¶63, p. 54](https://www.sec.gov/Archives/edgar/data/885639/000119312526115982/kss-20260131.htm). Adding the gain back, interest coverage is 4.43x rather than 4.60x, one band lower on our grade scale; the overall grade is unchanged at 8 [10-K Debt note ¶63, p. 54](https://www.sec.gov/Archives/edgar/data/885639/000119312526115982/kss-20260131.htm). In FY2024, scheduled principal of $353 million pushed DSCR down to 0.94x, which shows how thin the cushion can get in a weak year.
 
 **Pro forma.** Adding $500 million at 10.00% adds $50 million of interest and brings total debt to $4.4 billion. On a pro forma basis, debt/EBITDA would be 3.31x, net debt/EBITDA 2.80x, lease-adjusted leverage 4.47x, interest coverage 3.92x, DSCR 2.67x and the current ratio 1.46x. The rate comes from a secured issue, so for an unsecured loan this pro forma interest is a lower bound [10-K Debt note ¶61, p. 54](https://www.sec.gov/Archives/edgar/data/885639/000119312526115982/kss-20260131.htm).
 

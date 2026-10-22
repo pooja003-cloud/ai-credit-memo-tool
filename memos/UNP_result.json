@@ -4,9 +4,9 @@
   "recommendation": "Approve",
   "grade": 5,
   "stats": {
-    "placeholders": 131,
-    "citations": 57,
-    "sentences_checked": 76
+    "placeholders": 140,
+    "citations": 61,
+    "sentences_checked": 81
   },
   "review": {
     "date": "2026-10-22",
@@ -22,5 +22,17 @@
       "land sales lifted other income [7 \u00b6120]"
     ],
     "recommendation_vs_grade": "Approve with conditions vs grade 5 (BBB equivalent; agencies A-/A3). The memo argues the grade understates standalone quality because of the structural working-capital deficit (current ratio score 8), the same reason the benchmark gives for the one-notch gap. The open risk is the ~$20B debt-funded Norfolk Southern acquisition; condition (d) requires combined projections and a re-grade at closing."
+  },
+  "review_round_2": {
+    "date": "2026-10-22",
+    "by": "Pooja (review), Claude (edits)",
+    "draft_before": "memos/UNP_draft_before_review2.md",
+    "changes": [
+      "Merger: covenant headroom ($14.2B standalone, {{calc.covenant_headroom}}) is no longer called a mitigant; it is less than the ~$20B cash consideration, and post-closing compliance depends on combined EBITDA",
+      "Condition (d) strengthened: combined projections showing covenant compliance before closing, re-grade at closing, prepayment right if combined grade is below investment grade or the plan isn't delivered",
+      "Section 7: weighted score exactly 4.50, on the grade boundary; explains the one-notch gap to S&P/Moody's/Fitch. grade.py now rounds to 6 decimals before rounding half up (no grade changed)",
+      "Summary: 'Key reason' -> 'Key risk' for the Norfolk Southern funding; Fitch A- added",
+      "The reviewer's first versions typed '4 and 5' and 'grade 4' by hand, used [judgment] outside section 8 and left two sentences uncited; the checker rejected all four"
+    ]
   }
 }
