@@ -236,7 +236,7 @@ class Values:
             when = f"last action {r['last_action']}" if r.get("last_action") else "no dated action found"
             if r.get("last_action") and r.get("last_action_confirmed") is False:
                 when += ", date unconfirmed"
-            return True, f"{r['rating']}{outlook} ({AGENCY_NAMES.get(parts[1], parts[1])}, {when})"
+            return True, f"{r['rating']}{outlook} ({when})"    # the memo names the agency in front
         if head == "grade" and self.grade is not None and len(parts) == 3 and parts[1] == "score" \
                 and parts[2] in self.grade.get("scores", {}):
             return True, str(self.grade["scores"][parts[2]]["score"])

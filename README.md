@@ -45,6 +45,16 @@ python -m creditmemo.handcheck make DVA
 python -m creditmemo.handcheck compare DVA      # writes handcheck/DVA_result.md
 ```
 
+## Memos: all three companies
+
+| Company | Grade | Recommendation | Draft attempts | Agrees with grade? | Notable |
+|---|---|---|---|---|---|
+| [DaVita](memos/DVA_memo.md) | 7 | Approve with conditions | 2 (7 errors, then pass) | Yes | Stressed leverage likely breaches DaVita's own 5.00x covenant [DEBT ¶58] |
+| [Union Pacific](memos/UNP_memo.md) | 5 | Approve with conditions | 2 (5 errors, then pass) | Yes; argues the grade understates standalone quality (structural working-capital deficit) | ~$20B debt-funded Norfolk Southern acquisition is the main risk; requires combined projections and a re-grade at closing |
+| [Kohl's](memos/KSS_memo.md) | 8 | Decline | 2 (7 errors, then pass) | Yes | FY2025 EBITDA "recovery" rests on a one-off $129M settlement gain; unsecured lender behind secured debt; stressed pro forma DSCR below 1.0x |
+
+Human review of the Union Pacific and Kohl's memos (logged in `memos/<T>_result.json`): 22 citations read against the 10-K; one misused citation fixed (Union Pacific [1A ¶11] is about locomotive suppliers, not the railroad's barriers to entry), one sharpened. In two of the six review edits across the project, the reviewer typed a number by hand and the checker rejected it.
+
 ## Example memo: DaVita
 
 [memos/DVA_memo.md](memos/DVA_memo.md). Recommendation: **Approve with conditions**. Internal grade 7 (S&P BB, Moody's Ba2).
@@ -96,4 +106,4 @@ tests/                    worked examples and edge cases
 
 ## Results
 
-To come: ratio and stress tables across all three companies, memos for UNP and KSS, the demo page.
+To come: ratio and stress tables across all three companies, the demo page.

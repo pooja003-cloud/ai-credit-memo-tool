@@ -4,7 +4,7 @@
 |---|---|
 | Internal grade | {{grade.grade}} on the 1-to-10 scale (base {{grade.base_grade}}, worsened by {{grade.stress_notches}} notch under stress) |
 | Recommendation | Approve with conditions |
-| Agency ratings | {{rating.sp}}; {{rating.moodys}} |
+| Agency ratings | S&P {{rating.sp}}; Moody's {{rating.moodys}} |
 | Key reason: cash flow | Operating cash flow of {{FY2025.cashflow.cfo}} and DSCR of {{FY2025.dscr}}, still {{stress.dscr}} under stress |
 | Key reason: leverage | Debt to EBITDA of {{FY2025.debt_ebitda}} ({{proforma.debt_ebitda}} with this loan) rises to {{stress.debt_ebitda}} under stress, probably above the credit agreement's {{fact.covenant_max_leverage}} covenant, which uses a different EBITDA definition [DEBT ¶58] |
 | Key reason: financial policy | Buybacks of {{abs:FY2025.cashflow.buybacks}} exceeded free cash flow and turned equity negative; the conditions restrict them |

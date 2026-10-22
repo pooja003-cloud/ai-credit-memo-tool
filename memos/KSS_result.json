@@ -1,0 +1,28 @@
+{
+  "ticker": "KSS",
+  "attempts": 2,
+  "recommendation": "Decline",
+  "grade": 8,
+  "stats": {
+    "placeholders": 140,
+    "citations": 44,
+    "sentences_checked": 77
+  },
+  "review": {
+    "date": "2026-10-22",
+    "citations_spot_checked": 10,
+    "changes": [
+      "[DEBT \u00b651] is a dash cell in the debt table; cited with its row label as [DEBT \u00b650, \u00b651]",
+      "Ratings: agency names written in front of each rating placeholder"
+    ],
+    "confirmed": [
+      "$129M credit card interchange settlement gain [7 \u00b6156]",
+      "adjusted operating income $510M vs $509M [7 \u00b616]",
+      "$555M of the $674M cash is short-term investments [7-LIQ \u00b65]",
+      "sales fell in every line except Accessories [7 \u00b656]",
+      "buybacks resume only after leverage improves [7-LIQ \u00b678]"
+    ],
+    "found_by_claude": "EBITDA's FY2025 rise rests on the one-off settlement gain; excluding unusual items EBITDA fell. Neither the analyst points nor earlier review had flagged it.",
+    "recommendation_vs_grade": "Decline vs grade 8 (BB-/B+ equivalent; S&P B+, Moody's B2, Fitch BB-). Consistent: unsecured lender behind a secured ABL and secured notes, stressed DSCR 0.92x (0.78x pro forma), stressed pro forma coverage 2.03x on a lower-bound rate."
+  }
+}

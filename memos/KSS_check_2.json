@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "errors": [],
+  "warnings": [],
+  "recommendation": "Decline",
+  "stats": {
+    "placeholders": 140,
+    "citations": 44,
+    "sentences_checked": 77
+  }
+}

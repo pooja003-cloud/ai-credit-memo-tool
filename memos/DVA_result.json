@@ -19,6 +19,10 @@
       "was": "Management estimates it has roughly a third of the U.S. dialysis market by patient count [7 \u00b659].",
       "now": "Management estimates it serves more than a third of U.S. dialysis patients [7 \u00b659].",
       "why": "The 10-K says approximately 36%."
+    },
+    {
+      "date": "2026-10-22",
+      "why": "Ratings label: agency name now written before {{rating.*}} in the summary box"
     }
   ],
   "citation_spot_check": "21 citations read against the full 10-K paragraph on 2026-10-21; all support their sentence. Confirmed: max leverage covenant 5.00x through 2028 [DEBT \u00b658], subsidiary guarantees on the 6.75% notes [DEBT \u00b663], no single commercial payor above 10% [1 \u00b676].",

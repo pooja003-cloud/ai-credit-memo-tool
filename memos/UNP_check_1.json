@@ -1,0 +1,37 @@
+{
+  "ok": false,
+  "errors": [
+    {
+      "line": 46,
+      "type": "bad_citation",
+      "text": "[1 \u00b616, 1A \u00b611]"
+    },
+    {
+      "line": 42,
+      "type": "uncited_claim",
+      "text": "These figures are for Union Pacific standalone and exclude Norfolk Southern."
+    },
+    {
+      "line": 55,
+      "type": "uncited_claim",
+      "text": "We cannot size combined leverage because the fact sheet has no Norfolk Southern figures."
+    },
+    {
+      "line": 63,
+      "type": "uncited_claim",
+      "text": "No grading threshold breaks under stress."
+    },
+    {
+      "line": 77,
+      "type": "uncited_claim",
+      "text": "Structure should therefore protect us if combined leverage overshoots."
+    }
+  ],
+  "warnings": [],
+  "recommendation": "Approve",
+  "stats": {
+    "placeholders": 129,
+    "citations": 54,
+    "sentences_checked": 76
+  }
+}

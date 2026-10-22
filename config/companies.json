@@ -216,7 +216,7 @@
         }
       },
       "memo_points": [
-        "Our loan would be unsecured, while the revolver is secured and asset-based and the 2030 notes are secured by distribution and fulfillment centers [DEBT \u00b661, 7-LIQ \u00b6125]: we would rank behind both in a downside.",
+        "Our loan would be unsecured, while the revolver is secured and asset-based and the 2030 notes are secured by distribution and fulfillment centers [DEBT \u00b661] [7-LIQ \u00b6125]: we would rank behind both in a downside.",
         "The pro forma rate comes from secured notes, so the pro forma interest is a lower bound; with stressed coverage close to the threshold, say plainly that a realistic unsecured rate would likely push it below.",
         "Downgrades have already raised the coupon on the 2031 notes by 175bp in total [7-LIQ \u00b670]; use the fact placeholders.",
         "Rating outlooks improved after the 10-K date (Moody's to positive, S&P to stable): use {{rating.moodys}} and {{rating.sp}}.",

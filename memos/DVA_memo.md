@@ -1,4 +1,4 @@
-<!-- Rendered from memos/DVA_draft.md by creditmemo/memo_check.py. Every number comes from outputs/spreads/DVA.json, config/companies.json (cited 10-K facts) or config/agency_ratings.json; Claude (claude -p) wrote placeholders only. Check: 147 placeholders, 53 citations, 0 errors. Drafted in 2 attempts (attempt 1 failed with 7 errors, memos/DVA_check_1.json), then three review rounds and a pro forma rate change, all re-checked; edits logged in memos/DVA_result.json. -->
+<!-- Rendered from memos/DVA_draft.md by creditmemo/memo_check.py. Every number comes from outputs/spreads/DVA.json, config/companies.json (cited 10-K facts) or config/agency_ratings.json; Claude (claude -p) wrote placeholders only. Check: 147 placeholders, 53 citations, 0 errors. Drafted in 2 attempts (attempt 1 failed with 7 errors, memos/DVA_check_1.json), then three review rounds, a pro forma rate change and a ratings-label fix, all re-checked; edits logged in memos/DVA_result.json. -->
 
 # Credit memo: DaVita Inc.
 
@@ -6,7 +6,7 @@
 |---|---|
 | Internal grade | 7 on the 1-to-10 scale (base 6, worsened by 1 notch under stress) |
 | Recommendation | Approve with conditions |
-| Agency ratings | BB stable (S&P, last action 2025-09-16); Ba2 stable (Moody's, last action 2024-02-29, date unconfirmed) |
+| Agency ratings | S&P BB stable (last action 2025-09-16); Moody's Ba2 stable (last action 2024-02-29, date unconfirmed) |
 | Key reason: cash flow | Operating cash flow of $1.9 billion and DSCR of 2.91x, still 1.62x under stress |
 | Key reason: leverage | Debt to EBITDA of 3.72x (3.90x with this loan) rises to 5.47x under stress, probably above the credit agreement's 5.00x covenant, which uses a different EBITDA definition [10-K Debt note ¶58, p. F-28](https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/dva-20251231.htm) |
 | Key reason: financial policy | Buybacks of $1.8 billion exceeded free cash flow and turned equity negative; the conditions restrict them |

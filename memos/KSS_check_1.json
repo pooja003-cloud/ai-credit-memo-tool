@@ -1,0 +1,47 @@
+{
+  "ok": false,
+  "errors": [
+    {
+      "line": 8,
+      "type": "bad_citation",
+      "text": "[DEBT \u00b661, 7-LIQ \u00b6125]"
+    },
+    {
+      "line": 52,
+      "type": "bad_citation",
+      "text": "[DEBT \u00b661, 7-LIQ \u00b6125]"
+    },
+    {
+      "line": 87,
+      "type": "bad_citation",
+      "text": "[DEBT \u00b661, 7-LIQ \u00b6125]"
+    },
+    {
+      "line": 14,
+      "type": "uncited_claim",
+      "text": "In a downside we would rank behind both."
+    },
+    {
+      "line": 52,
+      "type": "uncited_claim",
+      "text": "**Subordination:** We would rank behind the secured asset-based revolver and the secured 2030 notes [DEBT \u00b661, 7-LIQ \u00b6125]."
+    },
+    {
+      "line": 87,
+      "type": "uncited_claim",
+      "text": "An unsecured lender is structurally behind a large secured revolver and secured notes [DEBT \u00b661, 7-LIQ \u00b6125]."
+    },
+    {
+      "line": 87,
+      "type": "uncited_claim",
+      "text": "That is the wrong place to be for a retailer whose sales are shrinking."
+    }
+  ],
+  "warnings": [],
+  "recommendation": "Decline",
+  "stats": {
+    "placeholders": 138,
+    "citations": 36,
+    "sentences_checked": 77
+  }
+}

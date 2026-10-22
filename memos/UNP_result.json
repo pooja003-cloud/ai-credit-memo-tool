@@ -1,0 +1,26 @@
+{
+  "ticker": "UNP",
+  "attempts": 2,
+  "recommendation": "Approve",
+  "grade": 5,
+  "stats": {
+    "placeholders": 131,
+    "citations": 57,
+    "sentences_checked": 76
+  },
+  "review": {
+    "date": "2026-10-22",
+    "citations_spot_checked": 12,
+    "changes": [
+      "[1A \u00b611] was cited for the network's 'high entry barriers', but that paragraph is about barriers facing new locomotive suppliers; replaced with [7 \u00b614] (pricing and productivity) and [1 \u00b63] (network). The first version of this edit typed '23 states' by hand and the checker rejected it",
+      "Ratings: the placeholder no longer repeats the agency name; the memo names the agency in front"
+    ],
+    "confirmed": [
+      "merger financing leverage covenant [1A \u00b667]",
+      "working capital deficit due to upcoming maturities [7-LIQ \u00b63]",
+      "2026 capital plan ~$3.3B, below FY2025 capex [7-LIQ \u00b658]",
+      "land sales lifted other income [7 \u00b6120]"
+    ],
+    "recommendation_vs_grade": "Approve with conditions vs grade 5 (BBB equivalent; agencies A-/A3). The memo argues the grade understates standalone quality because of the structural working-capital deficit (current ratio score 8), the same reason the benchmark gives for the one-notch gap. The open risk is the ~$20B debt-funded Norfolk Southern acquisition; condition (d) requires combined projections and a re-grade at closing."
+  }
+}

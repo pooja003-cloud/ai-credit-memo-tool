@@ -128,7 +128,7 @@ def test_abs_fact_and_rating_placeholders():
     assert VF.resolve("FY2025.cashflow.buybacks") == (True, "-$1.8 billion")
     assert VF.resolve("abs:FY2025.cashflow.buybacks") == (True, "$1.8 billion")
     assert VF.resolve("fact.covenant_max_leverage") == (True, "5.00x")
-    assert VF.resolve("rating.sp") == (True, "BB stable (S&P, last action 2025-09-16)")
+    assert VF.resolve("rating.sp") == (True, "BB stable (last action 2025-09-16)")
     assert VF.resolve("rating.moodys")[0] is False
 
 

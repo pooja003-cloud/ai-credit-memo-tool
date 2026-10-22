@@ -130,7 +130,7 @@ Facility requested: {{{{facility.type}}}} of {{{{facility.amount_usd}}}}, {{{{fa
 
 RULES (a script checks every one; a draft that breaks any rule is rejected):
 1. Never type a number. Every figure, ratio, percentage, amount, multiple and count must be a placeholder from the fact sheet, written exactly like {{{{FY2025.debt_ebitda}}}}. Write "{{{{facility.tenor_years}}}}-year", not "5-year". Words like "one notch" or "two thresholds" are fine. Allowed as typed text: years (2025), FY labels (FY2025), "Item 1A", "Note 12", "10-K", instrument names like "Term Loan A-2", and "1-to-10".
-2. Every sentence of six words or more must contain a placeholder or a citation. Cite the 10-K as [1A ¶12] using the section key and paragraph number shown in front of each paragraph, e.g. [7-LIQ ¶3] or [DEBT ¶61]. Several paragraphs: [DEBT ¶95, ¶96].
+2. Every sentence of six words or more must contain a placeholder or a citation. Cite the 10-K as [1A ¶12] using the section key and paragraph number shown in front of each paragraph, e.g. [7-LIQ ¶3] or [DEBT ¶61]. Several paragraphs of one section: [DEBT ¶95, ¶96]. Two sections: two brackets, [DEBT ¶61] [7-LIQ ¶125].
 3. Quotations of five or more words, in double quotes, must be copied word for word from the cited paragraph. Prefer paraphrase with a citation.
 4. Signs: placeholders print negative values with a minus sign (capex, buybacks, gains, falls). After words like "fell", "declined", "buybacks of" or "capex of", write {{{{abs:...}}}} (e.g. "buybacks of {{{{abs:FY2025.cashflow.buybacks}}}}", "EBITDA fell {{{{abs:growth.FY2025.ebitda}}}}"). The checker rejects a sign that contradicts the word.
 5. Do not invent placeholders. If a value is not in the fact sheet, describe it in words with a citation, or leave it out.
@@ -140,7 +140,7 @@ RULES (a script checks every one; a draft that breaks any rule is rejected):
 STRUCTURE (Markdown):
 # Credit memo: {name}
 
-A summary table right under the title, with rows: Internal grade ({{{{grade.grade}}}} on 1-to-10), Recommendation, Agency ratings ({{{{rating.sp}}}}; {{{{rating.moodys}}}}), and three short "Key reason" rows, each with a placeholder or citation.
+A summary table right under the title, with rows: Internal grade ({{{{grade.grade}}}} on 1-to-10), Recommendation, Agency ratings (S&P {{{{rating.sp}}}}; Moody's {{{{rating.moodys}}}} - a rating placeholder gives only the rating, outlook and date, so always write the agency name in front of it), and three short "Key reason" rows, each with a placeholder or citation.
 
 ## 1. Request
 ## 2. Borrower overview
