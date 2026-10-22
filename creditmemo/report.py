@@ -119,8 +119,7 @@ def main(argv=None) -> int:
     if "<!-- tables:start" in readme:
         readme = re.sub(r"<!-- tables:start.*?<!-- tables:end -->", lambda m: block, readme, flags=re.S)
     else:
-        readme = readme.replace("## Memos: all three companies", "## Ratio and stress tables\n\n" + block +
-                                "\n\n## Memos: all three companies", 1)
+        readme = readme.replace("## Run it", "## Tables\n\n" + block + "\n\n## Run it", 1)
     README.write_text(readme)
     print(text)
     return 0
