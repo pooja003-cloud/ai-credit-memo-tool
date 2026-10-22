@@ -1,8 +1,8 @@
-"""README tables, generated from the spreads (never typed by hand).
+"""Ratio and stress tables (docs/tables.md), generated from the spreads (never typed by hand).
 
-    python -m creditmemo.report      # writes outputs/tables.md and refreshes the README block
+    python -m creditmemo.report      # writes outputs/tables.md and refreshes docs/tables.md
 
-The README block between <!-- tables:start --> and <!-- tables:end --> is
+The block between <!-- tables:start --> and <!-- tables:end --> is
 replaced on every run.
 """
 
@@ -16,7 +16,7 @@ from . import ROOT, SPREAD_DIR
 from .edgar import load_companies
 
 OUT = ROOT / "outputs" / "tables.md"
-README = ROOT / "README.md"
+README = ROOT / "docs" / "tables.md"   # the generated block lives here; README links to it
 
 
 def x(v):
