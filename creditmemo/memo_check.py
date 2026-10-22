@@ -100,6 +100,8 @@ def fmt(key: str, v, kind: Optional[str] = None) -> str:
         return f"{v:.2f}x"
     if kind == "pct":
         return f"{v * 100:.1f}%"
+    if kind == "rate":                      # interest rates: two decimals (6.75%, not 6.8%)
+        return f"{v * 100:.2f}%"
     if kind == "int":
         return f"{v:,.0f}"
     return fmt_money(v)

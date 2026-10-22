@@ -99,6 +99,12 @@ def fact_sheet(spread: dict, v) -> str:
         ok, txt = v.resolve("rating." + k)
         if ok:
             out.append(f"- `{{{{rating.{k}}}}}` = {txt}")
+    pf = spread.get("proforma")
+    if pf:
+        out.append(f"- Pro forma rate source: {pf.get('rate_label')} {pf.get('rate_cite')}")
+        if pf.get("lower_bound"):
+            out.append("- The pro forma rate comes from a SECURED issue, so an unsecured loan would cost more: "
+                       "say in the memo that the pro forma interest is a lower bound.")
     br = [st["thresholds"][k]["label"] for k, b in st["stressed"]["breaches"].items() if b]
     out.append(f"- Stress thresholds broken (for your reasoning; describe them in words): "
                f"{', '.join(br) if br else 'none'}")

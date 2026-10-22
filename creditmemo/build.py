@@ -129,13 +129,14 @@ def assemble(ticker: str, company: dict, facility: dict, cf: dict, spec: dict, o
                         sc["scenario"], sc["thresholds"])
     stress["period"] = latest
     proforma = None
-    rate_fact = (company.get("facts") or {}).get("facility_rate")
+    rate_fact = (company.get("facts") or {}).get("new_debt_rate")   # rule in DECISIONS.md
     if rate_fact and facility.get("amount_usd"):
         proforma = run_proforma(ratio_inputs[latest], float(facility["amount_usd"]), rate_fact["value"],
                                 company.get("floating_rate_share") or 0.0, sc["scenario"], sc["thresholds"])
-        proforma.update({"period": latest, "rate_cite": rate_fact["cite"], "rate_label": rate_fact.get("label")})
+        proforma.update({"period": latest, "rate_cite": rate_fact["cite"], "rate_label": rate_fact.get("label"),
+                         "lower_bound": bool(rate_fact.get("secured"))})
     else:
-        warnings.append("No facility_rate fact in config/companies.json; pro forma not computed")
+        warnings.append("No new_debt_rate fact in config/companies.json; pro forma not computed")
 
     gr = compute_grade(ratios[latest], stress["stressed"]["breaches"], load_grade())
     gr["period"] = latest

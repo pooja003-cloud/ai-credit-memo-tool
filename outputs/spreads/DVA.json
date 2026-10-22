@@ -3941,13 +3941,13 @@
   },
   "proforma": {
     "amount": 500000000.0,
-    "rate": 0.0551,
-    "added_interest": 27550000.0,
+    "rate": 0.0675,
+    "added_interest": 33750000.0,
     "inputs": {
       "revenue": 13643069000.0,
       "operating_income": 2043615000.0,
       "da": 715348000.0,
-      "interest_expense": 607476000.0,
+      "interest_expense": 613676000.0,
       "short_term_borrowings": 109201000.0,
       "commercial_paper": 0.0,
       "current_ltd": 0.0,
@@ -3977,8 +3977,8 @@
       "net_debt_ebitda": 3.6596181246359594,
       "lease_adj_debt_ebitdar": 3.864137078416003,
       "lease_adj_net_debt_ebitdar": 3.6686993285166203,
-      "interest_coverage": 4.541682305144565,
-      "dscr": 2.79960288944671,
+      "interest_coverage": 4.495797456638356,
+      "dscr": 2.775591144828235,
       "current_ratio": 1.2916854732282628
     },
     "ratio_notes": {},
@@ -4007,8 +4007,8 @@
           "net_debt_ebitda": 3.6596181246359594,
           "lease_adj_debt_ebitdar": 3.864137078416003,
           "lease_adj_net_debt_ebitdar": 3.6686993285166203,
-          "interest_coverage": 4.541682305144565,
-          "dscr": 2.79960288944671,
+          "interest_coverage": 4.495797456638356,
+          "dscr": 2.775591144828235,
           "current_ratio": 1.2916854732282628
         },
         "breaches": {
@@ -4032,8 +4032,8 @@
           "net_debt_ebitda": 5.371364385054549,
           "lease_adj_debt_ebitdar": 5.180000877673536,
           "lease_adj_net_debt_ebitdar": 4.918010245492254,
-          "interest_coverage": 3.0550055012772463,
-          "dscr": 1.555814125738544,
+          "interest_coverage": 3.024529048628585,
+          "dscr": 1.542612990448214,
           "current_ratio": 1.2916854732282628
         },
         "ratio_notes": {},
@@ -4062,8 +4062,9 @@
       }
     },
     "period": "FY2025",
-    "rate_cite": "[DEBT \u00b6114]",
-    "rate_label": "Weighted average effective interest rate on all debt at December 31, 2025 (incl. caps and amortization); used as the pro forma cost of the new facility"
+    "rate_cite": "[DEBT \u00b663]",
+    "rate_label": "Coupon on DaVita's most recent senior unsecured issue in the 10-K: 6.75% senior notes due 2033, issued May 23, 2025",
+    "lower_bound": false
   },
   "warnings": []
 }

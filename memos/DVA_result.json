@@ -4,9 +4,9 @@
   "recommendation": "Approve",
   "grade": 7,
   "stats": {
-    "placeholders": 146,
-    "citations": 52,
-    "sentences_checked": 86
+    "placeholders": 147,
+    "citations": 53,
+    "sentences_checked": 87
   },
   "review_edits": [
     {
@@ -54,5 +54,12 @@
       "NCI risk: DSCR does not deduct NCI distributions; removed the FCF-definition mitigant and its decorative citation",
       "'Strong cash generation' -> 'Solid, though declining' with the CFO decline"
     ]
+  },
+  "proforma_rate_change": {
+    "date": "2026-10-22",
+    "rule": "DECISIONS.md: coupon on the most recent senior unsecured issue",
+    "was": "5.51% weighted average effective rate [DEBT \u00b6114]",
+    "now": "6.75% senior notes due 2033 [DEBT \u00b663]",
+    "effect": "added interest $28M -> $34M; pro forma coverage 4.54x -> 4.50x, DSCR 2.80x -> 2.78x; stressed coverage 3.06x -> 3.02x; leverage unchanged (3.90x, stressed 5.73x)"
   }
 }

@@ -105,10 +105,22 @@ Correction: the first draft used 38.1% for DaVita, saying most caps "expire 2025
 - the caps only pay above their strikes: weighted average SOFR strike 4.32% (2026), 4.46% (2027), 4.43% (2028), 4.50% (2029), with 25bp step-ups at end-2026 and end-2027;
 - cover falls to $1.0B in 2029, inside the requested 5-year loan.
 
+## Pro forma rate rule (2026-10-22)
+
+The pro forma prices the new loan at the **coupon on the most recent senior unsecured issue in the latest 10-K**. If the most recent senior issue is secured, use its coupon anyway and label the pro forma interest a **lower bound** (unsecured debt would cost more). If several were issued on the same date, take the one whose maturity is closest to the facility's tenor. Each rate is a cited fact, `{{fact.new_debt_rate}}` in `config/companies.json`, never typed into the memo.
+- Why not the average cost of existing debt: old debt was often issued when rates were lower or the credit was stronger, so the average understates what a new loan costs today. Kohl's shows the gap: 6.26% average effective rate at issuance [DEBT ¶57] vs 10.00% on its 2025 notes [DEBT ¶61].
+
+| Company | Rate | Issue | Citation | Label |
+|---|---|---|---|---|
+| DaVita | 6.75% | Senior unsecured notes due 2033, issued May 2025 | [DEBT ¶63] | |
+| Union Pacific | 5.100% | Unsecured notes due 2035, issued February 13, 2025 (same day as 5.600% notes due 2054; 2035 is closer to the 5-year tenor) | [DEBT ¶32, ¶33] | |
+| Kohl's | 10.000% | Senior **secured** notes due 2030, issued 2025 | [DEBT ¶61] | lower bound |
+- Bond coupons stand in for term-loan pricing, which a 10-K doesn't give. A bank term loan would usually price off SOFR plus a margin; the most recent bond coupon is the closest market price for the borrower's credit that the filing shows.
+
 ## Pro forma (2026-10-21)
 
 The latest fiscal year as if the requested facility were already drawn (`creditmemo/proforma.py`):
-- debt + facility amount; interest + amount x rate, where the rate is a cited 10-K fact (DaVita: 5.51% weighted average effective rate on all debt, Debt note p. F-30);
+- debt + facility amount; interest + amount x rate, the rate set by the rule above;
 - EBITDA, cash, capex, cash taxes, leases and next-year principal unchanged (proceeds spent, bullet repayment);
 - the stress case is rerun on pro forma inputs with the company's floating share applied to pro forma debt.
 Shown next to reported figures in the memo; not graded. The grade stays on reported figures.

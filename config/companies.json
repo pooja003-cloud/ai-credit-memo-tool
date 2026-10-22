@@ -85,11 +85,18 @@
           "cite": "[DEBT \u00b696]",
           "label": "Weighted average SOFR cap strike, 2029"
         },
-        "facility_rate": {
+        "new_debt_rate": {
+          "value": 0.0675,
+          "kind": "rate",
+          "cite": "[DEBT \u00b663]",
+          "secured": false,
+          "label": "Coupon on DaVita's most recent senior unsecured issue in the 10-K: 6.75% senior notes due 2033, issued May 23, 2025"
+        },
+        "avg_debt_rate": {
           "value": 0.0551,
-          "kind": "pct",
+          "kind": "rate",
           "cite": "[DEBT \u00b6114]",
-          "label": "Weighted average effective interest rate on all debt at December 31, 2025 (incl. caps and amortization); used as the pro forma cost of the new facility"
+          "label": "Weighted average effective interest rate on all debt at December 31, 2025 (context only; not the pro forma rate)"
         }
       }
     },
@@ -101,7 +108,16 @@
       "floating_rate_share": 0.0,
       "floating_rate_source": "10-K FY2025, Item 7A (refers to Item 7 Other Matters), p. 39",
       "floating_rate_status": "DRAFT - confirm",
-      "floating_rate_quote": "Interest rates \u2013 At both December 31, 2025, and 2024, we did not have variable-rate debt."
+      "floating_rate_quote": "Interest rates \u2013 At both December 31, 2025, and 2024, we did not have variable-rate debt.",
+      "facts": {
+        "new_debt_rate": {
+          "value": 0.051,
+          "kind": "rate",
+          "cite": "[DEBT \u00b632, \u00b633]",
+          "secured": false,
+          "label": "Coupon on Union Pacific's most recent senior unsecured issue: 5.100% notes due 2035, issued February 13, 2025 (same day as 5.600% notes due 2054; 2035 is closer to the 5-year tenor)"
+        }
+      }
     },
     "KSS": {
       "cik": 885639,
@@ -112,7 +128,16 @@
       "floating_rate_source": "10-K FY2025, Item 7A, p. 37",
       "floating_rate_status": "DRAFT - confirm",
       "floating_rate_basis": "All long-term debt is fixed rate. The $1.5B revolver is SOFR-based but undrawn at January 31, 2026 ($290M drawn a year earlier). $425M of 2021 notes carry rating-linked coupon step-ups, already triggered; that is a fixed-rate repricing, not floating exposure.",
-      "floating_rate_quote": "All other long-term debt is at fixed interest rates and, therefore, is not affected by changes in interest rates. ... There were no outstanding borrowings under the revolving credit facility as of January 31, 2026."
+      "floating_rate_quote": "All other long-term debt is at fixed interest rates and, therefore, is not affected by changes in interest rates. ... There were no outstanding borrowings under the revolving credit facility as of January 31, 2026.",
+      "facts": {
+        "new_debt_rate": {
+          "value": 0.1,
+          "kind": "rate",
+          "cite": "[DEBT \u00b661]",
+          "secured": true,
+          "label": "Coupon on Kohl's most recent senior issue: 10.000% senior secured notes due 2030, issued in the second quarter of 2025. Secured, so the pro forma interest on an unsecured loan is a lower bound"
+        }
+      }
     }
   },
   "_facts_readme": "'facts' are 10-K figures that are not in the spread, typed in by hand from the filing. Each carries the 10-K paragraph it comes from in 'cite' (section key and paragraph number in outputs/sections/<TICKER>.json); the memo checker fails if a citation doesn't exist. kind: money (dollars), ratio (x), pct (fraction)."

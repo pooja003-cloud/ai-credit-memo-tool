@@ -2617,7 +2617,8 @@
       "total_debt": 4493000000.0,
       "net_debt": 4310000000.0,
       "lease_adj_debt": 7376000000.0,
-      "fcf": 591000000.0
+      "fcf": 591000000.0,
+      "ebitda_ex_unusual": 1466000000.0
     },
     "FY2024": {
       "ebitda": 1176000000.0,
@@ -2626,7 +2627,8 @@
       "total_debt": 4354000000.0,
       "net_debt": 4220000000.0,
       "lease_adj_debt": 7159000000.0,
-      "fcf": 182000000.0
+      "fcf": 182000000.0,
+      "ebitda_ex_unusual": 1252000000.0
     },
     "FY2025": {
       "ebitda": 1324000000.0,
@@ -2635,7 +2637,8 @@
       "total_debt": 3886000000.0,
       "net_debt": 3212000000.0,
       "lease_adj_debt": 6630000000.0,
-      "fcf": 1008000000.0
+      "fcf": 1008000000.0,
+      "ebitda_ex_unusual": 1210000000.0
     }
   },
   "ratios": {
@@ -3058,6 +3061,133 @@
     },
     "status": "FROZEN 2026-10-21. Signed off by Pooja before any agency rating was looked up. Do not edit: tests/test_grade.py checks this file's SHA-256.",
     "period": "FY2025"
+  },
+  "proforma": {
+    "amount": 500000000.0,
+    "rate": 0.1,
+    "added_interest": 50000000.0,
+    "inputs": {
+      "revenue": 15527000000.0,
+      "operating_income": 624000000.0,
+      "da": 700000000.0,
+      "interest_expense": 338000000.0,
+      "short_term_borrowings": 85000000.0,
+      "commercial_paper": 0.0,
+      "current_ltd": 0.0,
+      "finance_lease_liabilities": 0.0,
+      "noncurrent_ltd": 4301000000.0,
+      "cash": 674000000.0,
+      "current_assets": 3691000000.0,
+      "current_liabilities": 2531000000.0,
+      "cfo": 1380000000.0,
+      "capex": 372000000.0,
+      "operating_lease_liabilities": 2744000000.0,
+      "operating_lease_cost": 271000000.0,
+      "cash_taxes": 51000000.0,
+      "scheduled_principal": 0.0
+    },
+    "derived": {
+      "ebitda": 1324000000.0,
+      "ebitda_margin": 0.08527081857409674,
+      "ebitdar": 1595000000.0,
+      "total_debt": 4386000000.0,
+      "net_debt": 3712000000.0,
+      "lease_adj_debt": 7130000000.0,
+      "fcf": 1008000000.0
+    },
+    "ratios": {
+      "debt_ebitda": 3.312688821752266,
+      "net_debt_ebitda": 2.8036253776435047,
+      "lease_adj_debt_ebitdar": 4.470219435736677,
+      "lease_adj_net_debt_ebitdar": 4.047648902821317,
+      "interest_coverage": 3.9171597633136095,
+      "dscr": 2.665680473372781,
+      "current_ratio": 1.4583168708020546
+    },
+    "ratio_notes": {},
+    "stress": {
+      "scenario": {
+        "revenue_shock": 0.2,
+        "margin_shock": 0.03,
+        "rate_shock": 0.02
+      },
+      "floating_rate_share": 0.0,
+      "extra_interest": 0.0,
+      "base_margin": 0.08527081857409674,
+      "stressed_margin": 0.05527081857409674,
+      "base": {
+        "derived": {
+          "ebitda": 1324000000.0,
+          "ebitda_margin": 0.08527081857409674,
+          "ebitdar": 1595000000.0,
+          "total_debt": 4386000000.0,
+          "net_debt": 3712000000.0,
+          "lease_adj_debt": 7130000000.0,
+          "fcf": 1008000000.0
+        },
+        "ratios": {
+          "debt_ebitda": 3.312688821752266,
+          "net_debt_ebitda": 2.8036253776435047,
+          "lease_adj_debt_ebitdar": 4.470219435736677,
+          "lease_adj_net_debt_ebitdar": 4.047648902821317,
+          "interest_coverage": 3.9171597633136095,
+          "dscr": 2.665680473372781,
+          "current_ratio": 1.4583168708020546
+        },
+        "breaches": {
+          "debt_ebitda": false,
+          "interest_coverage": false,
+          "dscr": false
+        }
+      },
+      "stressed": {
+        "derived": {
+          "ebitda": 686552000.0000001,
+          "ebitda_margin": 0.05527081857409674,
+          "ebitdar": 957552000.0000001,
+          "total_debt": 4386000000.0,
+          "net_debt": 3712000000.0,
+          "lease_adj_debt": 7130000000.0,
+          "fcf": 1008000000.0
+        },
+        "ratios": {
+          "debt_ebitda": 6.388445449142963,
+          "net_debt_ebitda": 5.4067281138209475,
+          "lease_adj_debt_ebitdar": 7.4460708139088,
+          "lease_adj_net_debt_ebitdar": 6.742192591107323,
+          "interest_coverage": 2.031218934911243,
+          "dscr": 0.7797396449704146,
+          "current_ratio": 1.4583168708020546
+        },
+        "ratio_notes": {},
+        "breaches": {
+          "debt_ebitda": true,
+          "interest_coverage": false,
+          "dscr": true
+        }
+      },
+      "thresholds": {
+        "debt_ebitda": {
+          "label": "Debt / EBITDA above 4.0x",
+          "op": ">",
+          "value": 4.0
+        },
+        "interest_coverage": {
+          "label": "EBITDA / interest below 2.0x",
+          "op": "<",
+          "value": 2.0
+        },
+        "dscr": {
+          "label": "DSCR below 1.0x",
+          "op": "<",
+          "value": 1.0
+        }
+      }
+    },
+    "period": "FY2025",
+    "rate_cite": "[DEBT \u00b661]",
+    "rate_label": "Coupon on Kohl's most recent senior issue: 10.000% senior secured notes due 2030, issued in the second quarter of 2025. Secured, so the pro forma interest on an unsecured loan is a lower bound",
+    "lower_bound": true
   },
   "warnings": [
     "FY2023 Scheduled principal, next 12 months: Scheduled principal, next 12 months not tagged; used Current portion of long-term debt (itself not tagged, counted as 0)",
