@@ -6,6 +6,8 @@
 | Union Pacific Corporation | FY2025 | 2.58x | 2.60x | 2.48x | 9.40x | 2.70x | 0.91x | 5 |
 | Kohl's Corporation | FY2025 | 2.94x | 4.16x | 2.43x | 4.60x | 3.13x | 1.46x | 8 |
 
+Note: Kohl's Corporation interest coverage is 4.43x excluding the $11 million debt-repurchase gain booked in interest expense [DEBT ¶63], as used in its memo; the table uses reported interest. The grade is unchanged (8).
+
 ### Leverage with and without leases, three years
 
 Lease-adjusted leverage pairs lease liabilities with EBITDAR (EBITDA + operating lease cost), because rent is already deducted inside EBITDA. The gap between the two columns is the lease effect.
@@ -15,6 +17,8 @@ Lease-adjusted leverage pairs lease liabilities with EBITDAR (EBITDA + operating
 | DaVita Inc. | 3.57x / 3.66x | 3.36x / 3.44x | 3.72x / 3.72x |
 | Union Pacific Corporation | 2.86x / 2.90x | 2.58x / 2.61x | 2.58x / 2.60x |
 | Kohl's Corporation | 3.06x / 4.25x | 3.70x / 4.93x | 2.94x / 4.16x |
+
+Note: DaVita Inc. FY2025 shows almost the same leverage with and without leases (3.724x vs 3.720x). This is not a bug: adding leases moves the ratio only when lease liabilities / lease cost differs from debt / EBITDA, and for DaVita Inc. it is 3.70x against 3.72x, so adding both to the ratio barely changes it.
 
 ### Stress test
 
