@@ -4,7 +4,7 @@ Back to the [README](../README.md).
 
 ## The memo checker and human review
 
-Every memo passed the checker on its second attempt; the first attempts' errors went back to Claude (see the Draft attempts column above).
+Every memo passed the checker on its second attempt; the first attempts' errors went back to Claude (see the Draft attempts column in [docs/memos.md](memos.md)).
 
 **What the checker proves, and what it doesn't.** It proves every number came from Python and every citation points to a real 10-K paragraph (and quotes match). It does not prove the reasoning is right. A sentence in the stress section had the cap logic backwards (caps protect only when SOFR is *at or above* the strike); it passed every check and was caught in human review. Credit judgment still needs a reviewer.
 
@@ -49,4 +49,4 @@ Why they differ:
 
 - **Agency benchmark.** What it can and can't show: three companies only show direction, not accuracy. It is partly circular, because the agencies lean on the same leverage and coverage ratios. Each rating records its last agency action and, separately, whether it was confirmed on the agency's own site; only Union Pacific's Fitch rating is confirmed that way so far, and Union Pacific's S&P rating rests on a 2025 news report. The useful finding is the pattern: base-case ratios flatter the two weaker credits, and the stress overlay is what brings them in line.
 - **Pro forma rate.** The coupon on each company's most recent senior unsecured issue in its 10-K (DaVita 6.75% [DEBT ¶63], Union Pacific 5.10%, Kohl's 10.00%), not the average cost of existing debt, which understates what new borrowing costs. Kohl's 2025 notes are secured, so its pro forma interest is a lower bound. **Bond coupons are a stand-in for term-loan pricing**, which a 10-K doesn't disclose; a bank term loan would usually price off SOFR plus a margin. Rule and table in DECISIONS.md.
-- **Checker scope.** It proves numbers and citations, not reasoning; credit judgment still needs a reviewer (see [How it stays honest](#how-it-stays-honest)).
+- **Checker scope.** It proves numbers and citations, not reasoning; credit judgment still needs a reviewer (see [The memo checker and human review](#the-memo-checker-and-human-review)).

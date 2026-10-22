@@ -3,7 +3,7 @@ new loan were already on the balance sheet.
 
   debt      + facility amount (added to long-term debt)
   interest  + facility amount x rate, where the rate is a cited 10-K fact
-              (DaVita: weighted average effective rate on all debt, Debt note)
+              (the coupon on the most recent senior unsecured issue; rule in DECISIONS.md)
   unchanged EBITDA, cash (proceeds assumed spent on general corporate purposes,
             not held), capex, cash taxes, leases and next-year principal
             (the loan is assumed to be a bullet repaid at maturity)

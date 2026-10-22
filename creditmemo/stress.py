@@ -9,8 +9,8 @@ Thresholds come from config/stress.json. A ratio that becomes not
 meaningful (leverage on negative EBITDA) counts as a breach, because it is
 worse than any threshold.
 
-demo/stress.js implements the same formulas for the live sliders; the
-tests in tests/test_stress.py pin the numbers both must produce.
+The hosted demo page (not in this repo) implements the same formulas for its
+live sliders; tests/test_stress.py pins the numbers both must produce.
 """
 
 from __future__ import annotations
